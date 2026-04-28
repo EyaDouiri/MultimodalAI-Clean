@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "FONGIDERM Antifongique Crème",
+    "module_reached": "m1_formation",
+    "timestamp": "2026-04-01_10h01",
+    "nb_messages": 7,
+    "scores": {}
+  },
+  "summary": {
+    "points_forts": [],
+    "points_faibles": [],
+    "concepts_non_maitrisés": [],
+    "ou_il_s_est_arrete": "m1_formation",
+    "recommandations_prochaine_session": [],
+    "evaluation_qualitative": "analyse indisponible",
+    "raw_response": "[ERREUR résumé] 401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions"
+  },
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "[ERREUR HTTP] 401"
+    },
+    {
+      "role": "delegue",
+      "content": "Bonjour à Dieu."
+    },
+    {
+      "role": "alia",
+      "content": "[ERREUR HTTP] 401"
+    },
+    {
+      "role": "delegue",
+      "content": "Bonjour Alia"
+    },
+    {
+      "role": "alia",
+      "content": "[ERREUR HTTP] 401"
+    },
+    {
+      "role": "delegue",
+      "content": "C'est moi et Edwiri, un délégué médical chez Vital."
+    },
+    {
+      "role": "alia",
+      "content": "[ERREUR HTTP] 401"
+    }
+  ]
+}

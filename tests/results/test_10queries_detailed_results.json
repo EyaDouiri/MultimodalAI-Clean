@@ -1,0 +1,144 @@
+{
+  "queries_tested": 10,
+  "results": [
+    {
+      "query": "vertige",
+      "category": "complément alimentaire",
+      "bd1_l2_top1": "LV PhytoVeine Gel",
+      "bd1_l2_distance": 1.3164433240890503,
+      "bd1_cos_top1": "LV PhytoVeine Gel",
+      "bd1_cos_score": 0.34177836775779724,
+      "bd2_l2_top1": "Pollen d'abeilles",
+      "bd2_l2_distance": 1.2529278993606567,
+      "bd2_cos_top1": "Pollen d'abeilles",
+      "bd2_cos_score": 0.373536080121994
+    },
+    {
+      "query": "anémie",
+      "category": "complément alimentaire",
+      "bd1_l2_top1": "LV Fersang junior",
+      "bd1_l2_distance": 1.2649645805358887,
+      "bd1_cos_top1": "LV Fersang junior",
+      "bd1_cos_score": 0.36751776933670044,
+      "bd2_l2_top1": "LV Fersang Sirop",
+      "bd2_l2_distance": 1.2265143394470215,
+      "bd2_cos_top1": "LV Fersang Sirop",
+      "bd2_cos_score": 0.3867429196834564
+    },
+    {
+      "query": "fatigue",
+      "category": "complément alimentaire",
+      "bd1_l2_top1": "Omevie Emotion – 900",
+      "bd1_l2_distance": 1.4458521604537964,
+      "bd1_cos_top1": "Omevie Emotion – 900",
+      "bd1_cos_score": 0.27707383036613464,
+      "bd2_l2_top1": "Omevie Emotion – 900",
+      "bd2_l2_distance": 1.3985004425048828,
+      "bd2_cos_top1": "Omevie Emotion – 900",
+      "bd2_cos_score": 0.3007497489452362
+    },
+    {
+      "query": "articulations",
+      "category": "complément alimentaire",
+      "bd1_l2_top1": "Omevie Articulation – 900",
+      "bd1_l2_distance": 1.2075846195220947,
+      "bd1_cos_top1": "Omevie Articulation – 900",
+      "bd1_cos_score": 0.39620769023895264,
+      "bd2_l2_top1": "Omevie Articulation – 900",
+      "bd2_l2_distance": 1.1901509761810303,
+      "bd2_cos_top1": "Omevie Articulation – 900",
+      "bd2_cos_score": 0.40492457151412964
+    },
+    {
+      "query": "zinc",
+      "category": "complément alimentaire",
+      "bd1_l2_top1": "LV Crème Dalibour",
+      "bd1_l2_distance": 1.1245622634887695,
+      "bd1_cos_top1": "LV Crème Dalibour",
+      "bd1_cos_score": 0.43771892786026,
+      "bd2_l2_top1": "Vitonic Zinc Vit.D3",
+      "bd2_l2_distance": 1.1781734228134155,
+      "bd2_cos_top1": "Vitonic Zinc Vit.D3",
+      "bd2_cos_score": 0.4109133183956146
+    },
+    {
+      "query": "cardio",
+      "category": "complément alimentaire",
+      "bd1_l2_top1": "Omevie Cardio – 900",
+      "bd1_l2_distance": 1.6402387619018555,
+      "bd1_cos_top1": "Omevie Cardio – 900",
+      "bd1_cos_score": 0.1798805147409439,
+      "bd2_l2_top1": "Omevie Cardio – 900",
+      "bd2_l2_distance": 1.492322564125061,
+      "bd2_cos_top1": "Omevie Cardio – 900",
+      "bd2_cos_score": 0.25383859872817993
+    },
+    {
+      "query": "bolémie",
+      "category": "complément alimentaire",
+      "bd1_l2_top1": "SWEET bronzage",
+      "bd1_l2_distance": 1.597031593322754,
+      "bd1_cos_top1": "SWEET bronzage",
+      "bd1_cos_score": 0.20148414373397827,
+      "bd2_l2_top1": "Levure de bière",
+      "bd2_l2_distance": 1.6097122430801392,
+      "bd2_cos_top1": "Levure de bière",
+      "bd2_cos_score": 0.195143923163414
+    },
+    {
+      "query": "vitamine D santé osseuse",
+      "category": "complément alimentaire",
+      "bd1_l2_top1": "LV Vitamine D3",
+      "bd1_l2_distance": 0.47495853900909424,
+      "bd1_cos_top1": "LV Vitamine D3",
+      "bd1_cos_score": 0.7625207304954529,
+      "bd2_l2_top1": "Pédiakids vitamine D3",
+      "bd2_l2_distance": 0.576617956161499,
+      "bd2_cos_top1": "Pédiakids vitamine D3",
+      "bd2_cos_score": 0.7116910219192505
+    },
+    {
+      "query": "peaux sensible",
+      "category": "complément alimentaire",
+      "bd1_l2_top1": "FONGIDERM Antifongique Crème",
+      "bd1_l2_distance": 1.5053447484970093,
+      "bd1_cos_top1": "FONGIDERM Antifongique Crème",
+      "bd1_cos_score": 0.24732764065265656,
+      "bd2_l2_top1": "Uniderme peau sensible",
+      "bd2_l2_distance": 1.3239898681640625,
+      "bd2_cos_top1": "Uniderme peau sensible",
+      "bd2_cos_score": 0.33800506591796875
+    },
+    {
+      "query": "concentration",
+      "category": "complément alimentaire",
+      "bd1_l2_top1": "Omevie Emotion – 900",
+      "bd1_l2_distance": 1.5932652950286865,
+      "bd1_cos_top1": "Omevie Emotion – 900",
+      "bd1_cos_score": 0.20336727797985077,
+      "bd2_l2_top1": "Mémoire et Concentration",
+      "bd2_l2_distance": 1.4148916006088257,
+      "bd2_cos_top1": "Mémoire et Concentration",
+      "bd2_cos_score": 0.29255425930023193
+    }
+  ],
+  "bd1_l2_stats": {
+    "min": 0.47495853900909424,
+    "max": 1.6402387619018555,
+    "mean": 1.3170245885849,
+    "median": 1.3811477422714233,
+    "std": 0.3274211272809537
+  },
+  "bd2_l2_stats": {
+    "min": 0.576617956161499,
+    "max": 1.6097122430801392,
+    "mean": 1.2663801312446594,
+    "median": 1.2884588837623596,
+    "std": 0.26512084914793205
+  },
+  "comparison": {
+    "same_top1_bd1_bd2": 3,
+    "l2_cosinus_equivalent_bd1": 10,
+    "l2_cosinus_equivalent_bd2": 10
+  }
+}

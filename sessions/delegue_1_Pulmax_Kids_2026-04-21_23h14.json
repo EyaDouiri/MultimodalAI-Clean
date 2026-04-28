@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "Pulmax Kids",
+    "module_reached": "m1_formation",
+    "timestamp": "2026-04-21_23h14",
+    "nb_messages": 1,
+    "scores": {}
+  },
+  "summary": {},
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "Bienvenue touta, dans le Module 1 sur Pulmax Kids. Avant de partir en visite, je veux te donner un brief rapide sur ce produit.\n\n**Ce que c'est** : Pulmax Kids est un complément alimentaire en forme de gélule qui aide à soulager la toux mixte chez les nourrissons et les enfants.\n\n**Le patient cible** : Nous prescrivons Pulmax Kids à des parents inquiets qui veulent aider leur enfant à respirer plus facilement.\n\n**L'avantage clé** : Pulmax Kids est unique en raison de son mécanisme d'action rapide, qui aide à dégager les voies respiratoires en quelques heures seulement.\n\n**Précaution principale** : N'oublie pas de demander à la famille si l'enfant a déjà une allergie connue à l'un des composants du produit.\n\nMaintenant, voici le pitch modèle pour un médecin :\n\n\"Bonjour, je voulais vous présenter Pulmax Kids, un complément alimentaire qui aide à soulager la toux mixte chez les nourrissons et les enfants. Avec un mécanisme d'action rapide, il dégage les voies respiratoires en quelques heures seulement. C'est une solution simple et efficace pour les familles qui cherchent à aider leur enfant à respirer plus facilement.\"\n\nEt voici le pitch modèle pour un pharmacien :\n\n\"Bonjour, je voulais vous présenter Pulmax Kids, un complément alimentaire qui aide à soulager la toux mixte chez les nourrissons et les enfants. Avec un mécanisme d'action rapide, il dégage les voies respiratoires en quelques heures seulement. C'est une solution simple et efficace pour les familles qui cherchent à aider leur enfant à respirer plus facilement. Nous proposons également un prix compétitif et une livraison rapide pour garantir que les familles puissent obtenir le produit rapidement.\"\n\nMaintenant, je veux que tu reprises ce pitch avec tes propres mots, touta. N'hésite pas à adapter les phrases pour qu'elles te viennent naturellement. Je vais corriger et affiner avec toi au fur et à mesure. Prêt ?"
+    }
+  ]
+}

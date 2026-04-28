@@ -1,0 +1,328 @@
+{
+  "model": "all-mpnet-base-v2",
+  "dimensions": 768,
+  "total_queries": 8,
+  "total_chunks": 440,
+  "results": [
+    {
+      "query": "Pédiakids APITOU",
+      "results": [
+        {
+          "rank": 1,
+          "distance": 1.098911166191101,
+          "product": "Pédiakids APITOU N°2",
+          "type": "pharmacology_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 2,
+          "distance": 1.1931533813476562,
+          "product": "Pédiakids APITOU N°2 Sans Sucre",
+          "type": "pharmacology_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 3,
+          "distance": 1.1972845792770386,
+          "product": "Pédiakids Gel Lavant Doux",
+          "type": "pharmacology_profile",
+          "classe": "topical"
+        },
+        {
+          "rank": 4,
+          "distance": 1.2127615213394165,
+          "product": "Pédiakids APITOU N°1",
+          "type": "pharmacology_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 5,
+          "distance": 1.223804235458374,
+          "product": "Pédiakids Apigrip",
+          "type": "pharmacology_profile",
+          "classe": "Complément alimentaire"
+        }
+      ]
+    },
+    {
+      "query": "douleur et inflammation",
+      "results": [
+        {
+          "rank": 1,
+          "distance": 1.0417523384094238,
+          "product": "OLIGOVIT Trio",
+          "type": "clinical_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 2,
+          "distance": 1.0775225162506104,
+          "product": "MULTIBON APIGORGE",
+          "type": "clinical_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 3,
+          "distance": 1.091130256652832,
+          "product": "Pédiakids Apigorge",
+          "type": "clinical_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 4,
+          "distance": 1.0931649208068848,
+          "product": "Vitonic sénior",
+          "type": "clinical_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 5,
+          "distance": 1.1151169538497925,
+          "product": "LV Arthroforce Gélule",
+          "type": "clinical_profile",
+          "classe": "complément alimentaire"
+        }
+      ]
+    },
+    {
+      "query": "traitement du diabète",
+      "results": [
+        {
+          "rank": 1,
+          "distance": 1.026954174041748,
+          "product": "LV Diabemin",
+          "type": "clinical_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 2,
+          "distance": 1.1799465417861938,
+          "product": "SWEET slim coupe faim",
+          "type": "clinical_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 3,
+          "distance": 1.2334814071655273,
+          "product": "MULTIBON SOMMEIL",
+          "type": "pharmacology_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 4,
+          "distance": 1.2369160652160645,
+          "product": "Pédiakids trio",
+          "type": "pharmacology_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 5,
+          "distance": 1.2370673418045044,
+          "product": "LV Sesa",
+          "type": "clinical_profile",
+          "classe": "complément alimentaire"
+        }
+      ]
+    },
+    {
+      "query": "soins peau sensible",
+      "results": [
+        {
+          "rank": 1,
+          "distance": 1.477020025253296,
+          "product": "Uniderm peau grasse",
+          "type": "pharmacology_profile",
+          "classe": "Savon"
+        },
+        {
+          "rank": 2,
+          "distance": 1.5087060928344727,
+          "product": "LV PSOCALM",
+          "type": "pharmacology_profile",
+          "classe": "Réparation de la peau"
+        },
+        {
+          "rank": 3,
+          "distance": 1.530299425125122,
+          "product": "HYDRA GEL Nettoyant visage Peau Grasse",
+          "type": "pharmacology_profile",
+          "classe": "Nettoyant visage"
+        },
+        {
+          "rank": 4,
+          "distance": 1.5410656929016113,
+          "product": "FONGIDERM Antifongique Crème",
+          "type": "pharmacology_profile",
+          "classe": "Soin"
+        },
+        {
+          "rank": 5,
+          "distance": 1.55093514919281,
+          "product": "HYDRA GEL Nettoyant visage Peau Normale",
+          "type": "pharmacology_profile",
+          "classe": "Nettoyant visage"
+        }
+      ]
+    },
+    {
+      "query": "maux de gorge",
+      "results": [
+        {
+          "rank": 1,
+          "distance": 1.433314323425293,
+          "product": "Pédiakids Spray Gorge",
+          "type": "clinical_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 2,
+          "distance": 1.4351458549499512,
+          "product": "Pédiakids Spray Gorge",
+          "type": "pharmacology_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 3,
+          "distance": 1.4977927207946777,
+          "product": "UNIDERM Anti-tache",
+          "type": "pharmacology_profile",
+          "classe": "Crème pour la peau"
+        },
+        {
+          "rank": 4,
+          "distance": 1.5695171356201172,
+          "product": "LV Hemostop Crème 45 gr",
+          "type": "pharmacology_profile",
+          "classe": "topical"
+        },
+        {
+          "rank": 5,
+          "distance": 1.57175874710083,
+          "product": "HYDRA GEL Nettoyant visage Peau Sèche",
+          "type": "pharmacology_profile",
+          "classe": "Nettoyant visage"
+        }
+      ]
+    },
+    {
+      "query": "fer et anémie",
+      "results": [
+        {
+          "rank": 1,
+          "distance": 1.0552833080291748,
+          "product": "SWEET health fer",
+          "type": "clinical_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 2,
+          "distance": 1.0735936164855957,
+          "product": "LV Fersang Gélule",
+          "type": "clinical_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 3,
+          "distance": 1.0759460926055908,
+          "product": "LV Fersang junior",
+          "type": "clinical_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 4,
+          "distance": 1.0882723331451416,
+          "product": "Vitonic Fer Grossesse",
+          "type": "clinical_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 5,
+          "distance": 1.097184181213379,
+          "product": "Vitonic sénior",
+          "type": "clinical_profile",
+          "classe": "Complément alimentaire"
+        }
+      ]
+    },
+    {
+      "query": "immunité et infection",
+      "results": [
+        {
+          "rank": 1,
+          "distance": 0.8434664607048035,
+          "product": "OLIGOVIT Trio",
+          "type": "clinical_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 2,
+          "distance": 0.9094129204750061,
+          "product": "MULTIBON IMMUNITÉ",
+          "type": "clinical_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 3,
+          "distance": 0.9687175750732422,
+          "product": "Vitonic Trio Grossesse",
+          "type": "clinical_profile",
+          "classe": "complément alimentaire"
+        },
+        {
+          "rank": 4,
+          "distance": 0.9829205870628357,
+          "product": "Minciligne Postnatale",
+          "type": "clinical_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 5,
+          "distance": 1.0164201259613037,
+          "product": "Vitonic Tonus",
+          "type": "clinical_profile",
+          "classe": "Complément alimentaire"
+        }
+      ]
+    },
+    {
+      "query": "fatigue",
+      "results": [
+        {
+          "rank": 1,
+          "distance": 1.4458521604537964,
+          "product": "Omevie Emotion – 900",
+          "type": "clinical_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 2,
+          "distance": 1.4985891580581665,
+          "product": "Levure de bière",
+          "type": "clinical_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 3,
+          "distance": 1.5073586702346802,
+          "product": "Vitonic sénior",
+          "type": "clinical_profile",
+          "classe": "Complément alimentaire"
+        },
+        {
+          "rank": 4,
+          "distance": 1.5350016355514526,
+          "product": "LV Mélatonuit",
+          "type": "clinical_profile",
+          "classe": "complément alimentaire"
+        },
+        {
+          "rank": 5,
+          "distance": 1.538469910621643,
+          "product": "LV Mélatonuit",
+          "type": "pharmacology_profile",
+          "classe": "complément alimentaire"
+        }
+      ]
+    }
+  ]
+}

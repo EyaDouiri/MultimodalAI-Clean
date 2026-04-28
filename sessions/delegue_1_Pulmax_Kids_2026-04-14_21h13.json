@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "Pulmax Kids",
+    "module_reached": "m1_formation",
+    "timestamp": "2026-04-14_21h13",
+    "nb_messages": 1,
+    "scores": {}
+  },
+  "summary": {},
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "Très bien, touta ! Écoute, on a Pulmax Kids, c'est un complément alimentaire en forme de gélule pour soulager la toux mixte chez les nourrissons et les enfants. Le médecin prescrit, c'est pour les parents qui cherchent à aider leur petit à se sentir mieux. L'avantage clé, c'est qu'il aide à dégager les voies respiratoires, ce qui signifie que les enfants peuvent respirer plus facilement. Et en visite, ne pas oublier de mentionner les contre-indications, c'est-à-dire l'allergie connue à l'un des composants.\n\nVoici le pitch modèle pour le médecin :\n\n\"Bonjour, docteur, Pulmax Kids est un complément alimentaire qui aide à soulager la toux mixte chez les nourrissons et les enfants. Il aide à dégager les voies respiratoires, ce qui signifie que les enfants peuvent respirer plus facilement. C'est une option simple et efficace pour les parents qui cherchent à aider leur petit à se sentir mieux.\"\n\nEt voici le pitch modèle pour le pharmacien :\n\n\"Bonjour, Pulmax Kids est un complément alimentaire qui aide à soulager la toux mixte chez les nourrissons et les enfants. Il est facile à utiliser et à prescrire, et les parents apprécient la rapidité de l'action. C'est une option pratique pour les familles qui cherchent à aider leur petit à se sentir mieux.\"\n\nMaintenant, touta, je veux que tu reprends ces pitches avec tes propres mots. Je vais corriger et affiner avec toi au fur et à mesure. Prépare-toi à être le médecin ou le pharmacien, et lance ton pitch !"
+    }
+  ]
+}

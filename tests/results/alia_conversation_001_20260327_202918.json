@@ -1,0 +1,143 @@
+{
+  "delegate": {
+    "delegate_id": "001",
+    "name": "eya",
+    "current_level": "debutant",
+    "overall_progress": 0,
+    "products": {
+      "FerBiotic": {
+        "niveau": "debutant",
+        "progres": 0,
+        "domaines_faibles": [
+          "indications",
+          "interactions"
+        ]
+      },
+      "Magnésol": {
+        "niveau": "debutant",
+        "progres": 0,
+        "domaines_faibles": [
+          "posologie",
+          "contre_indications"
+        ]
+      },
+      "Vitamin_D3": {
+        "niveau": "debutant",
+        "progres": 0,
+        "domaines_faibles": [
+          "interactions"
+        ]
+      }
+    }
+  },
+  "session_start": "2026-03-27T20:23:44.921177",
+  "total_turns": 4,
+  "conversation": [
+    {
+      "turn": 1,
+      "user": "tu va bien",
+      "timestamp": "2026-03-27T20:23:44.921177",
+      "alia": "Salut eya! 👋\n\nJe suis ALIA, ton formateur pharmaceutique personnel.\n\nJe vois que tu as 3 produits à maîtriser:\n  • FerBiotic\n  • Magnésol\n  • Vitamin_D3\n\nAujourd'hui on va travailler sur le Module 1: **La Bonne Présentation du Produit**\n\nJe vais d'abord évaluer ton niveau, puis adapter la formation en conséquence.\n\nPrêt? 🚀"
+    },
+    {
+      "turn": 2,
+      "user": "oui",
+      "timestamp": "2026-03-27T20:23:54.221223",
+      "alia": "Bonjour eya!\n\nAvant de commencer, je dois comprendre ton niveau actuel.\n\n**Question 1/3**: Parmi tes produits assignés (FerBiotic, Magnésol), \nlequel maîtrises-tu le mieux en termes de **présentation** et pourquoi?\n\n(Ta réponse m'aidera à adapter le niveau de formation.) 🔍"
+    },
+    {
+      "turn": 3,
+      "user": "tu va bien ?",
+      "timestamp": "2026-03-27T20:24:14.454197",
+      "alia": "Bien! Je comprends mieux.\n\n**Question 2/3**: Si un docteur te demande \"Pourquoi prescrire notamment FerBiotic?\",\ncomment tu répondrais en 30 secondes?\n\n(Je veux voir ta capacité à synthétiser les indications) 📝"
+    },
+    {
+      "turn": 4,
+      "user": "il fait beau",
+      "timestamp": "2026-03-27T20:25:45.347277",
+      "alia": "🟡 **Évaluation complétée!**\n\nTon niveau détecté: **INTERMEDIAIRE**\nConfiance: 45%\n\nVoilà! Je vais adapter ma formation à ce niveau.\n\nMaintenant, passons à la **FORMATION**. 🎓\n\nOn va commencer par FerBiotic.\nPrêt?"
+    }
+  ],
+  "final_status": {
+    "state": "forming",
+    "turn": 4,
+    "delegate": {
+      "delegate_id": "001",
+      "name": "eya",
+      "current_level": "debutant",
+      "overall_progress": 0,
+      "products": {
+        "FerBiotic": {
+          "niveau": "debutant",
+          "progres": 0,
+          "domaines_faibles": [
+            "indications",
+            "interactions"
+          ]
+        },
+        "Magnésol": {
+          "niveau": "debutant",
+          "progres": 0,
+          "domaines_faibles": [
+            "posologie",
+            "contre_indications"
+          ]
+        },
+        "Vitamin_D3": {
+          "niveau": "debutant",
+          "progres": 0,
+          "domaines_faibles": [
+            "interactions"
+          ]
+        }
+      }
+    },
+    "module1_status": {
+      "delegate": {
+        "delegate_id": "001",
+        "name": "eya",
+        "current_level": "debutant",
+        "overall_progress": 0,
+        "products": {
+          "FerBiotic": {
+            "niveau": "debutant",
+            "progres": 0,
+            "domaines_faibles": [
+              "indications",
+              "interactions"
+            ]
+          },
+          "Magnésol": {
+            "niveau": "debutant",
+            "progres": 0,
+            "domaines_faibles": [
+              "posologie",
+              "contre_indications"
+            ]
+          },
+          "Vitamin_D3": {
+            "niveau": "debutant",
+            "progres": 0,
+            "domaines_faibles": [
+              "interactions"
+            ]
+          }
+        }
+      },
+      "assessment": {
+        "current_level": "intermediaire",
+        "confidence": 0.45,
+        "evaluations_count": 2,
+        "average_score": 4.95
+      },
+      "current_product": null,
+      "session_progress": {
+        "formations_count": 0,
+        "questions_count": 0,
+        "evaluations_count": 0,
+        "products_covered": []
+      }
+    },
+    "conversation_turns": 4
+  }
+}

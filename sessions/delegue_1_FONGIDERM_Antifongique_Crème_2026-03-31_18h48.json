@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "Ahmed",
+    "product_name": "FONGIDERM Antifongique Crème",
+    "module_reached": "m1_formation",
+    "timestamp": "2026-03-31_18h48",
+    "nb_messages": 1,
+    "scores": {}
+  },
+  "summary": {},
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "Bonjour Ahmed, bienvenue dans cette session de formation ! Aujourd'hui, nous allons explorer en profondeur le produit FONGIDERM Antifongique Crème, et notre objectif est de bien comprendre son fonctionnement et ses indications.\n\nAvant qu'on commence, est-ce que tu sais à quoi sert ce produit, ou c'est la première fois que tu en entends parler ?"
+    }
+  ]
+}

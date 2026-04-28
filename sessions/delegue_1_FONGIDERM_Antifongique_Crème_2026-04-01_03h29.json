@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "FONGIDERM Antifongique Crème",
+    "module_reached": "m3_medecin",
+    "timestamp": "2026-04-01_03h29",
+    "nb_messages": 3,
+    "scores": {}
+  },
+  "summary": {
+    "points_forts": [],
+    "points_faibles": [],
+    "concepts_non_maitrisés": [],
+    "ou_il_s_est_arrete": "m3_medecin",
+    "recommandations_prochaine_session": [],
+    "evaluation_qualitative": "analyse indisponible",
+    "raw_response": "[ERREUR résumé] 401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions"
+  },
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "[ERREUR HTTP] 404 — {\"message\":\"Model llama-3.1-8b-instant does not exist or you do not have access to it.\",\"type\":\"not_found_error\",\"param\":\"model\",\"code\":\"model_not_found\"}"
+    },
+    {
+      "role": "alia",
+      "content": "[ERREUR HTTP] 404 — {\"message\":\"Model llama-3.1-8b-instant does not exist or you do not have access to it.\",\"type\":\"not_found_error\",\"param\":\"model\",\"code\":\"model_not_found\"}"
+    },
+    {
+      "role": "alia",
+      "content": "[ERREUR HTTP] 404 — {\"message\":\"Model llama-3.1-8b-instant does not exist or you do not have access to it.\",\"type\":\"not_found_error\",\"param\":\"model\",\"code\":\"model_not_found\"}"
+    }
+  ]
+}

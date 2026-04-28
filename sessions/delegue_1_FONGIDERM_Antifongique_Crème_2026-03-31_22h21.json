@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "Ahmed",
+    "product_name": "FONGIDERM Antifongique Crème",
+    "module_reached": "m1_formation",
+    "timestamp": "2026-03-31_22h21",
+    "nb_messages": 1,
+    "scores": {}
+  },
+  "summary": {},
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "ÉTAPE 1 — Brief commercial du produit\n\nAlors Ahmed, avant de partir en visite, je veux te donner un bref rappel sur FONGIDERM Antifongique Crème. C'est une crème en tube de 30g, principalement indiquée pour les mycoses cutanées superficielles. Ton public cible sont les médecins généralistes et les dermatologues qui prescrivent pour les patients adultes et enfants présentant des irritations cutanées.\n\nL'avantage clé de FONGIDERM est sa rapidité d'action : les résultats sont visibles en 48h, ce qui réduit les consultations de suivi pour les médecins. Et pour ne pas oublier, la principale précaution à mentionner en visite est l'allergie connue à l'un des composants, donc il faut demander si le patient a déjà eu des réactions allergiques à ce type de produit.\n\nÉTAPE 2 — Pitch modèle\n\nVoici le pitch modèle pour les médecins :\n\n\"FONGIDERM Antifongique Crème, c'est votre option rapide pour les mycoses superficielles. Les résultats sont visibles en 48h, ce qui réduit les consultations de suivi pour vous. Simple pour le patient, efficace pour vous.\"\n\nEt voici le pitch modèle pour les pharmaciens :\n\n\"FONGIDERM Antifongique Crème, c'est un produit très demandé pour les irritations cutanées superficielles. Les patients aiment son efficacité rapide et sa facilité d'utilisation. Nous proposons des réductions de prix pour les grosses commandes, et nous sommes à votre disposition pour les conseils de vente.\"\n\nÉTAPE 3 — Lance la pratique\n\nAhmed, maintenant c'est à toi de reprendre ce pitch avec tes propres mots ! Je vais te corriger et affiner au fur et à mesure. N'hésite pas à prendre ton temps et à me demander des conseils si tu as besoin. Qu'est-ce que tu dirais à un médecin sur FONGIDERM Antifongique Crème ?"
+    }
+  ]
+}

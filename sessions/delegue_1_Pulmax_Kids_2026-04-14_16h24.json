@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "Pulmax Kids",
+    "module_reached": "m1_formation",
+    "timestamp": "2026-04-14_16h24",
+    "nb_messages": 1,
+    "scores": {}
+  },
+  "summary": {},
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "ÉTAPE 1 — Brief commercial du produit :\n\nAlors touta, Pulmax Kids c'est un complément alimentaire en forme de gélule qui aide à soulager la toux mixte chez les nourrissons et les enfants. Ce produit est prescrit par les médecins et les infirmières pour les patients de 0 à 12 ans. L'avantage clé de Pulmax Kids est qu'il aide à dégager les voies respiratoires rapidement, ce qui est un grand soulagement pour les parents stressés. Et en visite, ne t'oublie pas de mentionner la contre-indication : l'allergie connue à l'un des composants.\n\nÉTAPE 2 — Pitch modèle :\n\nVoici le pitch modèle pour les médecins :\n\n\"Bonjour Docteur, Pulmax Kids est un complément alimentaire qui aide à soulager la toux mixte chez les nourrissons et les enfants. Il est facile à donner et aide à dégager les voies respiratoires rapidement, ce qui réduit les consultations de suivi pour vous. Il est également bien toléré et ne présente pas de risques graves si pris en dose correcte.\"\n\nEt voici le pitch modèle pour les pharmaciens :\n\n\"Bonjour, Pulmax Kids est un complément alimentaire qui aide à soulager la toux mixte chez les nourrissons et les enfants. Il est facile à vendre et aide à dégager les voies respiratoires rapidement, ce qui réduit les retours vers vous. Il est également bien toléré et nous avons des réductions pour les grosses commandes.\"\n\nÉTAPE 3 — Lance la pratique :\n\nMaintenant, touta, je veux que tu répètes ce pitch avec tes propres mots. N'hésite pas à adapter les phrases pour les rendre plus naturelles. Je vais corriger et affiner avec toi au fur et à mesure. Prépare-toi à montrer Pulmax Kids comme si tu étais en visite !"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "Pulmax Kids",
+    "module_reached": "m3_pharmacien",
+    "timestamp": "2026-04-14_13h10",
+    "nb_messages": 2,
+    "scores": {}
+  },
+  "summary": {},
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "Touta, bienvenue ! On va travailler sur Pulmax Kids aujourd'hui. Écoute, je vais te donner un bref sur le produit avant que nous allions dans les détails.\n\nPulmax Kids, c'est un complément alimentaire qui soulage la toux mixte chez les nourrissons et les enfants. C'est un produit qui est prescrit par les médecins pour les petits patients qui ont des problèmes respiratoires. Ce qui le distingue, c'est qu'il aide à dégager les voies respiratoires, ce qui est un vrai avantage pour les parents qui veulent que leur enfant se sente mieux rapidement.\n\nMaintenant, il est important de ne pas oublier que Pulmax Kids est un complément alimentaire, donc il ne remplace pas une alimentation variée et équilibrée. C'est une précaution que nous devons rappeler aux parents lors de la visite.\n\nVoici maintenant le pitch modèle pour les médecins :\n\n\"Bonjour, Docteur. Pulmax Kids est un complément alimentaire qui soulage la toux mixte chez les nourrissons et les enfants. Il aide à dégager les voies respiratoires, ce qui est un vrai avantage pour les parents qui veulent que leur enfant se sente mieux rapidement. Nous avons des études qui montrent que Pulmax Kids est efficace en 48 heures, ce qui réduit les consultations de suivi pour vous.\"\n\nEt voici le pitch modèle pour les pharmaciens :\n\n\"Bonjour, pharmacien. Pulmax Kids est un complément alimentaire qui soulage la toux mixte chez les nourrissons et les enfants. Il aide à dégager les voies respiratoires, ce qui est un vrai avantage pour les parents qui veulent que leur enfant se sente mieux rapidement. Nous avons des études qui montrent que Pulmax Kids est efficace en 48 heures, ce qui réduit les consultations de suivi pour vous. C'est un produit qui est facile à prescrire et qui est bien toléré par les patients.\"\n\nMaintenant, je veux que tu reprennes ce pitch avec tes propres mots, touta. Je vais corriger et affiner avec toi au fur et à mesure. Prépare-toi à présenter Pulmax Kids comme si tu étais en visite !"
+    },
+    {
+      "role": "alia",
+      "content": "Bonjour, je suis Mme Sonia, pharmacienne. Qu'est-ce que je peux faire pour vous aujourd'hui ?"
+    }
+  ]
+}

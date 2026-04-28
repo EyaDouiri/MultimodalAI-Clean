@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "Ahmed",
+    "product_name": "Pédiakids Varispray",
+    "module_reached": "m1_formation",
+    "timestamp": "2026-03-31_14h10",
+    "nb_messages": 1,
+    "scores": {}
+  },
+  "summary": {},
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "Bonjour Ahmed, je suis ravi de partager avec toi la connaissance de nos produits !\n\nAujourd'hui, nous allons explorer le produit Pédiakids Varispray, et l'objectif de ce module est de comprendre en profondeur ce produit pour que tu puisses l'expliquer avec tes propres mots.\n\nAvant qu'on commence, est-ce que tu sais à quoi sert ce produit, ou c'est la première fois que tu en entends parler ?"
+    }
+  ]
+}

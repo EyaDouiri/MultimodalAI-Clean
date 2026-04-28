@@ -1,0 +1,26 @@
+{
+  "summary": {
+    "l2": {
+      "top1_distances": {
+        "min": 0.46282994747161865,
+        "max": 1.9380429983139038,
+        "mean": 1.126693606376648,
+        "median": 1.136460304260254,
+        "std": 0.28455421328544617
+      }
+    },
+    "cosinus": {
+      "top1_scores": {
+        "min": 0.030978428199887276,
+        "max": 0.7685850858688354,
+        "mean": 0.4366532266139984,
+        "median": 0.43176984786987305,
+        "std": 0.14227710664272308
+      }
+    },
+    "comparison": {
+      "same_top1_visual_sample": "20/20"
+    }
+  },
+  "recommendation": "✅ Les deux métriques sont très proches (94% top-1 identique). Cosinus peut être préféré car embeddings sont normalisés."
+}

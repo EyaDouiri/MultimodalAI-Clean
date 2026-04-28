@@ -1,0 +1,831 @@
+{
+  "timestamp": "BD2 vs BD1 Comparison",
+  "total_queries": 100,
+  "bd2": {
+    "chunks": 440,
+    "l2_stats": {
+      "min": 0.5027790069580078,
+      "max": 1.7938880920410156,
+      "mean": 1.0810378789901733,
+      "median": 1.0960983037948608,
+      "std": 0.2519844174385071
+    }
+  },
+  "bd1": {
+    "chunks": 440,
+    "l2_stats": {
+      "min": 0.46282994747161865,
+      "max": 1.9380429983139038,
+      "mean": 1.126693606376648,
+      "median": 1.136460304260254,
+      "std": 0.28455421328544617
+    }
+  },
+  "comparison": {
+    "same_top1": 25,
+    "distance_diff_mean": -0.04565565705299377,
+    "distance_diff_std": 0.11613455743915546
+  },
+  "detailed_results": [
+    {
+      "query": "vitamines imunité et défense",
+      "top1_bd2": "Pédiakids Multi Vitamines Banane",
+      "top1_bd1": "LV Vitamine A",
+      "distance_bd2": 0.5671955347061157,
+      "distance_bd1": 0.5740476846694946,
+      "same_top1": false
+    },
+    {
+      "query": "fer et anémie",
+      "top1_bd2": "SWEET health fer",
+      "top1_bd1": "SWEET health fer",
+      "distance_bd2": 1.0901744365692139,
+      "distance_bd1": 1.0552833080291748,
+      "same_top1": true
+    },
+    {
+      "query": "magnésium stress et fatigue",
+      "top1_bd2": "Magnésium",
+      "top1_bd1": "Oligovit magnésium",
+      "distance_bd2": 0.7988134622573853,
+      "distance_bd1": 0.5927512645721436,
+      "same_top1": false
+    },
+    {
+      "query": "calcium os articulations",
+      "top1_bd2": "Omevie Articulation – 900",
+      "top1_bd1": "MULTIBON CALCIUM-VIT.D3",
+      "distance_bd2": 1.1218812465667725,
+      "distance_bd1": 1.1057891845703125,
+      "same_top1": false
+    },
+    {
+      "query": "zinc immunité",
+      "top1_bd2": "Vitonic Zinc Vit.D3",
+      "top1_bd1": "Vitonic Zinc Vit.D3",
+      "distance_bd2": 0.693407416343689,
+      "distance_bd1": 0.6095320582389832,
+      "same_top1": true
+    },
+    {
+      "query": "oméga 3 coeur",
+      "top1_bd2": "MULTIBON OMEGA 3",
+      "top1_bd1": "Omevie Omega 3 – 500",
+      "distance_bd2": 0.6894890069961548,
+      "distance_bd1": 0.6679671406745911,
+      "same_top1": false
+    },
+    {
+      "query": "probiotiques digestion",
+      "top1_bd2": "Ventre Ultra Plat",
+      "top1_bd1": "Vitonic sénior",
+      "distance_bd2": 0.8230561017990112,
+      "distance_bd1": 0.7714911699295044,
+      "same_top1": false
+    },
+    {
+      "query": "vitamine D santé osseuse",
+      "top1_bd2": "Pédiakids vitamine D3",
+      "top1_bd1": "LV Vitamine D3",
+      "distance_bd2": 0.576617956161499,
+      "distance_bd1": 0.47495853900909424,
+      "same_top1": false
+    },
+    {
+      "query": "vitamine C antioxydant",
+      "top1_bd2": "TC 2000 Nutractiva",
+      "top1_bd1": "Oligovit vitamine C",
+      "distance_bd2": 0.6851941347122192,
+      "distance_bd1": 0.6200388669967651,
+      "same_top1": false
+    },
+    {
+      "query": "vitamine B énergie",
+      "top1_bd2": "LV Tetra B",
+      "top1_bd1": "LV Tetra B",
+      "distance_bd2": 0.806221604347229,
+      "distance_bd1": 0.6472898721694946,
+      "same_top1": true
+    },
+    {
+      "query": "acide folique grossesse",
+      "top1_bd2": "Vitonic Allaitement",
+      "top1_bd1": "UNIDERM Anti-tache",
+      "distance_bd2": 1.0186610221862793,
+      "distance_bd1": 1.083877444267273,
+      "same_top1": false
+    },
+    {
+      "query": "sélénium antioxydant",
+      "top1_bd2": "LV Sélénium A, C, E + Gelée Royale",
+      "top1_bd1": "LV Sélénium A, C, E + Gelée Royale",
+      "distance_bd2": 0.5027790069580078,
+      "distance_bd1": 0.4975537061691284,
+      "same_top1": true
+    },
+    {
+      "query": "cuivre et fer",
+      "top1_bd2": "SWEET health fer",
+      "top1_bd1": "Vitonic Fer Grossesse",
+      "distance_bd2": 1.116879940032959,
+      "distance_bd1": 1.1904586553573608,
+      "same_top1": false
+    },
+    {
+      "query": "ginseng énergie tonique",
+      "top1_bd2": "Mémoire et Concentration",
+      "top1_bd1": "LV GINKO Extra",
+      "distance_bd2": 0.6930896043777466,
+      "distance_bd1": 1.0506230592727661,
+      "same_top1": false
+    },
+    {
+      "query": "complément énergétique performance",
+      "top1_bd2": "VITAL HEALTHCARE SKINCARE Anti-âge intensif",
+      "top1_bd1": "Levure de bière",
+      "distance_bd2": 1.1346709728240967,
+      "distance_bd1": 1.2148656845092773,
+      "same_top1": false
+    },
+    {
+      "query": "peau sensible irritée",
+      "top1_bd2": "Uniderm peau grasse",
+      "top1_bd1": "FONGIDERM Antifongique Crème",
+      "distance_bd2": 1.401902437210083,
+      "distance_bd1": 1.4735934734344482,
+      "same_top1": false
+    },
+    {
+      "query": "acné peau grasse",
+      "top1_bd2": "Dermasoufre",
+      "top1_bd1": "Dermasoufre",
+      "distance_bd2": 0.7090575098991394,
+      "distance_bd1": 0.8114904761314392,
+      "same_top1": true
+    },
+    {
+      "query": "peau sèche hydratation",
+      "top1_bd2": "HYDRAscreen Huile solaire",
+      "top1_bd1": "Hydra",
+      "distance_bd2": 1.0114575624465942,
+      "distance_bd1": 0.9841281175613403,
+      "same_top1": false
+    },
+    {
+      "query": "peau eczéma dermatite",
+      "top1_bd2": "Pédiakids Pommade change INTENSIVE",
+      "top1_bd1": "Pédiakids Varispray",
+      "distance_bd2": 0.800822913646698,
+      "distance_bd1": 0.7685415744781494,
+      "same_top1": false
+    },
+    {
+      "query": "psoriasis démangeaisons",
+      "top1_bd2": "LV PSOCALM",
+      "top1_bd1": "LV PSOCALM",
+      "distance_bd2": 0.6209741830825806,
+      "distance_bd1": 0.46282994747161865,
+      "same_top1": true
+    },
+    {
+      "query": "cicatrices taches peau",
+      "top1_bd2": "HYDRAfine Après épilation",
+      "top1_bd1": "UNIDERM Anti-tache",
+      "distance_bd2": 1.361303448677063,
+      "distance_bd1": 1.3435750007629395,
+      "same_top1": false
+    },
+    {
+      "query": "nettoyant visage doux",
+      "top1_bd2": "HYDRA GEL – CRÈME Nettoyant visage",
+      "top1_bd1": "Pédiakids lait dermo-nettoyant",
+      "distance_bd2": 1.0299956798553467,
+      "distance_bd1": 1.3009827136993408,
+      "same_top1": false
+    },
+    {
+      "query": "crème anti-âge rides",
+      "top1_bd2": "VITAL HEALTHCARE SKINCARE Anti-âge intensif",
+      "top1_bd1": "VITAL HEALTHCARE SKINCARE Anti-âge intensif",
+      "distance_bd2": 1.2282021045684814,
+      "distance_bd1": 1.082209825515747,
+      "same_top1": true
+    },
+    {
+      "query": "savon peaux sensibles",
+      "top1_bd2": "Uniderme peau sensible",
+      "top1_bd1": "Pédiakids Savon extra doux",
+      "distance_bd2": 0.9984872341156006,
+      "distance_bd1": 1.434836983680725,
+      "same_top1": false
+    },
+    {
+      "query": "démaquillant peau délicate",
+      "top1_bd2": "HYDRAfine Après épilation",
+      "top1_bd1": "LV PSOCALM",
+      "distance_bd2": 1.2427995204925537,
+      "distance_bd1": 1.326358437538147,
+      "same_top1": false
+    },
+    {
+      "query": "gel nettoyant visage",
+      "top1_bd2": "HYDRA GEL – CRÈME Nettoyant visage",
+      "top1_bd1": "HYDRA GEL – CRÈME Nettoyant visage",
+      "distance_bd2": 0.6322574615478516,
+      "distance_bd1": 0.8544163703918457,
+      "same_top1": true
+    },
+    {
+      "query": "crème réparation peau",
+      "top1_bd2": "Pédiakids Crème pour le change",
+      "top1_bd1": "Dermacné (crème)",
+      "distance_bd2": 1.1444437503814697,
+      "distance_bd1": 1.2715482711791992,
+      "same_top1": false
+    },
+    {
+      "query": "antifongique peau",
+      "top1_bd2": "FONGIDERM Antifongique Cheveux & corps",
+      "top1_bd1": "UNIDERM Anti-tache",
+      "distance_bd2": 1.1247203350067139,
+      "distance_bd1": 1.1497843265533447,
+      "same_top1": false
+    },
+    {
+      "query": "peau grasse sébum",
+      "top1_bd2": "Uniderm peau grasse",
+      "top1_bd1": "HYDRA GEL Nettoyant visage Peau Grasse",
+      "distance_bd2": 1.1643630266189575,
+      "distance_bd1": 1.4012837409973145,
+      "same_top1": false
+    },
+    {
+      "query": "hydratant peau",
+      "top1_bd2": "HYDRAscreen Huile solaire Pailletée",
+      "top1_bd1": "Hydra",
+      "distance_bd2": 0.9708253741264343,
+      "distance_bd1": 1.050923466682434,
+      "same_top1": false
+    },
+    {
+      "query": "digestion problèmes transit",
+      "top1_bd2": "Ventre Ultra Plat",
+      "top1_bd1": "Vitonic sénior",
+      "distance_bd2": 0.917865514755249,
+      "distance_bd1": 0.9189848899841309,
+      "same_top1": false
+    },
+    {
+      "query": "constipation ballonnements",
+      "top1_bd2": "Pédiakids Anti-ballonnement",
+      "top1_bd1": "Minciligne Homme",
+      "distance_bd2": 0.9560757875442505,
+      "distance_bd1": 1.130007028579712,
+      "same_top1": false
+    },
+    {
+      "query": "foie hépatique nettoyage",
+      "top1_bd2": "Pédiakids lait dermo-nettoyant",
+      "top1_bd1": "LV Fersang Gélule",
+      "distance_bd2": 0.9057422876358032,
+      "distance_bd1": 1.1065040826797485,
+      "same_top1": false
+    },
+    {
+      "query": "gastrite acidité estomac",
+      "top1_bd2": "Vitonic Allaitement",
+      "top1_bd1": "Vitonic sénior",
+      "distance_bd2": 0.9838913083076477,
+      "distance_bd1": 1.061072587966919,
+      "same_top1": false
+    },
+    {
+      "query": "diarrhée réhydratation",
+      "top1_bd2": "LV Fersang Gélule",
+      "top1_bd1": "Minciligne Homme",
+      "distance_bd2": 1.1014102697372437,
+      "distance_bd1": 1.0519227981567383,
+      "same_top1": false
+    },
+    {
+      "query": "intestins microbiota",
+      "top1_bd2": "FerBiotic Lipo",
+      "top1_bd1": "Vitonic sénior",
+      "distance_bd2": 1.1783323287963867,
+      "distance_bd1": 1.132596731185913,
+      "same_top1": false
+    },
+    {
+      "query": "fibres digestion",
+      "top1_bd2": "Phytofibres",
+      "top1_bd1": "LV Fersang Gélule",
+      "distance_bd2": 1.1080986261367798,
+      "distance_bd1": 1.078617811203003,
+      "same_top1": false
+    },
+    {
+      "query": "levure bière digestion",
+      "top1_bd2": "Levure de bière",
+      "top1_bd1": "Vitonic sénior",
+      "distance_bd2": 0.7915226221084595,
+      "distance_bd1": 0.825573205947876,
+      "same_top1": false
+    },
+    {
+      "query": "enzyme digestive",
+      "top1_bd2": "Aide minceur",
+      "top1_bd1": "Vitonic Junior",
+      "distance_bd2": 1.0461772680282593,
+      "distance_bd1": 1.0488858222961426,
+      "same_top1": false
+    },
+    {
+      "query": "régulation transit",
+      "top1_bd2": "Ventre Plat",
+      "top1_bd1": "Ventre Ultra Plat",
+      "distance_bd2": 1.6477420330047607,
+      "distance_bd1": 1.6966462135314941,
+      "same_top1": false
+    },
+    {
+      "query": "coupe faim appétit",
+      "top1_bd2": "VITAL HEALTHCARE FERTICARE FEMME",
+      "top1_bd1": "SWEET slim coupe faim",
+      "distance_bd2": 1.1908448934555054,
+      "distance_bd1": 1.296858310699463,
+      "same_top1": false
+    },
+    {
+      "query": "pancréas glucose",
+      "top1_bd2": "Levure de bière",
+      "top1_bd1": "FerBiotic Lipo",
+      "distance_bd2": 1.2979731559753418,
+      "distance_bd1": 1.4261269569396973,
+      "same_top1": false
+    },
+    {
+      "query": "bactéries intestinales",
+      "top1_bd2": "FerBiotic Lipo",
+      "top1_bd1": "Vitonic sénior",
+      "distance_bd2": 1.0778563022613525,
+      "distance_bd1": 0.9700497984886169,
+      "same_top1": false
+    },
+    {
+      "query": "gaz intestinaux",
+      "top1_bd2": "VITAL HEALTHCARE FERTICARE FEMME",
+      "top1_bd1": "Vitonic sénior",
+      "distance_bd2": 1.1189484596252441,
+      "distance_bd1": 1.2222710847854614,
+      "same_top1": false
+    },
+    {
+      "query": "confort digestif",
+      "top1_bd2": "Grossivit vitaminé Gélule",
+      "top1_bd1": "Grossivit Gélule",
+      "distance_bd2": 0.9235357046127319,
+      "distance_bd1": 1.0898985862731934,
+      "same_top1": false
+    },
+    {
+      "query": "immunité infection bactérie",
+      "top1_bd2": "MULTIBON IMMUNITÉ",
+      "top1_bd1": "MULTIBON IMMUNITÉ",
+      "distance_bd2": 1.0201908349990845,
+      "distance_bd1": 1.026057243347168,
+      "same_top1": true
+    },
+    {
+      "query": "rhume grippal virus",
+      "top1_bd2": "Pédiakids Apigrip Sans Sucre",
+      "top1_bd1": "Pédiakids Gripe water",
+      "distance_bd2": 1.045898675918579,
+      "distance_bd1": 1.545203447341919,
+      "same_top1": false
+    },
+    {
+      "query": "toux sirop",
+      "top1_bd2": "Angiplant Sirops",
+      "top1_bd1": "LV Spasvit Sirop",
+      "distance_bd2": 1.1339393854141235,
+      "distance_bd1": 1.2602481842041016,
+      "same_top1": false
+    },
+    {
+      "query": "gorge mal spray",
+      "top1_bd2": "Pédiakids Spray Gorge",
+      "top1_bd1": "Pédiakids Spray Gorge",
+      "distance_bd2": 0.8175304532051086,
+      "distance_bd1": 0.8266072273254395,
+      "same_top1": true
+    },
+    {
+      "query": "fièvre température",
+      "top1_bd2": "LV Fersang Gélule",
+      "top1_bd1": "Vitonic Fer Grossesse",
+      "distance_bd2": 1.4190316200256348,
+      "distance_bd1": 1.433942198753357,
+      "same_top1": false
+    },
+    {
+      "query": "antibactérien antibiotique",
+      "top1_bd2": "Echinacée, Zinc, Vit.C",
+      "top1_bd1": "UNIDERM Anti-tache",
+      "distance_bd2": 0.8399087190628052,
+      "distance_bd1": 0.8552939295768738,
+      "same_top1": false
+    },
+    {
+      "query": "viral prévention",
+      "top1_bd2": "LV CYSPROTECT",
+      "top1_bd1": "LV Crème Dalibour",
+      "distance_bd2": 1.3082301616668701,
+      "distance_bd1": 1.3036543130874634,
+      "same_top1": false
+    },
+    {
+      "query": "défense immunitaire",
+      "top1_bd2": "MULTIBON IMMUNITÉ",
+      "top1_bd1": "MULTIBON IMMUNITÉ",
+      "distance_bd2": 1.069197654724121,
+      "distance_bd1": 1.1403238773345947,
+      "same_top1": true
+    },
+    {
+      "query": "lymphocytes blanc",
+      "top1_bd2": "Gelée Royale Gélule",
+      "top1_bd1": "OLIGOVIT Trio",
+      "distance_bd2": 1.090786337852478,
+      "distance_bd1": 1.0438518524169922,
+      "same_top1": false
+    },
+    {
+      "query": "antivirale propriété",
+      "top1_bd2": "MULTIBON IMMUNITÉ",
+      "top1_bd1": "Dermacné (crème)",
+      "distance_bd2": 0.9250150322914124,
+      "distance_bd1": 1.046714425086975,
+      "same_top1": false
+    },
+    {
+      "query": "mucosité nasale",
+      "top1_bd2": "Pédiakids Spray Nasal",
+      "top1_bd1": "Rhinoplant",
+      "distance_bd2": 0.9117996692657471,
+      "distance_bd1": 0.8412153720855713,
+      "same_top1": false
+    },
+    {
+      "query": "protection infection",
+      "top1_bd2": "HYDRA GEL Nettoyant visage Peau Grasse",
+      "top1_bd1": "LV Crème Dalibour",
+      "distance_bd2": 1.2620148658752441,
+      "distance_bd1": 1.1755446195602417,
+      "same_top1": false
+    },
+    {
+      "query": "résistance maladie",
+      "top1_bd2": "Oligovit magnésium",
+      "top1_bd1": "Dermacne",
+      "distance_bd2": 1.280977725982666,
+      "distance_bd1": 1.3388607501983643,
+      "same_top1": false
+    },
+    {
+      "query": "orl otite rhinite",
+      "top1_bd2": "Pédiakids Spray Nasal",
+      "top1_bd1": "Vitonic Conception",
+      "distance_bd2": 1.1442292928695679,
+      "distance_bd1": 1.163569688796997,
+      "same_top1": false
+    },
+    {
+      "query": "prévention contagion",
+      "top1_bd2": "VITAL HEALTHCARE FERTICARE FEMME",
+      "top1_bd1": "Minciligne Homme",
+      "distance_bd2": 1.395310878753662,
+      "distance_bd1": 1.3849008083343506,
+      "same_top1": false
+    },
+    {
+      "query": "douleur arthrose",
+      "top1_bd2": "DERMADOUCE",
+      "top1_bd1": "LV Arthroforce Gélule",
+      "distance_bd2": 1.167472243309021,
+      "distance_bd1": 1.2291122674942017,
+      "same_top1": false
+    },
+    {
+      "query": "inflammation joints",
+      "top1_bd2": "LV Arthroforce Gélule",
+      "top1_bd1": "LV Arthroforce Gélule",
+      "distance_bd2": 1.1317367553710938,
+      "distance_bd1": 1.0654292106628418,
+      "same_top1": true
+    },
+    {
+      "query": "rhumatisme articulations",
+      "top1_bd2": "Omevie Articulation – 900",
+      "top1_bd1": "Omevie Articulation – 900",
+      "distance_bd2": 1.0900797843933105,
+      "distance_bd1": 1.0587422847747803,
+      "same_top1": true
+    },
+    {
+      "query": "collagène cartilage",
+      "top1_bd2": "LV Arthroforce Gélule",
+      "top1_bd1": "LV Arthroforce Gélule",
+      "distance_bd2": 1.0529062747955322,
+      "distance_bd1": 1.0039942264556885,
+      "same_top1": true
+    },
+    {
+      "query": "musculaire crampe",
+      "top1_bd2": "Plantalgic",
+      "top1_bd1": "LV Vitamine D3",
+      "distance_bd2": 1.3885414600372314,
+      "distance_bd1": 1.4687767028808594,
+      "same_top1": false
+    },
+    {
+      "query": "mal de dos colonne",
+      "top1_bd2": "VITAL HEALTHCARE FERTICARE FEMME",
+      "top1_bd1": "Vitonic sénior",
+      "distance_bd2": 1.074819564819336,
+      "distance_bd1": 1.1853454113006592,
+      "same_top1": false
+    },
+    {
+      "query": "migraine céphalée",
+      "top1_bd2": "LV Migrainal",
+      "top1_bd1": "LV Migrainal",
+      "distance_bd2": 1.0222586393356323,
+      "distance_bd1": 0.9754208326339722,
+      "same_top1": true
+    },
+    {
+      "query": "tension musculaire",
+      "top1_bd2": "LV Arthroforce Gélule",
+      "top1_bd1": "Pédiakids Huile de massage sommeil",
+      "distance_bd2": 1.3314704895019531,
+      "distance_bd1": 1.3712615966796875,
+      "same_top1": false
+    },
+    {
+      "query": "entorse foulure",
+      "top1_bd2": "Vitonic Fer Grossesse",
+      "top1_bd1": "UNIDERM Anti-tache",
+      "distance_bd2": 1.1704485416412354,
+      "distance_bd1": 1.154615044593811,
+      "same_top1": false
+    },
+    {
+      "query": "glucosamine arthrose",
+      "top1_bd2": "LV Arthroforce Gélule",
+      "top1_bd1": "LV Arthroforce Gélule",
+      "distance_bd2": 0.6900819540023804,
+      "distance_bd1": 0.7263692617416382,
+      "same_top1": true
+    },
+    {
+      "query": "anti-douleur analgésique",
+      "top1_bd2": "Pédiakids Huile de massage sommeil",
+      "top1_bd1": "Pédiakids Huile de massage sommeil",
+      "distance_bd2": 0.6804473400115967,
+      "distance_bd1": 0.7824694514274597,
+      "same_top1": true
+    },
+    {
+      "query": "tendons ligaments",
+      "top1_bd2": "LV Arthroforce Gélule",
+      "top1_bd1": "LV Arthroforce Gélule",
+      "distance_bd2": 1.2122657299041748,
+      "distance_bd1": 1.2826766967773438,
+      "same_top1": true
+    },
+    {
+      "query": "hématome bleu",
+      "top1_bd2": "LV Hemostop 60 Gélules",
+      "top1_bd1": "LV Hemostop 60 Gélules",
+      "distance_bd2": 0.9647566080093384,
+      "distance_bd1": 0.9851850271224976,
+      "same_top1": true
+    },
+    {
+      "query": "brûlure piqûre",
+      "top1_bd2": "Spiruline",
+      "top1_bd1": "Spiruline",
+      "distance_bd2": 1.4019775390625,
+      "distance_bd1": 1.4724146127700806,
+      "same_top1": true
+    },
+    {
+      "query": "hémostatique saignement",
+      "top1_bd2": "LV Hemostop 60 Gélules",
+      "top1_bd1": "LV Hemostop Crème 45 gr",
+      "distance_bd2": 0.8550223112106323,
+      "distance_bd1": 0.9056175947189331,
+      "same_top1": false
+    },
+    {
+      "query": "énergie fatigue",
+      "top1_bd2": "LV Mélatonuit",
+      "top1_bd1": "LV Mélatonuit",
+      "distance_bd2": 1.5112597942352295,
+      "distance_bd1": 1.3988854885101318,
+      "same_top1": true
+    },
+    {
+      "query": "sommeil insomnie repos",
+      "top1_bd2": "Dermalo",
+      "top1_bd1": "Grossivit vitaminé Sirop bébé et enfant",
+      "distance_bd2": 1.3656400442123413,
+      "distance_bd1": 1.442490577697754,
+      "same_top1": false
+    },
+    {
+      "query": "mélatonine nuit",
+      "top1_bd2": "LV Mélatonuit",
+      "top1_bd1": "LV Mélatonuit",
+      "distance_bd2": 0.9012407064437866,
+      "distance_bd1": 0.8015744686126709,
+      "same_top1": true
+    },
+    {
+      "query": "anxiété stress",
+      "top1_bd2": "Omevie Emotion – 900",
+      "top1_bd1": "Omevie Emotion – 900",
+      "distance_bd2": 1.210665225982666,
+      "distance_bd1": 1.2561489343643188,
+      "same_top1": true
+    },
+    {
+      "query": "mood dépression",
+      "top1_bd2": "Omevie Emotion – 900",
+      "top1_bd1": "Omevie Emotion – 900",
+      "distance_bd2": 1.206899881362915,
+      "distance_bd1": 1.3946104049682617,
+      "same_top1": true
+    },
+    {
+      "query": "cerveau mémoire",
+      "top1_bd2": "Dermalo",
+      "top1_bd1": "LV PSOCALM",
+      "distance_bd2": 1.2957842350006104,
+      "distance_bd1": 1.4673397541046143,
+      "same_top1": false
+    },
+    {
+      "query": "concentration focus",
+      "top1_bd2": "Mémoire et Concentration",
+      "top1_bd1": "Oligovit magnésium",
+      "distance_bd2": 1.7938880920410156,
+      "distance_bd1": 1.9380429983139038,
+      "same_top1": false
+    },
+    {
+      "query": "diabète glycémie glucose",
+      "top1_bd2": "Levure de bière",
+      "top1_bd1": "LV Diabemin",
+      "distance_bd2": 1.1217941045761108,
+      "distance_bd1": 1.0924725532531738,
+      "same_top1": false
+    },
+    {
+      "query": "cholestérol cardio",
+      "top1_bd2": "Omevie Cardio – 900",
+      "top1_bd1": "Omevie Cardio – 900",
+      "distance_bd2": 1.0220897197723389,
+      "distance_bd1": 1.153934359550476,
+      "same_top1": true
+    },
+    {
+      "query": "poids minceur",
+      "top1_bd2": "Minciligne Homme",
+      "top1_bd1": "Grossivit vitaminé Sirop bébé et enfant",
+      "distance_bd2": 1.1893072128295898,
+      "distance_bd1": 1.4298415184020996,
+      "same_top1": false
+    },
+    {
+      "query": "détox nettoyage",
+      "top1_bd2": "HYDRA GEL Nettoyant visage Peau Normale",
+      "top1_bd1": "Mincivit Detox",
+      "distance_bd2": 1.1236984729766846,
+      "distance_bd1": 1.284049391746521,
+      "same_top1": false
+    },
+    {
+      "query": "grossesse maternité",
+      "top1_bd2": "VITONIC Grossesse",
+      "top1_bd1": "Vitosine Eosine Aqueuse 2%",
+      "distance_bd2": 1.0787829160690308,
+      "distance_bd1": 1.1837220191955566,
+      "same_top1": false
+    },
+    {
+      "query": "bébé enfant pédiatrie",
+      "top1_bd2": "Pédiakids Huile de massage sommeil",
+      "top1_bd1": "Pédiakids APITOU N°2",
+      "distance_bd2": 1.0304440259933472,
+      "distance_bd1": 1.0627310276031494,
+      "same_top1": false
+    },
+    {
+      "query": "senior âge",
+      "top1_bd2": "LV Sélénium A, C, E Anti-âge",
+      "top1_bd1": "VITAL HEALTHCARE SKINCARE Anti-âge intensif",
+      "distance_bd2": 1.3585529327392578,
+      "distance_bd1": 1.4041969776153564,
+      "same_top1": false
+    },
+    {
+      "query": "sportif performance",
+      "top1_bd2": "Vaseline glycérinée",
+      "top1_bd1": "Hydra",
+      "distance_bd2": 1.4531164169311523,
+      "distance_bd1": 1.5194673538208008,
+      "same_top1": false
+    },
+    {
+      "query": "hormone équilibre",
+      "top1_bd2": "Stimul plus",
+      "top1_bd1": "Vitonic Fer",
+      "distance_bd2": 1.2698290348052979,
+      "distance_bd1": 1.2524776458740234,
+      "same_top1": false
+    },
+    {
+      "query": "vue oculaire",
+      "top1_bd2": "Vitonic Conception",
+      "top1_bd1": "UNIDERM Anti-tache",
+      "distance_bd2": 1.301269292831421,
+      "distance_bd1": 1.4423694610595703,
+      "same_top1": false
+    },
+    {
+      "query": "oreille audition",
+      "top1_bd2": "ARGIDERM",
+      "top1_bd1": "Omevie Articulation – 900",
+      "distance_bd2": 1.5255792140960693,
+      "distance_bd1": 1.564537525177002,
+      "same_top1": false
+    },
+    {
+      "query": "cheveu perte",
+      "top1_bd2": "Minciligne Homme",
+      "top1_bd1": "UNIDERM Anti-tache",
+      "distance_bd2": 1.25951087474823,
+      "distance_bd1": 1.4287604093551636,
+      "same_top1": false
+    },
+    {
+      "query": "ongle fragilité",
+      "top1_bd2": "LV Hemostop Crème 45 gr",
+      "top1_bd1": "HYDRA GEL – CRÈME Nettoyant visage",
+      "distance_bd2": 1.5304434299468994,
+      "distance_bd1": 1.4926115274429321,
+      "same_top1": false
+    },
+    {
+      "query": "circulation sanguine",
+      "top1_bd2": "Pédiakids Huile de massage sommeil",
+      "top1_bd1": "LV PhytoVeine Huile",
+      "distance_bd2": 1.114405632019043,
+      "distance_bd1": 1.1778143644332886,
+      "same_top1": false
+    },
+    {
+      "query": "hypertension tension artérielle",
+      "top1_bd2": "LV PhytoVeine Huile",
+      "top1_bd1": "Angiplant Spray",
+      "distance_bd2": 1.3673030138015747,
+      "distance_bd1": 1.3954328298568726,
+      "same_top1": false
+    },
+    {
+      "query": "asthme respiration",
+      "top1_bd2": "Pédiakids Apinez",
+      "top1_bd1": "PLANTHÉRAPIE PLANTEX RHUME",
+      "distance_bd2": 1.3931529521942139,
+      "distance_bd1": 1.3698582649230957,
+      "same_top1": false
+    },
+    {
+      "query": "allergies histamine",
+      "top1_bd2": "Planthérapie Allergiplant",
+      "top1_bd1": "Pédiakids Shampoing",
+      "distance_bd2": 1.075430989265442,
+      "distance_bd1": 0.9222061634063721,
+      "same_top1": false
+    },
+    {
+      "query": "antioxydant radicaux libres",
+      "top1_bd2": "Vitonic Trio Grossesse",
+      "top1_bd1": "Echinacée, Zinc, Vit.C",
+      "distance_bd2": 0.6995960474014282,
+      "distance_bd1": 0.8113166093826294,
+      "same_top1": false
+    }
+  ]
+}

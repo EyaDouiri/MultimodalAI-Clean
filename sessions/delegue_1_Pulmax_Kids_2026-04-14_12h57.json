@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "Pulmax Kids",
+    "module_reached": "m1_formation",
+    "timestamp": "2026-04-14_12h57",
+    "nb_messages": 1,
+    "scores": {}
+  },
+  "summary": {},
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "Bienvenue touta ! On va travailler sur Pulmax Kids aujourd'hui. Je vais te donner un brief commercial rapide avant que nous allions dans les détails.\n\n**Ce que c'est** : Pulmax Kids est un complément alimentaire en forme de gélule qui aide à soulager la toux mixte chez les nourrissons et les enfants.\n\n**Le patient cible** : c'est un produit prescrit par les médecins pour les enfants de 0 à 12 ans.\n\n**L'avantage clé** : Pulmax Kids est rapide et efficace, ce qui signifie que les enfants peuvent retrouver leur énergie et leur bonne humeur rapidement.\n\n**La précaution principale** : ne pas oublier de demander à la mère ou au père si l'enfant a une allergie connue à l'un des composants du produit.\n\nMaintenant, voici le pitch modèle pour les médecins :\n\n\"Bonjour docteur, je voulais vous présenter Pulmax Kids, un complément alimentaire qui aide à soulager la toux mixte chez les enfants. Avec Pulmax Kids, les enfants retrouvent rapidement leur énergie et leur bonne humeur. C'est simple à utiliser et efficace, ce qui signifie moins de consultations de suivi pour vous.\"\n\nEt voici le pitch modèle pour les pharmaciens :\n\n\"Bonjour pharmacien, je voulais vous présenter Pulmax Kids, un complément alimentaire qui aide à soulager la toux mixte chez les enfants. Avec Pulmax Kids, les parents sont satisfaits et les enfants retrouvent rapidement leur énergie. C'est un produit simple à utiliser et efficace, ce qui signifie moins de retours de clients pour vous.\"\n\nMaintenant, je veux que tu reprends ce pitch avec tes propres mots. N'hésite pas à ajuster et à affiner avec moi au fur et à mesure. Je vais te corriger et te donner des conseils pour que tu sois à l'aise avec ce pitch. Prêt ?"
+    }
+  ]
+}

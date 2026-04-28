@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "FONGIDERM Antifongique Crème",
+    "module_reached": "m1_formation",
+    "timestamp": "2026-04-01_01h18",
+    "nb_messages": 3,
+    "scores": {}
+  },
+  "summary": {
+    "points_forts": [
+      "Mention d'un cas concret pour illustrer l'efficacité de FONGIDERM",
+      "Réaction naturelle et adaptée du pitch"
+    ],
+    "points_faibles": [
+      "N'ont pas mentionné l'avantage clé du produit (résultat visible en 48h)"
+    ],
+    "concepts_non_maitrisés": [
+      "Utilisation de FONGIDERM sur une zone présentant une réaction allergique active au produit"
+    ],
+    "ou_il_s_est_arrete": "La session s'est terminée après que touta a mentionné l'endroit où Nahn Valakla a été",
+    "recommandations_prochaine_session": [
+      "Mentionner l'avantage clé du produit (résultat visible en 48h) dans le pitch",
+      "Pratiquer davantage la présentation du produit"
+    ],
+    "evaluation_qualitative": "intermédiaire — Touta a bien réagi et a mentionné un cas concret, mais a oublié de mentionner l'avantage clé du produit"
+  },
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "ÉTAPE 1 — Brief commercial du produit\n\nAlors touta, avant de partir en visite, je veux que tu saches quelques choses sur FONGIDERM Antifongique Crème. C'est une crème en tube de 30g, indiquée pour les mycoses cutanées. Nous visons les dermatologues et les médecins généralistes qui prescrivent pour les patients adultes et pédiatriques.\n\nL'avantage clé de FONGIDERM, c'est qu'il agit rapidement, avec un résultat visible en 48h, ce qui réduit les consultations de suivi pour les médecins. Et il est essentiel de rappeler à tes interlocuteurs que FONGIDERM n'est pas à utiliser sur une zone présentant une réaction allergique active au produit.\n\nÉTAPE 2 — Pitch modèle\n\nVoici le pitch modèle pour les médecins :\n\n\"Bonjour Docteur, FONGIDERM c'est votre option rapide pour les mycoses superficielles. Résultat visible en 48h, ce qui réduit les consultations de suivi pour vous. Simple pour le patient, efficace pour vous.\"\n\nEt pour les pharmaciens :\n\n\"Bonjour, FONGIDERM est une crème antifongique efficace et rapide, avec un résultat visible en 48h. C'est idéal pour les patients qui cherchent un traitement simple et efficace. Nous proposons un prix compétitif et une gamme de tailles de tubes pour répondre à vos besoins.\"\n\nÉTAPE 3 — Lance la pratique\n\nMaintenant, touta, je veux que tu reprennes ce pitch avec tes propres mots. N'hésite pas à adapter les phrases pour les rendre plus naturelles. Je vais corriger et affiner avec toi au fur et à mesure.\n\nCommence avec le pitch pour les médecins, puis passe au pitch pour les pharmaciens. Et n'oublie pas de me dire comment tu te sens après chaque essai. On va travailler ensemble pour que tu sois prêt à présenter FONGIDERM avec confiance et efficacité !"
+    },
+    {
+      "role": "delegue",
+      "content": "Là, il est allé aveugler à Nahn Valakla"
+    },
+    {
+      "role": "alia",
+      "content": "Touta, tu as bien réagi en mentionnant l'endroit où Nahn Valakla a été. C'est une bonne idée de lier le produit à un cas concret.\n\nForce : Tu as mentionné un cas réel, ce qui peut aider à illustrer l'efficacité de FONGIDERM.\n\nLacune : Tu n'as pas mentionné l'avantage clé du produit, qui est son résultat visible en 48h.\n\nEssaie de relancer avec l'avantage clé en tête. Pour les médecins, dis : \"Bonjour Docteur, FONGIDERM c'est votre option rapide pour les mycoses superficielles. Résultat visible en 48h, ce qui réduit les consultations de suivi pour vous.\""
+    }
+  ]
+}

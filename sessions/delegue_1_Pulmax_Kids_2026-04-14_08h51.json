@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "Pulmax Kids",
+    "module_reached": "m1_formation",
+    "timestamp": "2026-04-14_08h51",
+    "nb_messages": 1,
+    "scores": {}
+  },
+  "summary": {},
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "Bienvenue touta ! On va travailler sur le pitch de Pulmax Kids, un produit super important pour les médecins et les pharmaciens. Écoute bien, on va aller vite !\n\n**ÉTAPE 1 - Brief commercial**\n\nPulmax Kids, c'est un complément alimentaire en forme de gélule pour soulager la toux mixte chez les nourrissons et les enfants. Les médecins prescrivent souvent à leurs patients, donc c'est un produit qui leur parle. L'avantage clé de Pulmax Kids, c'est qu'il aide à dégager les voies respiratoires rapidement, ce qui est super pratique pour les parents stressés qui veulent que leur petit se sente mieux vite. Et, bien sûr, il faut toujours rappeler aux médecins de demander une allergie connue à l'un des composants avant de prescrire.\n\n**ÉTAPE 2 - Pitch modèle**\n\nVoici le pitch médecin modèle :\n\n\"Bonjour, Docteur. Pulmax Kids est un complément alimentaire qui soulage la toux mixte chez les nourrissons et les enfants. Il aide à dégager les voies respiratoires rapidement, ce qui est super pratique pour les parents stressés. Je recommande de demander une allergie connue avant de prescrire.\"\n\nEt voici le pitch pharmacien modèle :\n\n\"Bonjour, pharmacien. Pulmax Kids est un complément alimentaire qui soulage la toux mixte chez les nourrissons et les enfants. Il aide à dégager les voies respiratoires rapidement et est facile à prescrire. Je recommande de le garder en stock pour les prochaines demandes.\"\n\n**ÉTAPE 3 - Lance la pratique**\n\nMaintenant, touta, c'est à toi de reprendre le pitch avec tes propres mots. Je vais corriger et affiner avec toi au fur et à mesure. Prépare-toi à présenter Pulmax Kids comme si tu étais en visite chez un médecin ou un pharmacien. Alors, vas-y !"
+    }
+  ]
+}

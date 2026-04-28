@@ -1,0 +1,504 @@
+{
+  "queries": [
+    {
+      "id": 1,
+      "query": "vertige",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 2,
+      "query": "anémie",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 3,
+      "query": "fatigue",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 4,
+      "query": "articulations",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 5,
+      "query": "zinc",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 6,
+      "query": "cardio",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 7,
+      "query": "bolémie",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 8,
+      "query": "vitamine D santé osseuse",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 9,
+      "query": "peaux sensible",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 10,
+      "query": "concentration",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 11,
+      "query": "acide folique grossesse",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 12,
+      "query": "sélénium antioxydant",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 13,
+      "query": "cuivre et fer",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 14,
+      "query": "ginseng énergie tonique",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 15,
+      "query": "complément énergétique performance",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 16,
+      "query": "peau sensible irritée",
+      "category": "dermatologie"
+    },
+    {
+      "id": 17,
+      "query": "acné peau grasse",
+      "category": "dermatologie"
+    },
+    {
+      "id": 18,
+      "query": "peau sèche hydratation",
+      "category": "dermatologie"
+    },
+    {
+      "id": 19,
+      "query": "peau eczéma dermatite",
+      "category": "dermatologie"
+    },
+    {
+      "id": 20,
+      "query": "psoriasis démangeaisons",
+      "category": "dermatologie"
+    },
+    {
+      "id": 21,
+      "query": "cicatrices taches peau",
+      "category": "dermatologie"
+    },
+    {
+      "id": 22,
+      "query": "nettoyant visage doux",
+      "category": "dermatologie"
+    },
+    {
+      "id": 23,
+      "query": "crème anti-âge rides",
+      "category": "dermatologie"
+    },
+    {
+      "id": 24,
+      "query": "savon peaux sensibles",
+      "category": "dermatologie"
+    },
+    {
+      "id": 25,
+      "query": "démaquillant peau délicate",
+      "category": "dermatologie"
+    },
+    {
+      "id": 26,
+      "query": "gel nettoyant visage",
+      "category": "dermatologie"
+    },
+    {
+      "id": 27,
+      "query": "crème réparation peau",
+      "category": "dermatologie"
+    },
+    {
+      "id": 28,
+      "query": "antifongique peau",
+      "category": "dermatologie"
+    },
+    {
+      "id": 29,
+      "query": "peau grasse sébum",
+      "category": "dermatologie"
+    },
+    {
+      "id": 30,
+      "query": "hydratant peau",
+      "category": "dermatologie"
+    },
+    {
+      "id": 31,
+      "query": "digestion problèmes transit",
+      "category": "digestion"
+    },
+    {
+      "id": 32,
+      "query": "constipation ballonnements",
+      "category": "digestion"
+    },
+    {
+      "id": 33,
+      "query": "foie hépatique nettoyage",
+      "category": "digestion"
+    },
+    {
+      "id": 34,
+      "query": "gastrite acidité estomac",
+      "category": "digestion"
+    },
+    {
+      "id": 35,
+      "query": "diarrhée réhydratation",
+      "category": "digestion"
+    },
+    {
+      "id": 36,
+      "query": "intestins microbiota",
+      "category": "digestion"
+    },
+    {
+      "id": 37,
+      "query": "fibres digestion",
+      "category": "digestion"
+    },
+    {
+      "id": 38,
+      "query": "levure bière digestion",
+      "category": "digestion"
+    },
+    {
+      "id": 39,
+      "query": "enzyme digestive",
+      "category": "digestion"
+    },
+    {
+      "id": 40,
+      "query": "régulation transit",
+      "category": "digestion"
+    },
+    {
+      "id": 41,
+      "query": "coupe faim appétit",
+      "category": "digestion"
+    },
+    {
+      "id": 42,
+      "query": "pancréas glucose",
+      "category": "digestion"
+    },
+    {
+      "id": 43,
+      "query": "bactéries intestinales",
+      "category": "digestion"
+    },
+    {
+      "id": 44,
+      "query": "gaz intestinaux",
+      "category": "digestion"
+    },
+    {
+      "id": 45,
+      "query": "confort digestif",
+      "category": "digestion"
+    },
+    {
+      "id": 46,
+      "query": "immunité infection bactérie",
+      "category": "infection"
+    },
+    {
+      "id": 47,
+      "query": "rhume grippal virus",
+      "category": "infection"
+    },
+    {
+      "id": 48,
+      "query": "toux sirop",
+      "category": "infection"
+    },
+    {
+      "id": 49,
+      "query": "gorge mal spray",
+      "category": "infection"
+    },
+    {
+      "id": 50,
+      "query": "fièvre température",
+      "category": "infection"
+    },
+    {
+      "id": 51,
+      "query": "antibactérien antibiotique",
+      "category": "infection"
+    },
+    {
+      "id": 52,
+      "query": "viral prévention",
+      "category": "infection"
+    },
+    {
+      "id": 53,
+      "query": "défense immunitaire",
+      "category": "infection"
+    },
+    {
+      "id": 54,
+      "query": "lymphocytes blanc",
+      "category": "infection"
+    },
+    {
+      "id": 55,
+      "query": "antivirale propriété",
+      "category": "infection"
+    },
+    {
+      "id": 56,
+      "query": "mucosité nasale",
+      "category": "infection"
+    },
+    {
+      "id": 57,
+      "query": "protection infection",
+      "category": "infection"
+    },
+    {
+      "id": 58,
+      "query": "résistance maladie",
+      "category": "infection"
+    },
+    {
+      "id": 59,
+      "query": "orl otite rhinite",
+      "category": "infection"
+    },
+    {
+      "id": 60,
+      "query": "prévention contagion",
+      "category": "infection"
+    },
+    {
+      "id": 61,
+      "query": "douleur arthrose",
+      "category": "douleur"
+    },
+    {
+      "id": 62,
+      "query": "inflammation joints",
+      "category": "douleur"
+    },
+    {
+      "id": 63,
+      "query": "rhumatisme articulations",
+      "category": "douleur"
+    },
+    {
+      "id": 64,
+      "query": "collagène cartilage",
+      "category": "douleur"
+    },
+    {
+      "id": 65,
+      "query": "musculaire crampe",
+      "category": "douleur"
+    },
+    {
+      "id": 66,
+      "query": "mal de dos colonne",
+      "category": "douleur"
+    },
+    {
+      "id": 67,
+      "query": "migraine céphalée",
+      "category": "douleur"
+    },
+    {
+      "id": 68,
+      "query": "tension musculaire",
+      "category": "douleur"
+    },
+    {
+      "id": 69,
+      "query": "entorse foulure",
+      "category": "douleur"
+    },
+    {
+      "id": 70,
+      "query": "glucosamine arthrose",
+      "category": "douleur"
+    },
+    {
+      "id": 71,
+      "query": "anti-douleur analgésique",
+      "category": "douleur"
+    },
+    {
+      "id": 72,
+      "query": "tendons ligaments",
+      "category": "douleur"
+    },
+    {
+      "id": 73,
+      "query": "hématome bleu",
+      "category": "douleur"
+    },
+    {
+      "id": 74,
+      "query": "brûlure piqûre",
+      "category": "douleur"
+    },
+    {
+      "id": 75,
+      "query": "hémostatique saignement",
+      "category": "douleur"
+    },
+    {
+      "id": 76,
+      "query": "énergie fatigue",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 77,
+      "query": "sommeil insomnie repos",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 78,
+      "query": "mélatonine nuit",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 79,
+      "query": "anxiété stress",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 80,
+      "query": "mood dépression",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 81,
+      "query": "cerveau mémoire",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 82,
+      "query": "concentration focus",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 83,
+      "query": "diabète glycémie glucose",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 84,
+      "query": "cholestérol cardio",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 85,
+      "query": "poids minceur",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 86,
+      "query": "détox nettoyage",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 87,
+      "query": "grossesse maternité",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 88,
+      "query": "bébé enfant pédiatrie",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 89,
+      "query": "senior âge",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 90,
+      "query": "sportif performance",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 91,
+      "query": "hormone équilibre",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 92,
+      "query": "vue oculaire",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 93,
+      "query": "oreille audition",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 94,
+      "query": "cheveu perte",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 95,
+      "query": "ongle fragilité",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 96,
+      "query": "circulation sanguine",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 97,
+      "query": "hypertension tension artérielle",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 98,
+      "query": "asthme respiration",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 99,
+      "query": "allergies histamine",
+      "category": "complément alimentaire"
+    },
+    {
+      "id": 100,
+      "query": "antioxydant radicaux libres",
+      "category": "complément alimentaire"
+    }
+  ]
+}

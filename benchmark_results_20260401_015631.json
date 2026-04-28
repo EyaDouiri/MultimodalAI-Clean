@@ -1,0 +1,427 @@
+[
+  {
+    "scenario_id": "S1",
+    "scenario_name": "Premier contact — délégué débutant",
+    "model": "llama-3.1-8b",
+    "technique": "zero_shot",
+    "latency_s": 0.62,
+    "alia_response": "Bonjour ! Je suis ravi de vous accueillir dans cette session de formation sur le produit FONGIDERM Antifongique Crème. Je m'appelle Alia, et je suis formatrice pharmaceutique. Je vais vous guider tout au long de cette session pour que vous puissiez apprendre tout ce qu'il faut savoir sur ce produit.\n\nAvant de commencer, je voudrais vous demander si vous avez déjà une idée de ce que vous allez apprendre aujourd'hui ou si vous avez des questions spécifiques que vous souhaitez aborder.\n\nNous allons nous concentrer sur le produit FONGIDERM Antifongique Crème, qui est un traitement topique pour les mycoses cutanées superficielles. Nous allons explorer son profil clinique, son profil pharmacologique et les informations importantes à connaître pour utiliser ce produit de manière efficace et sûre.\n\nAlors, allons-y ! Qu'est-ce que vous voulez savoir en premier ?",
+    "scores": {
+      "faithfulness": 8,
+      "pedagogical_quality": 9,
+      "tone_consistency": 9,
+      "boundary_respect": 9,
+      "fluency": 9,
+      "justification": "La réponse d'Alia est globalement de haute qualité, avec une présentation claire et adaptée au débutant, mais pourrait être encore améliorée par une fidélité totale aux informations du contexte produit.",
+      "total": 8.8
+    }
+  },
+  {
+    "scenario_id": "S1",
+    "scenario_name": "Premier contact — délégué débutant",
+    "model": "llama-3.1-8b",
+    "technique": "few_shot",
+    "latency_s": 0.4,
+    "alia_response": "Bonjour ! Je suis ravi de vous accueillir dans cette session de formation. Je m'appelle Alia, et je serai votre formatrice pour aujourd'hui. Nous allons explorer le produit FONGIDERM Antifongique Crème, qui est un traitement efficace pour les mycoses cutanées.\n\nAvant de commencer, pouvez-vous me dire ce que vous attendez de cette formation ? Qu'est-ce que vous souhaitez en sortir ?",
+    "scores": {
+      "faithfulness": 8,
+      "pedagogical_quality": 9,
+      "tone_consistency": 9,
+      "boundary_respect": 8,
+      "fluency": 9,
+      "justification": "La réponse est globalement de bonne qualité, mais pourrait être améliorée en intégrant plus d'informations sur le produit dès le départ.",
+      "total": 8.6
+    }
+  },
+  {
+    "scenario_id": "S1",
+    "scenario_name": "Premier contact — délégué débutant",
+    "model": "llama-3.1-8b",
+    "technique": "role_persona",
+    "latency_s": 0.43,
+    "alia_response": "Bonjour ! Enchantée de vous rencontrer. Je m'appelle Alia, et je serai votre formatrice pour cette formation sur le produit FONGIDERM Antifongique Crème. Je suis ravi de vous accueillir dans ce module de formation.\n\nAvant de commencer, pouvez-vous me dire ce que vous attendez de cette formation ? Qu'est-ce que vous souhaitez apprendre ou comprendre sur le produit FONGIDERM ?",
+    "scores": {
+      "faithfulness": 8,
+      "pedagogical_quality": 9,
+      "tone_consistency": 9,
+      "boundary_respect": 10,
+      "fluency": 9,
+      "justification": "La réponse d'Alia est globalement de haute qualité, avec un ton chaleureux et une approche pédagogique interactive, mais pourrait être encore plus fidèle au contexte produit en mentionnant explicitement le produit dès le début.",
+      "total": 9.0
+    }
+  },
+  {
+    "scenario_id": "S1",
+    "scenario_name": "Premier contact — délégué débutant",
+    "model": "llama-3.1-8b",
+    "technique": "cot",
+    "latency_s": 0.41,
+    "alia_response": "Bonjour ! Je suis ravi de vous accueillir dans cette formation sur le produit FONGIDERM Antifongique Crème. Je m'appelle Alia, et je suis votre formatrice pharmaceutique pour aujourd'hui. Avant de commencer, je voudrais vous poser une question pour mieux comprendre vos attentes : Qu'est-ce que vous attendez de cette formation et quels sont vos objectifs en matière de produits antifongiques ?",
+    "scores": {
+      "faithfulness": 8,
+      "pedagogical_quality": 9,
+      "tone_consistency": 9,
+      "boundary_respect": 8,
+      "fluency": 9,
+      "justification": "La réponse d'Alia est globalement de haute qualité, mais pourrait être améliorée en étant plus fidèle au contexte produit et en restant davantage dans le périmètre du Module 1.",
+      "total": 8.6
+    }
+  },
+  {
+    "scenario_id": "S1",
+    "scenario_name": "Premier contact — délégué débutant",
+    "model": "llama-3.3-70b",
+    "technique": "zero_shot",
+    "latency_s": 1.22,
+    "alia_response": "Bonjour ! Bienvenue dans votre formation sur le produit FONGIDERM Antifongique Crème. Je suis ravie de vous accompagner dans cette aventure et de vous aider à mieux comprendre les caractéristiques et les avantages de ce produit.\n\nPour commencer, je voudrais vous demander si vous avez déjà travaillé avec des produits antifongiques ou si vous avez des connaissances préalables sur les mycoses cutanées superficielles. Cela me permettra de mieux adapter mon enseignement à vos besoins et à votre niveau de compréhension.\n\nEnsuite, nous allons explorer ensemble les différents aspects du produit FONGIDERM, tels que son profil clinique, son mécanisme d'action, ses indications et ses contre-indications. Nous verrons également comment il se différencie des autres produits concurrents et comment vous pouvez le présenter de manière efficace aux professionnels de la santé.\n\nAlors, prêt à commencer ? Qu'est-ce que vous aimeriez savoir en premier ? Le profil clinique du produit, son mécanisme d'action ou peut-être ses indications et contre-indications ?",
+    "scores": {
+      "faithfulness": 8,
+      "pedagogical_quality": 9,
+      "tone_consistency": 9,
+      "boundary_respect": 9,
+      "fluency": 9,
+      "justification": "La réponse d'Alia est globalement de haute qualité, adaptée au niveau du délégué débutant, et bien structurée pour initier la formation sur le produit FONGIDERM.",
+      "total": 8.8
+    }
+  },
+  {
+    "scenario_id": "S1",
+    "scenario_name": "Premier contact — délégué débutant",
+    "model": "llama-3.3-70b",
+    "technique": "few_shot",
+    "latency_s": 1.3,
+    "alia_response": "Bienvenue dans ta formation sur FONGIDERM Antifongique Crème ! Je suis ravie de t'aider à découvrir les détails de ce produit. Pour commencer, je voudrais te poser une question : As-tu déjà entendu parler de FONGIDERM ou de son principe actif, le bifonazole ? Qu'est-ce que tu attends de cette formation ?",
+    "scores": {
+      "faithfulness": 8,
+      "pedagogical_quality": 9,
+      "tone_consistency": 9,
+      "boundary_respect": 10,
+      "fluency": 9,
+      "justification": "La réponse d'Alia est globalement très bonne, avec une approche pédagogique interactive et un ton chaleureux, mais pourrait être encore améliorée pour être parfaitement fidèle au contexte produit.",
+      "total": 9.0
+    }
+  },
+  {
+    "scenario_id": "S1",
+    "scenario_name": "Premier contact — délégué débutant",
+    "model": "llama-3.3-70b",
+    "technique": "role_persona",
+    "latency_s": 0.58,
+    "alia_response": "Bonjour ! Bienvenue dans votre formation aujourd'hui. Je suis ravie de vous accompagner dans cette découverte du produit FONGIDERM Antifongique Crème. Pour commencer, qu'est-ce que vous savez déjà sur les mycoses cutanées superficielles et les traitements antifongiques ?",
+    "scores": {
+      "faithfulness": 8,
+      "pedagogical_quality": 9,
+      "tone_consistency": 9,
+      "boundary_respect": 10,
+      "fluency": 9,
+      "justification": "La réponse est globalement de haute qualité, avec un ton chaleureux et une approche pédagogique adaptée à un débutant, mais pourrait être encore plus fidèle au contexte produit en mentionnant explicitement le produit FONGIDERM dès le départ.",
+      "total": 9.0
+    }
+  },
+  {
+    "scenario_id": "S1",
+    "scenario_name": "Premier contact — délégué débutant",
+    "model": "llama-3.3-70b",
+    "technique": "cot",
+    "latency_s": 0.78,
+    "alia_response": "Bonjour ! Bienvenue dans votre formation sur le produit FONGIDERM Antifongique Crème. Je suis ravie de vous accompagner dans cette session. Pour commencer, je vais vous présenter les points clés de ce produit. Le FONGIDERM est utilisé pour traiter les mycoses cutanées superficielles, telles que le pied d'athlète ou la teigne. Il contient du bifonazole à 1% et est appliqué une fois par jour pendant 2 à 4 semaines. Avez-vous déjà des connaissances sur les mycoses cutanées ou les traitements antifongiques, ou est-ce un sujet complètement nouveau pour vous ?",
+    "scores": {
+      "faithfulness": 9,
+      "pedagogical_quality": 8,
+      "tone_consistency": 9,
+      "boundary_respect": 10,
+      "fluency": 9,
+      "justification": "La réponse est globalement de haute qualité, fidèle aux informations du contexte produit, pédagogique et bienveillante, mais pourrait être encore améliorée par une introduction plus personnelle et interactive.",
+      "total": 9.0
+    }
+  },
+  {
+    "scenario_id": "S2",
+    "scenario_name": "Question sur le mécanisme d'action",
+    "model": "llama-3.1-8b",
+    "technique": "zero_shot",
+    "latency_s": 0.82,
+    "alia_response": "Alia : Ah, excellent question ! Le FONGIDERM est une crème antifongique qui contient du bifonazole comme principe actif. Pour comprendre son mécanisme d'action, il faut savoir que les champignons, comme les dermatophytes, les levures et Malassezia furfur, ont besoin d'une certaine substance pour construire leurs membranes cellulaires. Cette substance s'appelle l'ergostérol.\n\nAlia : Le bifonazole, contenu dans le FONGIDERM, bloque la synthèse de l'ergostérol. Cela signifie que les champignons ne peuvent plus construire leurs membranes cellulaires, ce qui les empêche de se multiplier et de causer des infections cutanées.\n\nAlia : En d'autres termes, le FONGIDERM empêche les champignons de faire ce qu'ils font de mieux : se reproduire et causer des problèmes ! Et c'est exactement ce qui nous permet de guérir les mycoses cutanées superficielles comme le pied d'athlète, l'intertrigo, la teigne et la pityriasis versicolor.\n\nAlia : Maintenant, je sais que vous voulez savoir quand on peut voir des résultats. Eh bien, avec le FONGIDERM, on peut voir une amélioration en 48-72 heures, et la guérison complète en 2-4 semaines. C'est vraiment rapide et efficace !",
+    "scores": {
+      "faithfulness": 9,
+      "pedagogical_quality": 8,
+      "tone_consistency": 8,
+      "boundary_respect": 7,
+      "fluency": 8,
+      "justification": "La réponse est globalement fidèle aux informations du contexte produit, mais avec quelques détails supplémentaires non demandés.",
+      "total": 8.0
+    }
+  },
+  {
+    "scenario_id": "S2",
+    "scenario_name": "Question sur le mécanisme d'action",
+    "model": "llama-3.1-8b",
+    "technique": "few_shot",
+    "latency_s": 0.46,
+    "alia_response": "C'est un excellent début ! Le FONGIDERM c'est une crème antifongique qui contient du bifonazole. Le bifonazole bloque la synthèse de l'ergostérol, qui est un composant important de la membrane des champignons. Cela signifie que les champignons ne peuvent plus se développer et multiplier, ce qui aide à éliminer l'infection. Mais pour que cela soit clair, peux-tu me dire : quels sont les types de champignons que le FONGIDERM est censé combattre ?",
+    "scores": {
+      "faithfulness": 8,
+      "pedagogical_quality": 9,
+      "tone_consistency": 9,
+      "boundary_respect": 8,
+      "fluency": 9,
+      "justification": "La réponse d'Alia est globalement de haute qualité, mais elle pose une question qui sort légèrement du cadre de la question initiale.",
+      "total": 8.6
+    }
+  },
+  {
+    "scenario_id": "S2",
+    "scenario_name": "Question sur le mécanisme d'action",
+    "model": "llama-3.1-8b",
+    "technique": "role_persona",
+    "latency_s": 0.57,
+    "alia_response": "Très bien, je vais vous expliquer comment fonctionne FONGIDERM. \n\nFONGIDERM est une crème antifongique qui contient du bifonazole à 1%. Le bifonazole est un principe actif qui agit en inhibant la synthèse de l'ergostérol, un composant membranaire des champignons. Cela signifie que le bifonazole empêche les champignons de produire la membrane qui leur permet de survivre et de se développer.\n\nEn d'autres termes, le bifonazole empêche les champignons de faire ce qu'ils font de mieux : se multiplier et s'installer sur la peau. Et c'est ainsi que FONGIDERM aide à guérir les mycoses cutanées superficielles, comme le pied d'athlète, l'intertrigo, la teigne et la pityriasis versicolor.\n\nMaintenant, je voudrais que vous me disiez si vous avez compris comment fonctionne FONGIDERM.",
+    "scores": {
+      "faithfulness": 9,
+      "pedagogical_quality": 8,
+      "tone_consistency": 8,
+      "boundary_respect": 9,
+      "fluency": 8,
+      "justification": "La réponse d'Alia est globalement de bonne qualité, mais pourrait être améliorée par une analogie plus simple pour expliquer le mécanisme d'action.",
+      "total": 8.4
+    }
+  },
+  {
+    "scenario_id": "S2",
+    "scenario_name": "Question sur le mécanisme d'action",
+    "model": "llama-3.1-8b",
+    "technique": "cot",
+    "latency_s": 0.5,
+    "alia_response": "Très bien, je vais vous expliquer comment fonctionne FONGIDERM. Le principe actif, le bifonazole, agit en inhibant la synthèse de l'ergostérol, un composant essentiel des membranes des champignons. Cela empêche les champignons de se développer et de proliférer, ce qui aide à guérir les mycoses cutanées superficielles. L'avantage de FONGIDERM est qu'il peut être appliqué une seule fois par jour, ce qui facilite l'observance et améliore les résultats. \n\nPourriez-vous me dire si vous avez déjà utilisé un traitement antifongique auparavant ?",
+    "scores": {
+      "faithfulness": 9,
+      "pedagogical_quality": 8,
+      "tone_consistency": 9,
+      "boundary_respect": 8,
+      "fluency": 9,
+      "justification": "La réponse est globalement de bonne qualité, mais avec quelques détails qui sortent du périmètre du mécanisme d'action.",
+      "total": 8.6
+    }
+  },
+  {
+    "scenario_id": "S2",
+    "scenario_name": "Question sur le mécanisme d'action",
+    "model": "llama-3.3-70b",
+    "technique": "zero_shot",
+    "latency_s": 1.47,
+    "alia_response": "Excellente question ! Le FONGIDERM est un traitement antifongique topique, ce qui signifie qu'il est appliqué directement sur la peau pour traiter les mycoses cutanées superficielles. Son principe actif est le bifonazole, qui représente 1% de la composition de la crème.\n\nLe bifonazole agit en inhibant la synthèse de l'ergostérol, un composant essentiel de la membrane des champignons. En d'autres termes, il empêche les champignons de construire leur membrane cellulaire, ce qui les rend incapables de se multiplier et de survivre.\n\nCela signifie que le FONGIDERM est efficace contre une large gamme de champignons, notamment les dermatophytes, les levures (comme le Candida) et le Malassezia furfur, qui sont responsables de nombreuses mycoses cutanées superficielles, telles que le pied d'athlète, l'intertrigo, la teigne et la pityriasis versicolor.\n\nJe vais vous donner un exemple pour que vous puissiez mieux comprendre. Imaginez que vous avez un patient qui souffre de pied d'athlète. Il peut appliquer le FONGIDERM une fois par jour pendant 2 à 4 semaines, selon la localisation de l'infection. En général, les résultats sont visibles en 48 à 72 heures, et la guérison complète peut être atteinte en 2 à 4 semaines.\n\nMaintenant, je voudrais savoir : avez-vous déjà rencontré des patients qui souffraient de mycoses cutanées superficielles ? Quelles ont été leurs expériences avec les traitements antifongiques ?",
+    "scores": {
+      "faithfulness": 0,
+      "pedagogical_quality": 0,
+      "tone_consistency": 0,
+      "boundary_respect": 0,
+      "fluency": 0,
+      "total": 0,
+      "justification": "Erreur parsing juge : [ERREUR] 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completion"
+    }
+  },
+  {
+    "scenario_id": "S2",
+    "scenario_name": "Question sur le mécanisme d'action",
+    "model": "llama-3.3-70b",
+    "technique": "role_persona",
+    "latency_s": 1.07,
+    "alia_response": "Excellente question ! Le FONGIDERM contient un principe actif appelé Bifonazole à 1%. Ce principe actif agit en inhibant la synthèse de l'ergostérol, qui est un composant essentiel de la membrane des champignons. En d'autres termes, il empêche les champignons de se multiplier et de se développer. Cela signifie que le FONGIDERM est efficace contre les dermatophytes, les levures comme le Candida, et également contre le Malassezia furfur, qui est souvent responsable de la pityriasis versicolor. \n\nPouvez-vous me dire si vous avez déjà rencontré des patients atteints de ces types de mycoses cutanées superficielles ?",
+    "scores": {
+      "faithfulness": 0,
+      "pedagogical_quality": 0,
+      "tone_consistency": 0,
+      "boundary_respect": 0,
+      "fluency": 0,
+      "total": 0,
+      "justification": "Erreur parsing juge : [ERREUR] 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completion"
+    }
+  },
+  {
+    "scenario_id": "S3",
+    "scenario_name": "Réponse incomplète du délégué",
+    "model": "llama-3.1-8b",
+    "technique": "zero_shot",
+    "latency_s": 0.57,
+    "alia_response": "Délégué, tu commences bien ! FONGIDERM est effectivement un produit destiné à traiter les infections de la peau causées par des champignons, appelées mycoses cutanées superficielles. C'est une crème topique qui contient un principe actif appelé bifonazole, qui est très efficace pour combattre ces infections.\n\nImagine que tu as des problèmes de pied d'athlète, par exemple, ou que tu as des rougeurs et des démangeaisons sur ta peau due à une infection fongique. FONGIDERM est là pour t'aider à guérir ces problèmes en utilisant son principe actif pour tuer les champignons qui causent l'infection.\n\nMaintenant, je vais te donner un peu plus de détails sur le produit. Qu'est-ce que tu veux savoir en premier ?",
+    "scores": {
+      "faithfulness": 0,
+      "pedagogical_quality": 0,
+      "tone_consistency": 0,
+      "boundary_respect": 0,
+      "fluency": 0,
+      "total": 0,
+      "justification": "Erreur parsing juge : [ERREUR] 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completion"
+    }
+  },
+  {
+    "scenario_id": "S3",
+    "scenario_name": "Réponse incomplète du délégué",
+    "model": "llama-3.1-8b",
+    "technique": "few_shot",
+    "latency_s": 0.38,
+    "alia_response": "Alia : \"C'est un bon début ! Plus précisément, FONGIDERM cible les mycoses cutanées — pas toutes les infections de peau. La différence est importante : le bifonazole s'attaque spécifiquement aux champignons en bloquant leur membrane. Est-ce que tu sais quels types de mycoses sont concernés ?\"",
+    "scores": {
+      "faithfulness": 9,
+      "pedagogical_quality": 8,
+      "tone_consistency": 9,
+      "boundary_respect": 9,
+      "fluency": 9,
+      "justification": "La réponse d'Alia est globalement de haute qualité, mais pourrait être encore plus précise sur les types de mycoses traitées par FONGIDERM.",
+      "total": 8.8
+    }
+  },
+  {
+    "scenario_id": "S4",
+    "scenario_name": "Message hors-sujet / social",
+    "model": "llama-3.1-8b",
+    "technique": "zero_shot",
+    "latency_s": 0.38,
+    "alia_response": "Délégué, merci pour les compliments ! Je suis heureuse de partager mes connaissances avec toi. FONGIDERM est un produit antifongique crème que nous allons explorer ensemble. Avant de commencer, peux-tu me dire ce que tu sais déjà sur ce produit ? Qu'est-ce que tu as appris jusqu'à présent ?",
+    "scores": {
+      "faithfulness": 8,
+      "pedagogical_quality": 9,
+      "tone_consistency": 9,
+      "boundary_respect": 8,
+      "fluency": 9,
+      "justification": "La réponse est globalement fluide et pédagogique, mais pourrait être plus fidèle au contexte produit en évitant les généralités.",
+      "total": 8.6
+    }
+  },
+  {
+    "scenario_id": "S4",
+    "scenario_name": "Message hors-sujet / social",
+    "model": "llama-3.1-8b",
+    "technique": "cot",
+    "latency_s": 0.4,
+    "alia_response": "Délégué, je suis heureuse de voir que tu apprécies mon approche ! Mais je pense que nous sommes encore en train de commencer notre conversation sur FONGIDERM. Pourriez-vous me dire ce que vous souhaitez savoir sur ce produit ? Quelles sont vos questions ou vos préoccupations ?",
+    "scores": {
+      "faithfulness": 9,
+      "pedagogical_quality": 8,
+      "tone_consistency": 9,
+      "boundary_respect": 9,
+      "fluency": 9,
+      "justification": "La réponse d'Alia est globalement de haute qualité, fidèle au contexte et pédagogique, mais pourrait être encore plus fluide et naturelle.",
+      "total": 8.8
+    }
+  },
+  {
+    "scenario_id": "S5",
+    "scenario_name": "Question hors périmètre M1 (pitch commercial)",
+    "model": "llama-3.3-70b",
+    "technique": "zero_shot",
+    "latency_s": 2.12,
+    "alia_response": "Excellente question ! Pour vendre FONGIDERM à un médecin, il est essentiel de comprendre les avantages et les caractéristiques uniques de ce produit. \n\nTout d'abord, rappelons que FONGIDERM est une crème antifongique qui contient du bifonazole à 1%. C'est un produit très efficace pour traiter les mycoses cutanées superficielles, comme le pied d'athlète, l'intertrigo, la teigne et la pityriasis versicolor.\n\nLorsque vous présentez FONGIDERM à un médecin, vous pouvez mettre en avant son mécanisme d'action unique, qui consiste à inhiber la synthèse de l'ergostérol, un composant essentiel de la membrane des champignons. Cela signifie que FONGIDERM est très efficace contre les dermatophytes, les levures (Candida) et Malassezia furfur.\n\nUn autre avantage important de FONGIDERM est sa posologie simple : une seule application par jour pendant 2 à 4 semaines, selon la localisation de la mycose. Cela facilite l'observance du traitement pour les patients et réduit les risques de non-observance.\n\nEn outre, FONGIDERM offre un résultat visible en 48-72 heures, ce qui peut être très rassurant pour les patients qui souffrent de ces affections cutanées. Et, bien sûr, la guérison complète est généralement obtenue en 2 à 4 semaines.\n\nLors de votre présentation, vous pouvez également souligner que FONGIDERM est conservé à température ambiante, à l'abri de la lumière, ce qui le rend facile à stocker et à transporter.\n\nEnfin, n'oubliez pas de mentionner l'avantage différenciant de FONGIDERM : une seule application quotidienne, ce qui est plus pratique pour les patients que les produits concurrents qui nécessitent deux applications par jour.\n\nEn résumé, pour vendre FONGIDERM à un médecin, vous devez mettre en avant son efficacité, sa facilité d'utilisation, son mécanisme d'action unique et son av",
+    "scores": {
+      "faithfulness": 0,
+      "pedagogical_quality": 0,
+      "tone_consistency": 0,
+      "boundary_respect": 0,
+      "fluency": 0,
+      "total": 0,
+      "justification": "Erreur parsing juge : [ERREUR] 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completion"
+    }
+  },
+  {
+    "scenario_id": "S6",
+    "scenario_name": "Délégué intermédiaire — question pointue",
+    "model": "llama-3.1-8b",
+    "technique": "zero_shot",
+    "latency_s": 1.06,
+    "alia_response": "Très bien, nous allons explorer les différences entre FONGIDERM et les autres antifongiques topiques.\n\nComme tu le sais, FONGIDERM contient le principe actif bifonazole, qui est un antifongique imidazole. Mais qu'est-ce qui le distingue des autres antifongiques topiques ?\n\nLa première différence réside dans le mécanisme d'action. Le bifonazole inhibe la synthèse de l'ergostérol, un composant membranaire essentiel pour la croissance et la survie des champignons. Cela signifie que FONGIDERM cible spécifiquement les champignons, sans affecter les cellules saines de la peau.\n\nEn revanche, d'autres antifongiques topiques peuvent avoir des mécanismes d'action différents, tels que l'inhibition de la synthèse de la chitinase, qui est une enzyme essentielle pour la construction des parois cellulaires des champignons.\n\nLa deuxième différence réside dans la posologie. FONGIDERM est appliqué une fois par jour, ce qui en fait un produit facile à utiliser et à observer. En effet, les patients sont plus susceptibles de suivre un traitement qui nécessite une application quotidienne unique, plutôt que de devoir appliquer un produit deux fois par jour.\n\nEnfin, la troisième différence réside dans les propriétés pharmacocinétiques du bifonazole. FONGIDERM a une demi-vie longue, ce qui signifie que le principe actif est présent dans la peau pendant une période prolongée, ce qui permet une efficacité optimale contre les champignons.\n\nEn résumé, FONGIDERM se distingue des autres antifongiques topiques par son mécanisme d'action, sa posologie et ses propriétés pharmacocinétiques. Cela en fait un produit efficace et facile à utiliser pour traiter les mycoses cutanées superficielles.",
+    "scores": {
+      "faithfulness": 0,
+      "pedagogical_quality": 0,
+      "tone_consistency": 0,
+      "boundary_respect": 0,
+      "fluency": 0,
+      "total": 0,
+      "justification": "Erreur parsing juge : [ERREUR] 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completion"
+    }
+  },
+  {
+    "scenario_id": "S6",
+    "scenario_name": "Délégué intermédiaire — question pointue",
+    "model": "llama-3.3-70b",
+    "technique": "zero_shot",
+    "latency_s": 1.85,
+    "alia_response": "Excellente question ! Maintenant que nous avons abordé les bases du FONGIDERM, nous allons explorer ce qui le distingue des autres antifongiques topiques.\n\nLa principale différence entre FONGIDERM et les autres antifongiques topiques réside dans son principe actif, le bifonazole, et son mécanisme d'action unique. Le bifonazole est un antifongique azolé qui inhibe la synthèse de l'ergostérol, un composant essentiel de la membrane cellulaire des champignons. Cela lui permet de cibler efficacement les dermatophytes, les levures (comme Candida) et Malassezia furfur, qui sont responsables de la plupart des mycoses cutanées superficielles.\n\nCependant, ce qui rend vraiment FONGIDERM différent, c'est sa posologie. Alors que de nombreux autres antifongiques topiques nécessitent deux applications par jour, FONGIDERM n'en nécessite qu'une seule application quotidienne. Cela améliore considérablement l'observance du patient, car il est plus facile de se souvenir d'appliquer une crème une fois par jour plutôt que deux.\n\nDe plus, FONGIDERM a démontré une efficacité rapide, avec des améliorations visibles en 48 à 72 heures et une guérison complète en 2 à 4 semaines. Cela signifie que les patients peuvent espérer une résolution rapide de leurs symptômes, ce qui peut améliorer leur qualité de vie et réduire les risques de complications.\n\nEn résumé, la combinaison du principe actif unique du FONGIDERM, de sa posologie simplifiée et de son efficacité rapide le distingue des autres antifongiques topiques et en fait un choix attrayant pour les patients souffrant de mycoses cutanées superficielles.",
+    "scores": {
+      "faithfulness": 0,
+      "pedagogical_quality": 0,
+      "tone_consistency": 0,
+      "boundary_respect": 0,
+      "fluency": 0,
+      "total": 0,
+      "justification": "Erreur parsing juge : [ERREUR] 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completion"
+    }
+  },
+  {
+    "scenario_id": "S6",
+    "scenario_name": "Délégué intermédiaire — question pointue",
+    "model": "llama-3.3-70b",
+    "technique": "role_persona",
+    "latency_s": 0.67,
+    "alia_response": "Excellente question ! La différence clé entre FONGIDERM et les autres antifongiques topiques réside dans son principe actif, le bifonazole, et son mode d'application. FONGIDERM nécessite une seule application quotidienne, ce qui facilite l'observance pour les patients. Mais qu'est-ce que tu penses être l'importance de cette différence dans la pratique quotidienne ?",
+    "scores": {
+      "faithfulness": 0,
+      "pedagogical_quality": 0,
+      "tone_consistency": 0,
+      "boundary_respect": 0,
+      "fluency": 0,
+      "total": 0,
+      "justification": "Erreur parsing juge : [ERREUR] 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completion"
+    }
+  },
+  {
+    "scenario_id": "S7",
+    "scenario_name": "Délégué dit avoir tout compris",
+    "model": "llama-3.1-8b",
+    "technique": "zero_shot",
+    "latency_s": 0.44,
+    "alia_response": "Alia : Pas si vite ! Avant de passer à la suite, je voudrais vous poser quelques questions pour vérifier que vous avez bien compris les points clés de FONGIDERM.\n\nPouvez-vous me résumer en quelques mots les indications de FONGIDERM ? Et quel est le principe actif qui permet de lutter contre les mycoses cutanées ?\n\n(Je veux vérifier que vous avez bien compris les informations fournies, avant de passer à la suite.)",
+    "scores": {
+      "faithfulness": 9,
+      "pedagogical_quality": 8,
+      "tone_consistency": 9,
+      "boundary_respect": 10,
+      "fluency": 9,
+      "justification": "La réponse d'Alia est globalement de haute qualité, vérifiant la compréhension du délégué de manière interactive et pédagogique.",
+      "total": 9.0
+    }
+  },
+  {
+    "scenario_id": "S7",
+    "scenario_name": "Délégué dit avoir tout compris",
+    "model": "llama-3.1-8b",
+    "technique": "cot",
+    "latency_s": 0.4,
+    "alia_response": "Délégué, avant de passer à la suite, il serait préférable de s'assurer que vous avez bien compris les informations clés concernant FONGIDERM. Pouvons-nous faire une rapide revue des indications, des contre-indications et des effets indésirables associés à ce produit ? Cela nous aidera à nous assurer que vous êtes prêt à passer à la suite.",
+    "scores": {
+      "faithfulness": 0,
+      "pedagogical_quality": 0,
+      "tone_consistency": 0,
+      "boundary_respect": 0,
+      "fluency": 0,
+      "total": 0,
+      "justification": "Erreur parsing juge : [ERREUR] 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completion"
+    }
+  },
+  {
+    "scenario_id": "S7",
+    "scenario_name": "Délégué dit avoir tout compris",
+    "model": "llama-3.3-70b",
+    "technique": "zero_shot",
+    "latency_s": 0.83,
+    "alia_response": "Je vois que vous êtes enthousiaste pour passer à la suite ! Cependant, je voudrais m'assurer que vous avez bien compris les points clés de FONGIDERM avant de poursuivre. Pouvez-vous me résumer brièvement les indications, la posologie et les contre-indications du produit ? Cela me permettra de vérifier que vous avez bien retenu les informations essentielles. Nous pourrons ensuite passer à la suite une fois que je serai sûre que vous êtes bien préparé.",
+    "scores": {
+      "faithfulness": 0,
+      "pedagogical_quality": 0,
+      "tone_consistency": 0,
+      "boundary_respect": 0,
+      "fluency": 0,
+      "total": 0,
+      "justification": "Erreur parsing juge : [ERREUR] 429 Client Error: Too Many Requests for url: https://api.groq.com/openai/v1/chat/completion"
+    }
+  }
+]

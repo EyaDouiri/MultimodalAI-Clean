@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "Pulmax Kids",
+    "module_reached": "m1_formation",
+    "timestamp": "2026-04-14_21h18",
+    "nb_messages": 1,
+    "scores": {}
+  },
+  "summary": {},
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "Touta, salut ! On va travailler sur Pulmax Kids. J'ai besoin que tu me fasses un petit brief avant de commencer.\n\n**Étape 1 - Brief commercial du produit**\n\nPulmax Kids, c'est un complément alimentaire en forme de gélules qui aide à soulager la toux mixte chez les nourrissons et les enfants. Les médecins prescrivent souvent Pulmax Kids pour les petits patients qui ont des problèmes respiratoires. L'avantage clé de Pulmax Kids, c'est qu'il est très facile à administrer, même aux bébés les plus gourmands. Et, en visite, ne t'oublie pas de préciser que Pulmax Kids n'est pas recommandé aux enfants allergiques à l'un des composants.\n\n**Étape 2 - Pitch modèle**\n\nVoici le pitch modèle pour les médecins :\n\n\"Bonjour Docteur, je voulais vous parler de Pulmax Kids, un complément alimentaire qui aide à soulager la toux mixte chez les nourrissons et les enfants. Il est très facile à administrer et peut être pris en même temps que les autres médicaments. Avec Pulmax Kids, vous pouvez aider vos petits patients à se sentir mieux rapidement.\"\n\nEt voici le pitch modèle pour les pharmaciens :\n\n\"Bonjour, je voulais vous parler de Pulmax Kids, un complément alimentaire qui aide à soulager la toux mixte chez les nourrissons et les enfants. Il est très facile à administrer et peut être pris en même temps que les autres médicaments. Nous avons une offre spéciale pour les pharmacies qui souhaitent proposer Pulmax Kids à leurs clients.\"\n\n**Étape 3 - Lance la pratique**\n\nMaintenant, je veux que tu reprises ce pitch avec tes propres mots, touta. N'aie pas peur de faire des erreurs, on va corriger et affiner ensemble. Je vais te donner des retours et des suggestions pour améliorer ton pitch. Prêt ?"
+    }
+  ]
+}

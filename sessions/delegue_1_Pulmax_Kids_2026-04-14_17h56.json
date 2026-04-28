@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "Pulmax Kids",
+    "module_reached": "m3_medecin",
+    "timestamp": "2026-04-14_17h56",
+    "nb_messages": 2,
+    "scores": {}
+  },
+  "summary": {},
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "Bienvenue touta ! On va travailler sur Pulmax Kids, un complément alimentaire pour soulager la toux mixte chez les nourrissons et les enfants. Voici le brief commercial :\n\nPulmax Kids est un complément alimentaire en forme de gélule qui aide à dégager les voies respiratoires et à soulager la toux mixte chez les nourrissons et les enfants.\n\nLe patient cible est le médecin pédiatre, qui prescrit Pulmax Kids pour les enfants de 1 à 12 ans souffrant de toux mixte.\n\nL'avantage clé de Pulmax Kids est qu'il est facile à utiliser : les parents peuvent simplement donner une gélule à leur enfant 2 à 3 fois par jour, ce qui rend le traitement pratique et simple.\n\nLa précaution principale à ne pas oublier en visite est de rappeler aux parents de ne pas dépasser la dose journalière recommandée, car Pulmax Kids est un complément alimentaire et non un remède.\n\nVoici le pitch modèle pour le médecin :\n\n\"Bonjour, docteur. Je voulais vous présenter Pulmax Kids, un complément alimentaire qui aide à dégager les voies respiratoires et à soulager la toux mixte chez les enfants. Il est facile à utiliser et les parents peuvent simplement donner une gélule à leur enfant 2 à 3 fois par jour. C'est une option pratique et simple pour aider les enfants à se sentir mieux rapidement.\"\n\nEt voici le pitch modèle pour le pharmacien :\n\n\"Bonjour, pharmacien. Je voulais vous présenter Pulmax Kids, un complément alimentaire qui aide à dégager les voies respiratoires et à soulager la toux mixte chez les enfants. Il est facile à utiliser et les parents peuvent simplement donner une gélule à leur enfant 2 à 3 fois par jour. Nous avons une offre spéciale pour les pharmacies qui souhaitent proposer Pulmax Kids à leurs clients.\"\n\nMaintenant, c'est à toi, touta ! Reprends ce pitch avec tes propres mots. Je vais corriger et affiner avec toi au fur et à mesure. N'hésite pas à demander si tu as besoin de clarification ou de conseils."
+    },
+    {
+      "role": "alia",
+      "content": "Bonjour, je suis Dr. Karim, je vous écoute. Qu'est-ce que vous me proposez aujourd'hui ?"
+    }
+  ]
+}

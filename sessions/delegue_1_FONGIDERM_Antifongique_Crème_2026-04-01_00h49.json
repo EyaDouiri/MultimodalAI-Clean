@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "FONGIDERM Antifongique Crème",
+    "module_reached": "m1_formation",
+    "timestamp": "2026-04-01_00h49",
+    "nb_messages": 21,
+    "scores": {}
+  },
+  "summary": {
+    "points_forts": [],
+    "points_faibles": [],
+    "concepts_non_maitrisés": [],
+    "ou_il_s_est_arrete": "m1_formation",
+    "recommandations_prochaine_session": [],
+    "evaluation_qualitative": "analyse indisponible",
+    "raw_response": "{\n  \"points_forts\": [\"Identification du patient cible\", \"Mention des mycoses superficielles\"],\n  \"points_faibles\": [\"Utilisation de mots inconnus\", \"Erreur de conjugaison verbale\", \"Déviation de l'objectif\"],\n  \"concepts_non_maitrisés\": [\"Pitch commercial\", \"Utilisation de phrases correctes\"],\n  \"ou_il_s_est_arrete\": \"La session s'est terminée après plusieurs tentatives de rédaction d'un pitch commercial pour FONGIDERM Antifongique Crème.\",\n  \"recommandations_prochaine_session\": [\"Pratiquer le p"
+  },
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "Très bien, touta ! On va commencer le Module 1 sur FONGIDERM Antifongique Crème. Étape 1, brief commercial du produit.\n\n**Ce que c'est :** FONGIDERM Antifongique Crème est une crème en tube de 30g pour les mycoses superficielles.\n\n**Le patient cible :** C'est pour les médecins qui prescrivent des traitements pour les mycoses superficielles, et pour les patients qui souffrent de cette maladie.\n\n**L'avantage clé :** L'avantage clé de FONGIDERM est qu'il donne un résultat visible en 48h, ce qui réduit les consultations de suivi pour les médecins.\n\n**La précaution principale :** Ne pas oublier de signaler les contre-indications, notamment l'allergie connue à l'un des composants.\n\nMaintenant, étape 2, pitch modèle.\n\n**Pitch médecin modèle :** \"Docteur, FONGIDERM est votre option rapide pour les mycoses superficielles. Résultat visible en 48h, ce qui réduit les consultations de suivi pour vous. Simple pour le patient, efficace pour vous.\"\n\n**Pitch pharmacien modèle :** \"FONGIDERM Antifongique Crème est une solution pratique pour les mycoses superficielles. Résultat visible en 48h, ce qui réduit les retours chez vous pour les patients. Nous proposons un prix compétitif et une livraison rapide.\"\n\nMaintenant, étape 3, lance la pratique ! Touta, je veux que tu reprends ce pitch avec tes propres mots. N'hésite pas à adapter, à simplifier ou à ajouter des détails. Je vais corriger et affiner avec toi au fur et à mesure. Prêt ?"
+    },
+    {
+      "role": "delegue",
+      "content": "Oui, je s'éprête. Bonjour à l'IA. En fait, la vantage clé de phoingit d'hérem."
+    },
+    {
+      "role": "alia",
+      "content": "Touta, bienvenue ! Je vois que tu es enthousiaste. Mais avant de continuer, je dois dire que \"phoingit d'hérem\" n'est pas le nom du produit, c'est FONGIDERM Antifongique Crème. Et je ne comprends pas bien ce que tu veux dire par \"la vantage clé\".\n\nForce : Tu es prêt à commencer !\n\nLacune : Tu as utilisé des mots inconnus et tu n'as pas mentionné les mycoses superficielles.\n\nEssaie de recommencer avec le pitch modèle en utilisant tes propres mots. Je vais te guider."
+    },
+    {
+      "role": "delegue",
+      "content": "Le patient cible pour les médecins qui perscriventait traitement pour les médecins."
+    },
+    {
+      "role": "alia",
+      "content": "Touta, je vois que tu es prêt à continuer ! Mais avant de poursuivre, je dois dire que \"perscrivetait\" n'est pas le mot juste. Je pense que tu veux dire \"prescrivent\".\n\nForce : Tu as bien identifié le patient cible, c'est pour les médecins qui prescrivent des traitements pour les mycoses superficielles.\n\nLacune : Tu as utilisé un mot incorrect, \"perscrivetait\" au lieu de \"prescrivent\".\n\nEssaie de recommencer avec le pitch modèle en utilisant tes propres mots. Et cette fois, n'oublie pas de mentionner les mycoses superficielles.\n\nPour te aider, je vais te donner un exemple de phrase : \"FONGIDERM est une solution pour les médecins qui prescrivent des traitements pour les mycoses superficielles.\""
+    },
+    {
+      "role": "delegue",
+      "content": "Sans GDAR met une solution pour les médecins qui perscrivent de traitement pour les muquaux superficiels."
+    },
+    {
+      "role": "alia",
+      "content": "Touta, bien joué ! Je vois que tu as bien identifié le patient cible et que tu as mentionné les mycoses superficielles. C'est une bonne base !\n\nForce : Tu as bien mentionné les mycoses superficielles et que tu as identifié le patient cible.\n\nLacune : Tu as utilisé le mot incorrect \"perscrivent\" à la place de \"prescrivent\" et tu as mentionné \"muquaux\" au lieu de \"mycoses\".\n\nEssaie de recommencer avec le pitch modèle en utilisant tes propres mots. Et cette fois, n'oublie pas de mentionner les mycoses superficielles et utilise le mot correct \"prescrivent\".\n\nPar exemple : \"FONGIDERM est une solution pour les médecins qui prescrivent des traitements pour les mycoses superficielles.\"\n\nRelance, touta !"
+    },
+    {
+      "role": "delegue",
+      "content": "Salut, salut, salut, je vois bien à l'IA en fait à quel âge est-ce que tu as?"
+    },
+    {
+      "role": "alia",
+      "content": "Touta, je vois que tu es un peu dévié de l'objectif ! En tant que coach commercial, je vais te dire que ton dernier message n'a rien à voir avec le pitch de FONGIDERM.\n\nForce : Tu as bien utilisé des formules de salutation, c'est une bonne façon de se connecter avec ton interlocuteur.\n\nLacune : Tu as complètement oublié le pitch de FONGIDERM et tu as posé une question personnelle à l'IA.\n\nEssaie de revenir sur le sujet et de recommencer le pitch avec tes propres mots. Je vais te guider. Relance, touta !"
+    },
+    {
+      "role": "delegue",
+      "content": "Alors bonjour à tous, aujourd'hui nous vous y présentons Fonji qui est..."
+    },
+    {
+      "role": "alia",
+      "content": "Touta, bien joué ! Je vois que tu as repris le fil de la conversation et que tu as mentionné le nom du produit, FONGIDERM. C'est une bonne base !\n\nForce : Tu as bien mentionné le nom du produit, FONGIDERM.\n\nLacune : Tu n'as pas mentionné les mycoses superficielles et tu as utilisé une formule de salutation qui n'est pas nécessaire dans le pitch.\n\nEssaie de continuer en mentionnant les mycoses superficielles et en simplifiant le ton. Par exemple : \"FONGIDERM est une solution pour les médecins qui prescrivent des traitements pour les mycoses superficielles.\"\n\nRelance, touta !"
+    },
+    {
+      "role": "delegue",
+      "content": "Pour tout ce que tu fais, Alia, tu m'intéresse tellement."
+    },
+    {
+      "role": "alia",
+      "content": "Touta, je vois que tu es enthousiaste, c'est une bonne chose ! Mais pour ce qui est du pitch, il faut rester concentré sur le produit et le message à transmettre. Ce que tu as dit là, \"Pour tout ce que tu fais, Alia, tu m'intéresse tellement\", c'est un compliment gentil, mais il ne nous aide pas à avancer sur le pitch de FONGIDERM.\n\nForce : Tu as bien montré que tu es enthousiaste et que tu es intéressé par le sujet.\n\nLacune : Tu as complètement oublié le pitch de FONGIDERM et tu as posé un compliment qui n'est pas pertinent.\n\nEssaie de revenir sur le sujet et de recommencer le pitch avec tes propres mots. Je vais te guider. Par exemple, on peut commencer par \"FONGIDERM est une solution pour les médecins qui prescrivent des traitements pour les mycoses superficielles.\""
+    },
+    {
+      "role": "delegue",
+      "content": "Bonjour Amorio, bonjour, comment vas-tu ?"
+    },
+    {
+      "role": "alia",
+      "content": "Touta, je vois que tu as encore dévié de l'objectif ! Ton message n'a rien à voir avec le pitch de FONGIDERM. Je vais te dire que ton salut et ta question sur mon état de santé ne nous aident pas à avancer.\n\nForce : Tu as bien utilisé des formules de salutation, c'est une bonne façon de se connecter avec ton interlocuteur.\n\nLacune : Tu as complètement oublié le pitch de FONGIDERM et tu as posé une question personnelle à l'IA.\n\nEssaie de revenir sur le sujet et de recommencer le pitch avec tes propres mots. Je vais te guider. Par exemple, on peut commencer par \"FONGIDERM est une solution pour les médecins qui prescrivent des traitements pour les mycoses superficielles.\""
+    },
+    {
+      "role": "delegue",
+      "content": "En attendant, comment vas-tu, Ali ?"
+    },
+    {
+      "role": "alia",
+      "content": "Touta, je vois que tu es encore dévié de l'objectif ! Ton message n'a rien à voir avec le pitch de FONGIDERM. Je vais te dire que ton salut et ta question sur mon état de santé ne nous aident pas à avancer.\n\nForce : Tu as bien utilisé des formules de salutation, c'est une bonne façon de se connecter avec ton interlocuteur.\n\nLacune : Tu as complètement oublié le pitch de FONGIDERM et tu as posé une question personnelle à l'IA.\n\nEssaie de revenir sur le sujet et de recommencer le pitch avec tes propres mots. Je vais te guider. Par exemple, on peut commencer par \"FONGIDERM est une solution pour les médecins qui prescrivent des traitements pour les mycoses superficielles.\" Relance, touta !"
+    },
+    {
+      "role": "delegue",
+      "content": "Bonjour comment allez-vous?"
+    },
+    {
+      "role": "alia",
+      "content": "Touta, je vois que tu as encore dévié de l'objectif ! Ton message n'a rien à voir avec le pitch de FONGIDERM. Je vais te dire que ton salut et ta question sur mon état de santé ne nous aident pas à avancer.\n\nForce : Tu as bien utilisé des formules de salutation, c'est une bonne façon de se connecter avec ton interlocuteur.\n\nLacune : Tu as complètement oublié le pitch de FONGIDERM et tu as posé une question personnelle à l'IA.\n\nEssaie de revenir sur le sujet et de recommencer le pitch avec tes propres mots. Par exemple, on peut commencer par \"FONGIDERM est une solution pour les médecins qui prescrivent des traitements pour les mycoses superficielles.\" Relance, touta !\n\nC'est le moment de parler de FONGIDERM. Dis-moi, qu'est-ce que tu penses que les médecins veulent savoir en premier lieu lorsqu'ils prescrivent des traitements pour les mycoses superficielles ?"
+    },
+    {
+      "role": "delegue",
+      "content": "Bonjour Alia, comment vas-tu ?"
+    },
+    {
+      "role": "alia",
+      "content": "Touta, je vois que tu es encore dévié de l'objectif ! Ton message n'a rien à voir avec le pitch de FONGIDERM. Je vais te dire que ton salut et ta question sur mon état de santé ne nous aident pas à avancer.\n\nForce : Tu as bien utilisé des formules de salutation, c'est une bonne façon de se connecter avec ton interlocuteur.\n\nLacune : Tu as complètement oublié le pitch de FONGIDERM et tu as posé une question personnelle à l'IA.\n\nEssaie de revenir sur le sujet et de recommencer le pitch avec tes propres mots. Par exemple, on peut commencer par \"FONGIDERM est une solution pour les médecins qui prescrivent des traitements pour les mycoses superficielles.\" Relance, touta !\n\nDis-moi, qu'est-ce que tu penses que les médecins veulent savoir en premier lieu lorsqu'ils prescrivent des traitements pour les mycoses superficielles ?"
+    }
+  ]
+}

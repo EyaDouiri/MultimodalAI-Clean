@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "Pulmax Kids",
+    "module_reached": "m1_formation",
+    "timestamp": "2026-04-22_00h11",
+    "nb_messages": 1,
+    "scores": {}
+  },
+  "summary": {},
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "Bien, touta, allons-y ! Pour ce module, on va travailler sur Pulmax Kids. Étape 1, brief commercial :\n\nPulmax Kids est un complément alimentaire en forme de gélule pour soulager la toux mixte chez les nourrissons et les enfants. Le médecin prescrit, mais c'est souvent les parents qui viennent nous voir pour acheter le produit. L'avantage clé de Pulmax Kids est qu'il aide à dégager les voies respiratoires, ce qui est super important pour les petits qui ont du mal à respirer. Et la précaution principale à ne pas oublier en visite, c'est de vérifier si le nourrisson ou l'enfant a déjà une allergie connue à l'un des composants.\n\nÉtape 2, pitch modèle :\n\n**Pitch médecin :**\n\"Bonjour, docteur. Pulmax Kids est un complément alimentaire qui aide à soulager la toux mixte chez les nourrissons et les enfants. Il dégage les voies respiratoires, ce qui est super important pour les petits qui ont du mal à respirer. Je recommande de prescrire Pulmax Kids pour les cas de toux persistante.\"\n\n**Pitch pharmacien :**\n\"Bonjour, pharmacien. Pulmax Kids est un produit qui aide à soulager la toux mixte chez les nourrissons et les enfants. Il est facile à utiliser, les parents peuvent acheter le produit directement ici et il est très efficace pour dégager les voies respiratoires. Je recommande de le recommander aux parents qui cherchent à soulager la toux de leur enfant.\"\n\nÉtape 3, lance la pratique :\n\nMaintenant, touta, c'est à toi de reprendre ce pitch avec tes propres mots. N'hésite pas à improviser, je vais corriger et affiner avec toi au fur et à mesure. Prépare-toi à présenter Pulmax Kids comme si tu étais en visite chez un médecin ou un pharmacien. Et n'oublie pas, je vais te donner des retours pour améliorer ton pitch !"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "Pulmax Kids",
+    "module_reached": "m3_pharmacien",
+    "timestamp": "2026-04-14_19h02",
+    "nb_messages": 2,
+    "scores": {}
+  },
+  "summary": {},
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "Très bien, touta ! Alors, on va présenter Pulmax Kids comme si c'était notre première visite.\n\n**Étape 1 - Brief commercial**\n\nPulmax Kids, c'est un complément alimentaire en forme de gélule pour soulager la toux mixte chez les nourrissons et les enfants. Nous ciblons principalement les médecins pédiatres et les pédiatres qui prescrivent pour les enfants de 3 mois à 12 ans. L'avantage clé de Pulmax Kids est qu'il aide à dégager les voies respiratoires rapidement, ce qui est un véritable avantage pour les parents qui veulent que leur enfant se sente mieux rapidement. La précaution principale à ne pas oublier en visite est de rappeler aux parents qu'il est important de suivre la dose recommandée et de ne pas dépasser la dose journalière.\n\n**Étape 2 - Pitch modèle**\n\nVoici le pitch modèle pour les médecins :\n\n\"Bonjour docteur, Pulmax Kids est un complément alimentaire qui aide à soulager la toux mixte chez les enfants. Il est facile à administrer et aide à dégager les voies respiratoires rapidement. C'est une excellente option pour les parents qui veulent que leur enfant se sente mieux rapidement.\"\n\nEt voici le pitch modèle pour les pharmaciens :\n\n\"Bonjour, Pulmax Kids est un complément alimentaire qui aide à soulager la toux mixte chez les enfants. Il est facile à vendre et à recommander aux parents qui cherchent à aider leur enfant à se sentir mieux rapidement. Nous avons une offre spéciale pour les pharmacies qui veulent proposer ce produit à leurs clients.\"\n\n**Étape 3 - Lance la pratique**\n\nMaintenant, touta, je vais te demander de reprendre ce pitch avec tes propres mots. N'hésite pas à adapter les phrases pour les rendre plus naturelles. Je vais corriger et affiner avec toi au fur et à mesure.\n\nAlors, vas-y, touta ! Qu'est-ce que tu dirais si tu étais en visite pour présenter Pulmax Kids ?"
+    },
+    {
+      "role": "alia",
+      "content": "Bienvenue, touta. Qu'est-ce qui vous amène aujourd'hui ?"
+    }
+  ]
+}

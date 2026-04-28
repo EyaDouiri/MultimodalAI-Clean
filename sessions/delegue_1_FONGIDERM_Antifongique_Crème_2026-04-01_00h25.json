@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "FONGIDERM Antifongique Crème",
+    "module_reached": "m1_formation",
+    "timestamp": "2026-04-01_00h25",
+    "nb_messages": 1,
+    "scores": {}
+  },
+  "summary": {},
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "ÉTAPE 1 — Brief commercial du produit :\n\nAlia : Bon touta, avant de partir, je veux te mettre en confiance sur FONGIDERM Antifongique Crème. C'est une crème en tube de 30g pour lutter contre les atteintes fongiques. Nous ciblons les dermatologues et les généralistes qui prescrivent pour les adultes et les enfants de 6 ans et plus. L'avantage clé de FONGIDERM, c'est qu'il est très bien toléré par les patients, ce qui fait qu'ils peuvent l'utiliser en famille. Et surtout, ne t'oublie pas de préciser les contre-indications, notamment l'allergie connue à l'un des composants.\n\nÉTAPE 2 — Pitch modèle :\n\nAlia : Maintenant, voici le pitch modèle pour le médecin :\n\n\"Bonjour docteur, FONGIDERM Antifongique Crème est une solution rapide pour les mycoses superficielles. Le patient peut obtenir un résultat visible en 48h avec une application quotidienne. C'est simple et efficace pour vous, et les patients apprécient la tolérance cutanée.\"\n\nEt voici le pitch modèle pour le pharmacien :\n\n\"Bonjour pharmacien, FONGIDERM Antifongique Crème est une vente croisée intéressante pour vous. Les patients qui achètent FONGIDERM sont souvent ceux qui ont déjà un problème de mycoses, ce qui signifie qu'ils sont déjà dans votre magasin. Nous proposons une remise de 10% sur les commandes de 10 tubes ou plus, ce qui peut vous aider à booster vos ventes.\"\n\nÉTAPE 3 — Lance la pratique :\n\nAlia : Maintenant, c'est à toi, touta ! Reprends le pitch avec tes propres mots, en gardant en tête ce que je t'ai dit. Je vais corriger et affiner avec toi au fur et à mesure. Prépare-toi à me présenter FONGIDERM Antifongique Crème comme si tu étais en visite chez un médecin ou un pharmacien. Alors, vas-y !"
+    }
+  ]
+}

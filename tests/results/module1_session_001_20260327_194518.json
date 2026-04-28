@@ -1,0 +1,16 @@
+{
+  "delegate_id": "001",
+  "delegate_name": "Ahmed",
+  "module": 1,
+  "start_time": "2026-03-27T19:45:18.067885",
+  "interactions": [
+    {
+      "type": "test",
+      "content": "Test interaction"
+    }
+  ],
+  "products_covered": [],
+  "progress_tracking": {},
+  "end_time": "2026-03-27T19:45:18.068885",
+  "engine_history": []
+}

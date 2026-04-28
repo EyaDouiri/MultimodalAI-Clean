@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "Pulmax Kids",
+    "module_reached": "m1_formation",
+    "timestamp": "2026-04-14_18h07",
+    "nb_messages": 1,
+    "scores": {}
+  },
+  "summary": {},
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "Très bien, touta ! Alors, avant de partir en visite, je vais te brief sur Pulmax Kids. Voici ce que je veux que tu saches :\n\nPulmax Kids est un complément alimentaire en forme de gélule, qui aide à soulager la toux mixte chez les nourrissons et les enfants. C'est un produit qui est souvent prescrit par les pédiatres et les généralistes pour les petits patients qui ont des problèmes respiratoires. L'avantage clé de Pulmax Kids est qu'il est très facile à prendre, même pour les bébés qui ont du mal à avaler des médicaments. Et la précaution principale à ne pas oublier en visite, c'est de rappeler aux parents que Pulmax Kids ne remplace pas une alimentation variée et équilibrée, donc il faut toujours leur faire comprendre l'importance de donner des aliments sains à leur enfant.\n\nMaintenant, voici le pitch modèle pour les médecins :\n\n\"Bonjour, Docteur. Pulmax Kids est un complément alimentaire qui aide à soulager la toux mixte chez les nourrissons et les enfants. Il est très facile à prendre et peut être pris en association avec d'autres traitements. J'ai des cas récents qui ont montré des résultats rapides et efficaces avec Pulmax Kids.\"\n\nEt voici le pitch modèle pour les pharmaciens :\n\n\"Bonjour, pharmacien. Pulmax Kids est un complément alimentaire qui aide à soulager la toux mixte chez les nourrissons et les enfants. Il est très facile à prendre et peut être pris en association avec d'autres traitements. Nous avons des promotions actuelles pour Pulmax Kids, et je peux vous proposer des tarifs compétitifs pour les patients qui en ont besoin.\"\n\nMaintenant, je veux que tu essayes de reprendre ce pitch avec tes propres mots. N'hésite pas à improviser et à adapter les phrases à ta façon de parler. Je vais corriger et affiner avec toi au fur et à mesure pour que tu sois prêt à le lancer en visite. Prêt ?"
+    }
+  ]
+}

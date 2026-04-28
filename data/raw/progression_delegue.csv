@@ -1,0 +1,9 @@
+id_delegue,medicament,niveau_actuel,progres_%,date_derniere_update,domaines_faibles
+001,FerBiotic,debutant,0%,2025-01-01,"indications,interactions"
+001,Magnésol,debutant,0%,2025-01-01,"posologie,contre_indications"
+001,Vitamin_D3,debutant,0%,2025-01-01,"interactions"
+002,Calcium_Plus,debutant,0%,2025-01-01,"indications,posologie"
+002,Omega3_Forte,debutant,0%,2025-01-01,"interactions,effets_secondaires"
+003,FerBiotic,debutant,0%,2025-01-01,"indications,interactions"
+003,Calcium_Plus,debutant,0%,2025-01-01,"posologie"
+003,Probiotics_Plus,debutant,0%,2025-01-01,"indications,posologie,interactions"

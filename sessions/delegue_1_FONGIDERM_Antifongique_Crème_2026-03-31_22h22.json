@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "Ahmed",
+    "product_name": "FONGIDERM Antifongique Crème",
+    "module_reached": "m1_formation",
+    "timestamp": "2026-03-31_22h22",
+    "nb_messages": 1,
+    "scores": {}
+  },
+  "summary": {},
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "Ahmed, bienvenue dans ce module sur FONGIDERM Antifongique Crème ! Avant de partir en visite, je veux te donner un aperçu rapide du produit.\n\n**Étape 1 - Brief commercial**\n\nFONGIDERM Antifongique Crème est une crème en tube de 30g, utilisée pour lutter contre les atteintes fongiques cutanées. C'est un produit que les dermatologues prescrivent souvent pour les patients adultes et pédiatriques qui souffrent de mycoses superficielles. L'avantage clé de FONGIDERM est qu'il agit rapidement, avec un résultat visible en 48h, ce qui réduit les consultations de suivi pour les médecins. N'oublie pas de mentionner les contre-indications, en particulier l'allergie connue à l'un des composants.\n\n**Étape 2 - Pitch modèle**\n\nVoici un exemple de pitch pour les médecins :\n\n\"Bonjour Docteur, FONGIDERM est une crème antifongique rapide et efficace pour les mycoses superficielles. Avec un résultat visible en 48h, c'est une option idéale pour réduire les consultations de suivi. Simple à utiliser, elle est appliquée une fois par jour, ce qui facilite la vie pour les patients.\"\n\nEt voici un exemple de pitch pour les pharmaciens :\n\n\"Bonjour, FONGIDERM est une crème antifongique populaire chez les patients qui souffrent de mycoses superficielles. Avec un résultat rapide et une application simple, c'est un produit qui se vend bien. N'oublie pas de mentionner les avantages de la tolérance cutanée et de la sécurité pédiatrique.\"\n\n**Étape 3 - Lance la pratique**\n\nAhmed, maintenant c'est à toi de reprendre ce pitch avec tes propres mots. Je vais te corriger et affiner au fur et à mesure. N'hésite pas à être créatif et à adapter le pitch à ta façon de parler. Commence par le problème du patient, puis passe à ce que fait le produit, et enfin à l'avantage clé qui le distingue. Prépare-toi à me montrer ton pitch !"
+    }
+  ]
+}

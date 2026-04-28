@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "FONGIDERM Antifongique Crème",
+    "module_reached": "m1_formation",
+    "timestamp": "2026-04-01_00h30",
+    "nb_messages": 1,
+    "scores": {}
+  },
+  "summary": {},
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "Bienvenue touta, je suis ravi de te présenter notre produit FONGIDERM Antifongique Crème. Écoute, voici le brief :\n\n**Ce que c'est** : FONGIDERM est une crème antifongique en tube de 30g, indiquée pour les mycoses cutanées superficielles.\n\n**Le patient cible** : c'est un produit prescrit par les médecins et les dermatologues pour les patients qui présentent des mycoses cutanées.\n\n**L'avantage clé** : FONGIDERM est une option rapide et efficace pour les mycoses superficielles, avec un résultat visible en 48h.\n\n**La précaution principale** : n'oublie pas de signaler les allergies connues à l'un des composants et d'éviter le contact avec les yeux et les muqueuses.\n\nVoici maintenant le pitch modèle pour les médecins :\n\n\"Bonjour Docteur, FONGIDERM est une crème antifongique rapide et efficace pour les mycoses superficielles. Un résultat visible en 48h réduit les consultations de suivi pour vous. Simple à utiliser, elle est indiquée pour les patients présentant des mycoses cutanées superficielles.\"\n\nEt voici le pitch modèle pour les pharmaciens :\n\n\"Bonjour, FONGIDERM est une crème antifongique en tube de 30g, indiquée pour les mycoses cutanées superficielles. Un résultat visible en 48h réduit les consultations de suivi pour les médecins. Nous proposons également un prix compétitif et une livraison rapide pour vous aider à répondre aux besoins de vos patients.\"\n\nMaintenant, je veux que tu reprennes ces pitches avec tes propres mots. N'hésite pas à adapter-les à ta façon de parler et à tes expériences. Je vais corriger et affiner avec toi au fur et à mesure.\n\nPrépare-toi à présenter FONGIDERM Antifongique Crème à un médecin et à un pharmacien. Je suis là pour t'aider !"
+    }
+  ]
+}

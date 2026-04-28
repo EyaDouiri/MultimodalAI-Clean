@@ -1,0 +1,74 @@
+{
+  "session_info": {
+    "timestamp": "2026-03-27T11:33:27.719542",
+    "final_level": "debutant",
+    "final_score_avg": 15.0,
+    "message_count": 2,
+    "scores_history": [
+      15,
+      15
+    ]
+  },
+  "standards": {
+    "relevance": {
+      "weight": 0.25,
+      "description": "La réponse répond à la question"
+    },
+    "clarity": {
+      "weight": 0.2,
+      "description": "La réponse est claire et structurée"
+    },
+    "completeness": {
+      "weight": 0.2,
+      "description": "La réponse est complète"
+    },
+    "professionalism": {
+      "weight": 0.2,
+      "description": "Ton professionnel pharmaceutique"
+    },
+    "engagement": {
+      "weight": 0.15,
+      "description": "Engagement avec le sujet"
+    }
+  },
+  "levels": {
+    "debutant": {
+      "min_score": 0,
+      "max_score": 35,
+      "description": "Débutant - Connaissances limitées"
+    },
+    "intermediaire": {
+      "min_score": 36,
+      "max_score": 60,
+      "description": "Intermédiaire - Bonne compréhension"
+    },
+    "professionnel": {
+      "min_score": 61,
+      "max_score": 80,
+      "description": "Professionnel - Expertise confirmée"
+    },
+    "excellent": {
+      "min_score": 81,
+      "max_score": 100,
+      "description": "Excellent - Maître du domaine"
+    }
+  },
+  "conversation": [
+    {
+      "message": 1,
+      "user": "salut alia",
+      "user_score": 15,
+      "alia": "Bonjour! Je suis désolé, mais je n'ai pas accès aux informations sur les produits pharmaceutiques que vous avez demandé. Si vous pourriez me donner plus de détails sur les produits en question, je serais ravi de vous fournir des informations utiles. Dans l'absence de données, je peux vous donner des",
+      "level": "debutant",
+      "retrieval_distance": 0.27265286445617676
+    },
+    {
+      "message": 2,
+      "user": "ferbiotic",
+      "user_score": 15,
+      "alia": "I apologize, but I cannot provide information on a product called \"ferbiotic\" as there is no available information on it. The name does not seem to be associated with any known pharmaceutical company or product. Can you please provide more context or details about the product you are inquiring about",
+      "level": "debutant",
+      "retrieval_distance": 0.3438235819339752
+    }
+  ]
+}

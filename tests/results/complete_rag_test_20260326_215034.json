@@ -1,0 +1,299 @@
+{
+  "timestamp": "2026-03-26T21:50:33.231674",
+  "total_tests": 40,
+  "test_queries": 10,
+  "prompt_styles": [
+    "simple",
+    "pedagogical",
+    "cot",
+    "fewshot"
+  ],
+  "results_by_query": [
+    {
+      "query_idx": 1,
+      "query": "vertige",
+      "retrieved_count": 5,
+      "retrieval_distance_mean": 0.3147410452365875,
+      "generations": [
+        {
+          "style": "simple",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "pedagogical",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "cot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "fewshot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        }
+      ]
+    },
+    {
+      "query_idx": 2,
+      "query": "anémie",
+      "retrieved_count": 5,
+      "retrieval_distance_mean": 0.34949225187301636,
+      "generations": [
+        {
+          "style": "simple",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "pedagogical",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "cot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "fewshot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        }
+      ]
+    },
+    {
+      "query_idx": 3,
+      "query": "fatigue",
+      "retrieved_count": 5,
+      "retrieval_distance_mean": 0.2474728524684906,
+      "generations": [
+        {
+          "style": "simple",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "pedagogical",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "cot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "fewshot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        }
+      ]
+    },
+    {
+      "query_idx": 4,
+      "query": "articulations",
+      "retrieved_count": 5,
+      "retrieval_distance_mean": 0.2040746510028839,
+      "generations": [
+        {
+          "style": "simple",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "pedagogical",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "cot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "fewshot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        }
+      ]
+    },
+    {
+      "query_idx": 5,
+      "query": "zinc",
+      "retrieved_count": 5,
+      "retrieval_distance_mean": 0.4310838282108307,
+      "generations": [
+        {
+          "style": "simple",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "pedagogical",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "cot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "fewshot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        }
+      ]
+    },
+    {
+      "query_idx": 6,
+      "query": "cardio",
+      "retrieved_count": 5,
+      "retrieval_distance_mean": 0.1661059409379959,
+      "generations": [
+        {
+          "style": "simple",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "pedagogical",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "cot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "fewshot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        }
+      ]
+    },
+    {
+      "query_idx": 7,
+      "query": "bolémie",
+      "retrieved_count": 5,
+      "retrieval_distance_mean": 0.17453238368034363,
+      "generations": [
+        {
+          "style": "simple",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "pedagogical",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "cot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "fewshot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        }
+      ]
+    },
+    {
+      "query_idx": 8,
+      "query": "vitamine D santé osseuse",
+      "retrieved_count": 5,
+      "retrieval_distance_mean": 0.726732075214386,
+      "generations": [
+        {
+          "style": "simple",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "pedagogical",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "cot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "fewshot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        }
+      ]
+    },
+    {
+      "query_idx": 9,
+      "query": "peaux sensible",
+      "retrieved_count": 5,
+      "retrieval_distance_mean": 0.2437509000301361,
+      "generations": [
+        {
+          "style": "simple",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "pedagogical",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "cot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "fewshot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        }
+      ]
+    },
+    {
+      "query_idx": 10,
+      "query": "concentration",
+      "retrieved_count": 5,
+      "retrieval_distance_mean": 0.17236459255218506,
+      "generations": [
+        {
+          "style": "simple",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "pedagogical",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "cot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        },
+        {
+          "style": "fewshot",
+          "success": false,
+          "error": "OllamaConnection.generate() got an unexpected keyword argument 'temperature'"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "successful_generations": 0,
+    "total_generations": 40,
+    "success_rate": "0.0%",
+    "avg_retrieval_distance": "0.303"
+  }
+}

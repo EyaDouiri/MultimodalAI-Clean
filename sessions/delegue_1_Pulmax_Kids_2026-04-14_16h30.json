@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "Pulmax Kids",
+    "module_reached": "m3_pharmacien",
+    "timestamp": "2026-04-14_16h30",
+    "nb_messages": 4,
+    "scores": {}
+  },
+  "summary": {
+    "points_forts": [],
+    "points_faibles": [],
+    "concepts_non_maitrisés": [],
+    "ou_il_s_est_arrete": "m3_pharmacien",
+    "recommandations_prochaine_session": [],
+    "evaluation_qualitative": "analyse indisponible",
+    "raw_response": "[ERREUR résumé] 401 Client Error: Unauthorized for url: https://api.groq.com/openai/v1/chat/completions"
+  },
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "Alors touta, on va lancer le Module 1 sur Pulmax Kids. On va travailler sur la présentation du produit de manière commerciale, puis on va créer des pitches pour les médecins et les pharmaciens.\n\nÉTAPE 1 — Brief commercial du produit :\n\nPulmax Kids est un complément alimentaire en forme de gélule qui aide à soulager la toux mixte chez les nourrissons et les enfants. Les médecins prescrivent souvent Pulmax Kids pour les petits patients qui ont des problèmes respiratoires. L'avantage clé de Pulmax Kids est qu'il est facile à administrer et qu'il n'a pas d'effets secondaires graves. La précaution principale à ne pas oublier en visite est de vérifier si le patient a une allergie connue à l'un des composants du produit.\n\nÉTAPE 2 — Pitch modèle :\n\n**Pitch médecin modèle :**\n\n\"Bonjour Docteur, Pulmax Kids est un complément alimentaire qui aide à soulager la toux mixte chez les nourrissons et les enfants. Il est facile à administrer et n'a pas d'effets secondaires graves. Je pense que c'est une excellente option pour les patients qui ont des problèmes respiratoires.\"\n\n**Pitch pharmacien modèle :**\n\n\"Bonjour, Pulmax Kids est un complément alimentaire qui aide à soulager la toux mixte chez les nourrissons et les enfants. Il est facile à administrer et n'a pas d'effets secondaires graves. Nous avons des promotions actuelles sur le produit et je peux vous proposer un prix compétitif.\"\n\nÉTAPE 3 — Lance la pratique :\n\nMaintenant, touta, je veux que tu reprennes ce pitch avec tes propres mots. N'hésite pas à adapter les phrases pour te sentir plus à l'aise. Je vais corriger et affiner avec toi au fur et à mesure. Prépare-toi à présenter Pulmax Kids à un médecin et à un pharmacien. Alors, vas-y, commence !"
+    },
+    {
+      "role": "alia",
+      "content": "Bonjour, que puis-je faire pour vous ?"
+    },
+    {
+      "role": "delegue",
+      "content": "cc"
+    },
+    {
+      "role": "alia",
+      "content": "Bonjour, je suis Mme Sonia, pharmacienne. Qu'est-ce que vous proposez avec ce produit Pulmax Kids ? J'ai déjà 4 antifongiques en rayon, pourquoi prendre le vôtre en plus ?"
+    }
+  ]
+}

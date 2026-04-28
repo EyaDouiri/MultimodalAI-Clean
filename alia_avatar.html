@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Alia</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap');
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:100%; height:100%; background:#0c0b14; color:#e8e4f8; font-family:'Inter',sans-serif; overflow:hidden; }
+
+#wrap {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  height: 100vh;
+}
+
+/* Avatar takes full height */
+#avatar-panel {
+  position: relative;
+  overflow: hidden;
+  background: #0a0912;
+}
+#avatar-canvas { width:100%; height:100%; display:block; }
+
+/* Speaking ring on avatar border */
+#avatar-panel::after {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: 0;
+  pointer-events: none;
+  transition: box-shadow 0.3s;
+}
+#avatar-panel.speaking::after { box-shadow: inset 0 0 0 2px rgba(180,160,255,0.6); }
+#avatar-panel.listening::after { box-shadow: inset 0 0 0 2px rgba(0,210,170,0.5); }
+
+/* Subtitle bar at bottom of avatar */
+#subtitle-bar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(12,11,20,0.92));
+  padding: 32px 20px 14px;
+  pointer-events: none;
+}
+#subtitle-text {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  font-style: italic;
+  min-height: 18px;
+  display: block;
+}
+
+/* Name + status */
+#info-strip {
+  position: absolute;
+  top: 12px; left: 14px; right: 14px;
+  display: flex; align-items: center; justify-content: space-between;
+  pointer-events: none;
+}
+#persona-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px; color: rgba(255,255,255,0.45);
+  background: rgba(12,11,20,0.6); backdrop-filter: blur(4px);
+  padding: 3px 8px; border-radius: 3px; letter-spacing: 0.06em;
+}
+#status-pill {
+  display: flex; align-items: center; gap: 5px;
+  background: rgba(12,11,20,0.6); backdrop-filter: blur(4px);
+  padding: 3px 8px; border-radius: 3px;
+  font-size: 10px; color: rgba(255,255,255,0.45);
+  font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.04em;
+}
+#status-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: #333; transition: background 0.3s;
+  flex-shrink: 0;
+}
+#status-dot.speaking { background: #fefeff; box-shadow: 0 0 4px #efeff1; animation: sp 0.8s infinite; }
+#status-dot.listening { background: #00d2aa; box-shadow: 0 0 4px #00d2aa; }
+@keyframes sp { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* User cam — Mode simulation: plein écran en PiP grand */
+#user-cam {
+  position: absolute;
+  bottom: 12px; right: 12px;
+  width: 280px; height: 210px;
+  border-radius: 12px; overflow: hidden;
+  border: 2px solid rgba(0,210,170,0.4);
+  background: #0d0b18;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.8);
+  display: none;
+  z-index: 100;
+}
+#user-cam.visible { 
+  display: block;
+  animation: slideIn 0.3s ease-out;
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+#user-video {
+  width:100%; height:100%; object-fit:cover;
+  transform: scaleX(-1); display: block;
+}
+#user-cam-label {
+  position: absolute; bottom: 8px; left: 0; right: 0;
+  text-align: center; font-size: 11px;
+  color: rgba(0,210,170,0.7);
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+}
+#mic-ring {
+  display: none;
+  position: absolute; inset: -2px;
+  border-radius: 10px;
+  border: 2px solid #00d2aa;
+  pointer-events: none;
+}
+
+/* Load error */
+#load-err {
+  display: none;
+  position: absolute; inset: 0;
+  flex-direction: column; align-items: center; justify-content: center;
+  gap: 10px; text-align: center; padding: 30px; color: #f87171;
+}
+#load-err code {
+  background: #1a1528; padding: 4px 10px; border-radius: 4px;
+  font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #93c5fd;
+}
+
+/* BOTTOM BAR */
+#bottom-bar {
+  height: 42px;
+  background: #0a0912;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex; align-items: center; gap: 8px;
+  padding: 0 12px;
+  flex-shrink: 0;
+}
+.bar-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px; font-weight: 400;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.45);
+  padding: 5px 12px; border-radius: 4px;
+  cursor: pointer; transition: all 0.12s;
+}
+.bar-btn:hover { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); }
+.bar-btn.on { background: rgba(0,210,170,0.1); border-color: rgba(0,210,170,0.3); color: #00d2aa; }
+#conn-status {
+  margin-left: auto;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px; color: rgba(255,255,255,0.2);
+  display: flex; align-items: center; gap: 4px;
+}
+#conn-dot { width:4px;height:4px;border-radius:50%;background:#333; }
+#conn-dot.ok { background:#00d2aa; }
+</style>
+</head>
+<body>
+<div id="wrap">
+
+  <div id="avatar-panel">
+    <canvas id="avatar-canvas"></canvas>
+
+    <div id="info-strip">
+      <div id="persona-label">ALIA</div>
+      <div id="status-pill">
+        <div id="status-dot"></div>
+        <span id="status-text">Chargement...</span>
+      </div>
+    </div>
+
+    <div id="subtitle-bar">
+      <span id="subtitle-text"></span>
+    </div>
+
+    <div id="user-cam">
+      <video id="user-video" autoplay muted playsinline></video>
+      <div id="user-cam-label">vous</div>
+      <div id="mic-ring"></div>
+    </div>
+
+    <div id="load-err">
+      <div style="font-size:18px">!</div>
+      <b>avatar.glb introuvable</b>
+      <div style="font-size:11px;color:#888;line-height:1.7">
+        Lancez <code>python avatar_server.py</code><br>
+        puis <code>http://localhost:9000/alia_avatar.html</code>
+      </div>
+    </div>
+  </div>
+
+  <div id="bottom-bar">
+    <button class="bar-btn" onclick="testSpeak()">Test lèvres</button>
+    <button class="bar-btn" onclick="testListen()">Test écoute</button>
+    <button class="bar-btn" id="cam-btn" onclick="toggleCam()">Caméra</button>
+    <button class="bar-btn" onclick="resetState()">Reset</button>
+    <div id="conn-status"><div id="conn-dot"></div><span id="conn-label">—</span></div>
+  </div>
+
+</div>
+
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/"}}
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader }    from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+// ═══════════════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════════════
+let renderer, scene, camera, controls;
+const clock = new THREE.Clock();
+let avatarRoot = null;
+let headMesh   = null;   // AvatarHead — 51 ARKit morph targets
+let lashMesh   = null;   // AvatarEyelashes
+let teethMesh  = null;   // AvatarTeethLower
+
+let isSpeaking  = false;
+let isListening = false;
+let lipPhase    = 0;
+let blinkTimer  = 0;
+let blinkActive = false;
+
+const $ = id => document.getElementById(id);
+
+// ═══════════════════════════════════════════════════════════════
+// THREE INIT
+// ═══════════════════════════════════════════════════════════════
+function init() {
+  const canvas = $('avatar-canvas');
+  const panel  = $('avatar-panel');
+
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x0b0912);
+  // Subtle vignette atmosphere
+  scene.add(new THREE.Mesh(
+    new THREE.SphereGeometry(50,16,16),
+    new THREE.MeshBasicMaterial({color:0x0d0b1c, side:THREE.BackSide})
+  ));
+
+  renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:false});
+  renderer.outputEncoding    = THREE.sRGBEncoding;
+  renderer.toneMapping       = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 0.95;
+  renderer.shadowMap.enabled = true;
+  resize();
+
+  // Portrait crop — FOV 22° for tight face/bust framing
+  camera = new THREE.PerspectiveCamera(22, panel.offsetWidth/panel.offsetHeight, 0.05, 100);
+  camera.position.set(0, 1.72, 1.25);
+  camera.lookAt(0, 1.64, 0);
+
+  // Studio portrait lighting
+  scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+  // Key light — warm from upper right
+  const key = new THREE.DirectionalLight(0xfff0e0, 1.5);
+  key.position.set(1.5, 3.0, 2.0); key.castShadow = true; scene.add(key);
+  // Fill — cool from left
+  const fill = new THREE.DirectionalLight(0xb0c8ff, 0.5);
+  fill.position.set(-2, 1.5, 1); scene.add(fill);
+  // Rim — purple backlight
+  const rim = new THREE.DirectionalLight(0xd0a8ff, 0.7);
+  rim.position.set(0.5, 2.5, -3); scene.add(rim);
+  // Bottom bounce
+  const bot = new THREE.DirectionalLight(0x404080, 0.15);
+  bot.position.set(0, -2, 1); scene.add(bot);
+
+  controls = new OrbitControls(camera, renderer.domElement);
+  controls.target.set(0, 1.63, 0);
+  controls.enablePan  = false;
+  controls.minDistance = 0.4; controls.maxDistance = 4;
+  controls.minPolarAngle = 0.15; controls.maxPolarAngle = 2.0;
+  controls.update();
+
+  window.addEventListener('resize', resize);
+  loadAvatar();
+  animate();
+}
+
+function resize() {
+  const p = $('avatar-panel');
+  if (!p || !renderer) return;
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.setSize(p.offsetWidth, p.offsetHeight);
+  if (camera) { camera.aspect = p.offsetWidth/p.offsetHeight; camera.updateProjectionMatrix(); }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// LOAD GLB + FIX ARMS
+// ═══════════════════════════════════════════════════════════════
+function loadAvatar() {
+  $('status-text').textContent = 'Chargement...';
+  new GLTFLoader().load('avatar.glb',
+    gltf => {
+      avatarRoot = gltf.scene;
+      scene.add(avatarRoot);
+
+      // Normalize scale
+      const box = new THREE.Box3().setFromObject(avatarRoot);
+      avatarRoot.scale.setScalar(1.6 / (box.max.y - box.min.y));
+      const b2 = new THREE.Box3().setFromObject(avatarRoot);
+      avatarRoot.position.y -= b2.min.y;
+
+      // ── Find morph meshes by node name ─────────────────────────
+      avatarRoot.traverse(obj => {
+        if (!obj.isMesh) return;
+        obj.castShadow = obj.receiveShadow = true;
+        if (obj.morphTargetInfluences) obj.morphTargetInfluences.fill(0);
+
+        if (obj.name === 'AvatarHead' && obj.morphTargetDictionary) {
+          headMesh = obj;
+        }
+        if (obj.name === 'AvatarEyelashes' && obj.morphTargetDictionary) {
+          lashMesh = obj;
+        }
+        if (obj.name === 'AvatarTeethLower' && obj.morphTargetDictionary) {
+          teethMesh = obj;
+        }
+      });
+
+      // Fallback: find by morph count if names don't match
+      if (!headMesh) {
+        avatarRoot.traverse(obj => {
+          if (!obj.isMesh || headMesh) return;
+          const n = obj.morphTargetDictionary;
+          if (n && n['jawOpen'] !== undefined && Object.keys(n).length > 40) {
+            headMesh = obj;
+          }
+        });
+      }
+
+      // ── Fix T-pose arms → natural A-pose / rest position ───────
+      // The GLB has no animations. We correct the shoulder/arm bones
+      // to bring arms down into a natural neutral stance.
+      avatarRoot.traverse(obj => {
+        if (!obj.isBone && obj.type !== 'Bone') return;
+        const name = obj.name || '';
+
+        // LeftShoulder — rotate arm down ~70° from T-pose
+        if (name === 'LeftShoulder') {
+          // Current T-pose has ~90° out. We want ~20-25° from body.
+          // Adjust euler Z (roll) to bring arm down
+          obj.rotation.z = -2.7;   // was ~0.6, pull arm toward body
+          obj.rotation.x = 1;
+        }
+        if (name === 'RightShoulder') {
+          obj.rotation.z = 2.7;
+          obj.rotation.x = 1.0;
+        }
+        // Upper arm — slight outward cant for natural look
+        if (name === 'LeftArm') {
+          obj.rotation.z = -0.15;
+          obj.rotation.x = 0.05;
+        }
+        if (name === 'RightArm') {
+          obj.rotation.z = 0.15;
+          obj.rotation.x = 0.05;
+        }
+      });
+
+      if (gltf.animations?.length) {
+        const mixer = new THREE.AnimationMixer(avatarRoot);
+        mixer.clipAction(gltf.animations[0]).play();
+      }
+
+      setConn(true);
+      setStatus('idle');
+      $('status-text').textContent = 'Prête';
+    },
+    p => { if (p.total>0) $('status-text').textContent=`${Math.round(p.loaded/p.total*100)}%`; },
+    e => { $('load-err').style.display='flex'; $('status-text').textContent='Erreur'; }
+  );
+}
+
+// ═══════════════════════════════════════════════════════════════
+// MORPH HELPERS
+// ═══════════════════════════════════════════════════════════════
+function m(mesh, name, val) {
+  if (!mesh?.morphTargetDictionary || !mesh.morphTargetInfluences) return;
+  const i = mesh.morphTargetDictionary[name];
+  if (i === undefined) return;
+  mesh.morphTargetInfluences[i] = Math.max(0, Math.min(1, val));
+}
+function ml(mesh, name, tgt, spd) {
+  if (!mesh?.morphTargetDictionary || !mesh.morphTargetInfluences) return;
+  const i = mesh.morphTargetDictionary[name];
+  if (i === undefined) return;
+  mesh.morphTargetInfluences[i] = THREE.MathUtils.lerp(mesh.morphTargetInfluences[i], tgt, spd);
+}
+
+// ═══════════════════════════════════════════════════════════════
+// ANIMATE
+// ═══════════════════════════════════════════════════════════════
+function animate() {
+  requestAnimationFrame(animate);
+  const dt = clock.getDelta();
+  const t  = clock.getElapsedTime();
+  controls.update();
+
+  // ── LIP SYNC ─────────────────────────────────────────────────
+  if (isSpeaking && headMesh) {
+    lipPhase += dt * 9.5;
+
+    // Jaw — primary opening
+    const jaw = Math.max(0,
+      Math.sin(lipPhase) * 0.42 +
+      Math.sin(lipPhase * 1.87 + 0.6) * 0.20 +
+      Math.sin(lipPhase * 3.14 + 1.1) * 0.08
+    );
+    m(headMesh, 'jawOpen', jaw);
+    m(teethMesh,'jawOpen', jaw * 0.55);
+
+    // Lip shapes
+    m(headMesh, 'mouthFunnel',        Math.max(0, Math.sin(lipPhase*0.73+1.3)*0.25));
+    m(headMesh, 'mouthPucker',        Math.max(0, Math.sin(lipPhase*1.1+2.1)*0.14));
+    m(headMesh, 'mouthLowerDownLeft', Math.max(0, Math.sin(lipPhase*1.35+0.4)*0.30));
+    m(headMesh, 'mouthLowerDownRight',Math.max(0, Math.sin(lipPhase*1.35+0.4)*0.30));
+    m(headMesh, 'mouthUpperUpLeft',   Math.max(0, Math.sin(lipPhase*1.55+1.9)*0.16));
+    m(headMesh, 'mouthUpperUpRight',  Math.max(0, Math.sin(lipPhase*1.55+1.9)*0.16));
+    m(headMesh, 'mouthRollLower',     Math.max(0, Math.sin(lipPhase*0.7+0.9)*0.11));
+    // Gentle smile during speech
+    m(headMesh, 'mouthSmileLeft',  0.07 + Math.sin(t*0.7)*0.04);
+    m(headMesh, 'mouthSmileRight', 0.07 + Math.sin(t*0.7)*0.04);
+    m(headMesh, 'cheekPuff', Math.max(0, Math.sin(lipPhase*0.5+3.0)*0.06));
+
+  } else if (headMesh) {
+    // Return to neutral
+    const R = 0.10;
+    ml(headMesh, 'jawOpen',            0, R); ml(teethMesh,'jawOpen',0, R);
+    ml(headMesh, 'mouthFunnel',        0, R); ml(headMesh,'mouthPucker',0, R);
+    ml(headMesh, 'mouthLowerDownLeft', 0, R); ml(headMesh,'mouthLowerDownRight',0, R);
+    ml(headMesh, 'mouthUpperUpLeft',   0, R); ml(headMesh,'mouthUpperUpRight',0, R);
+    ml(headMesh, 'mouthRollLower',     0, R); ml(headMesh,'cheekPuff',0, R);
+    // Listening: subtle warm smile
+    const sm = isListening ? 0.06 : 0;
+    ml(headMesh, 'mouthSmileLeft',  sm, 0.04);
+    ml(headMesh, 'mouthSmileRight', sm, 0.04);
+  }
+
+  // ── BLINK ─────────────────────────────────────────────────────
+  blinkTimer += dt;
+  if (blinkTimer > 3.0 + Math.random()*2.8) { blinkTimer = 0; doBlink(); }
+
+  // ── SUBTLE IDLE HEAD MOVEMENT ─────────────────────────────────
+  if (headMesh && !isSpeaking) {
+    // Very gentle brow lift cycle
+    ml(headMesh, 'browInnerUp', Math.max(0, Math.sin(t*0.2)*0.04), 0.02);
+  }
+
+  renderer.render(scene, camera);
+}
+
+function doBlink() {
+  if (blinkActive || !headMesh) return;
+  blinkActive = true;
+  let t = 0;
+  const iv = setInterval(() => {
+    t += 0.018;
+    const v = t < 0.07 ? t/0.07 : Math.max(0, 1-(t-0.07)/0.09);
+    m(headMesh,'eyeBlinkLeft',v);  m(headMesh,'eyeBlinkRight',v);
+    m(lashMesh,'eyeBlinkLeft',v);  m(lashMesh,'eyeBlinkRight',v);
+    if (t > 0.16) {
+      m(headMesh,'eyeBlinkLeft',0);  m(headMesh,'eyeBlinkRight',0);
+      m(lashMesh,'eyeBlinkLeft',0);  m(lashMesh,'eyeBlinkRight',0);
+      clearInterval(iv); blinkActive = false;
+    }
+  }, 18);
+}
+
+// ═══════════════════════════════════════════════════════════════
+// STATUS
+// ═══════════════════════════════════════════════════════════════
+function setStatus(state, text='') {
+  const dot = $('status-dot'), panel = $('avatar-panel');
+  dot.className = ''; panel.className = '';
+
+  if (state === 'speaking') {
+    isSpeaking=true; isListening=false;
+    dot.classList.add('speaking');
+    panel.classList.add('speaking');
+    $('status-text').textContent = 'Parle...';
+    if (text) $('subtitle-text').textContent = text;
+  } else if (state === 'listening') {
+    isSpeaking=false; isListening=true;
+    dot.classList.add('listening');
+    panel.classList.add('listening');
+    $('status-text').textContent = 'Ecoute...';
+    $('subtitle-text').textContent = '';
+  } else {
+    isSpeaking=false; isListening=false;
+    $('status-text').textContent = 'En attente';
+    $('subtitle-text').textContent = '';
+  }
+}
+
+window.setPersona = function(label) {
+  $('persona-label').textContent = label || 'ALIA';
+};
+
+function setConn(ok) {
+  $('conn-dot').className = ok ? 'ok' : '';
+  $('conn-label').textContent = ok ? 'Connecté' : 'Hors ligne';
+}
+
+// ═══════════════════════════════════════════════════════════════
+// HTTP POLLING — receives state from agent.py via avatar_server
+// ═══════════════════════════════════════════════════════════════
+let lastKey = null, fails = 0, locked = false;
+
+async function poll() {
+  if (locked) return;
+  locked = true;
+  try {
+    const r = await fetch('/api/avatar/last', {cache:'no-store'});
+    if (!r.ok) { fails++; return; }
+    const d = await r.json();
+    if (!d?.state) return;
+
+    const key = d.state+'|'+(d.text||'')+'|'+(d.persona||'');
+    if (key === lastKey) return;
+    lastKey = key; fails = 0; setConn(true);
+
+    if (d.persona) window.setPersona(d.persona);
+    if (d.state === 'speaking')       setStatus('speaking', d.text||'');
+    else if (d.state === 'listening') setStatus('listening');
+    else                              setStatus('idle');
+
+  } catch(e) { if(++fails===4) setConn(false); }
+  finally {
+    locked = false;
+    setTimeout(poll, fails > 4 ? 1000 : 150);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+// USER CAM — manual only
+// ═══════════════════════════════════════════════════════════════
+let uStream=null, uCtx=null, uAn=null, uIv=null;
+window.camOn = false;
+
+window.toggleCam = async function() { window.camOn ? window.stopCam() : await window.startCam(); };
+
+window.startCam = async function startCam() {
+  try {
+    uStream = await navigator.mediaDevices.getUserMedia({
+      video:{width:{ideal:320},height:{ideal:240},facingMode:'user'}, audio:true
+    });
+    $('user-video').srcObject = uStream;
+    $('user-cam').classList.add('visible');
+    $('cam-btn').classList.add('on');
+    camOn = true; window.camOn = true;
+
+    uCtx = new (window.AudioContext||window.webkitAudioContext)();
+    const src = uCtx.createMediaStreamSource(uStream);
+    uAn = uCtx.createAnalyser(); uAn.fftSize = 256; src.connect(uAn);
+    const buf = new Uint8Array(uAn.frequencyBinCount);
+    uIv = setInterval(() => {
+      uAn.getByteFrequencyData(buf);
+      const avg = buf.reduce((s,v)=>s+v,0)/buf.length;
+      $('mic-ring').style.display = avg > 18 ? 'block' : 'none';
+    }, 60);
+  } catch(e) { console.warn('Camera:', e.message); }
+}
+
+window.stopCam = function stopCam() {
+  if(uStream) { uStream.getTracks().forEach(t=>t.stop()); uStream=null; }
+  if(uIv) { clearInterval(uIv); uIv=null; }
+  if(uCtx) { uCtx.close(); uCtx=null; }
+  $('user-video').srcObject = null;
+  $('user-cam').classList.remove('visible');
+  $('cam-btn').classList.remove('on');
+  $('mic-ring').style.display = 'none';
+  camOn = false; window.camOn = false;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// TEST CONTROLS
+// ═══════════════════════════════════════════════════════════════
+window.testSpeak  = () => { setStatus('speaking','Bonjour, je suis Alia votre coach pharmaceutique.'); setTimeout(()=>setStatus('idle'),4500); };
+window.testListen = () => { setStatus('listening'); setTimeout(()=>setStatus('idle'),3000); };
+window.resetState = () => { setStatus('idle'); lastKey=null; };
+
+// ═══════════════════════════════════════════════════════════════
+// BOOT
+// ═══════════════════════════════════════════════════════════════
+init();
+poll();
+</script>
+</body>
+</html>

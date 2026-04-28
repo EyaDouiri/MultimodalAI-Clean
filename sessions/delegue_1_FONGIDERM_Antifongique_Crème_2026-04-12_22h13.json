@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "FONGIDERM Antifongique Crème",
+    "module_reached": "m1_evaluation",
+    "timestamp": "2026-04-12_22h13",
+    "nb_messages": 2,
+    "scores": {}
+  },
+  "summary": {},
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "ÉTAPE 1 — Brief commercial du produit :\n\nAlors touta, FONGIDERM Antifongique Crème c'est une crème en tube de 30g qui lutte contre les atteintes fongiques, notamment les mycoses cutanées. Le médecin prescrit généralement pour les adultes et les enfants de plus de 2 ans. L'avantage clé de FONGIDERM, c'est qu'il agit rapidement, avec un résultat visible en 48h, ce qui réduit les consultations de suivis pour le médecin. La précaution principale à ne pas oublier en visite, c'est de rappeler à l'utilisateur de ne pas utiliser la crème sur une zone présentant une réaction allergique active au produit.\n\nÉTAPE 2 — Pitch modèle :\n\n**Pitch médecin modèle :**\n\"Bonjour docteur, FONGIDERM Antifongique Crème est une solution rapide pour les mycoses superficielles. Un résultat visible en 48h, ce qui réduit les consultations de suivi pour vous. Simple pour le patient, efficace pour vous.\"\n\n**Pitch pharmacien modèle :**\n\"Bonjour pharmacien, FONGIDERM Antifongique Crème est une crème en tube de 30g qui lutte contre les atteintes fongiques. Un résultat visible en 48h, ce qui réduit les consultations de suivi pour les médecins. Nous proposons un prix compétitif et une livraison rapide.\"\n\nÉTAPE 3 — Lance la pratique :\n\nMaintenant, touta, je veux que tu reprends ce pitch avec tes propres mots. N'hésite pas à adapter les phrases pour que cela te ressemble. Je vais corriger et affiner avec toi au fur et à mesure. Prépare-toi à lancer ton pitch comme si tu étais en visite !"
+    },
+    {
+      "role": "alia",
+      "content": "HISTORIQUE DE SESSION (pour adapter le QCM aux lacunes détectées) :\n\nAlia : ÉTAPE 1 — Brief commercial du produit :\n\nAlors touta, FONGIDERM Antifongique Crème c'est une crème en tube de 30g qui lutte contre les atteintes fongiques, notamment les mycoses cutanées. Le médecin prescrit généralement pour les adultes et les enfants de plus de 2 ans. L'avantage clé de FONGIDERM, c'est qu'il agit rapidement, avec un résultat visible en 48h, ce qui réduit les consultations de suivis pour le médecin. La précaution principale à ne pas oublier en visite, c'est de rappeler à l'utilisateur de ne pas utiliser la crème sur une zone présentant une réaction allergique active au produit.\n\nÉTAPE 2 — Pitch modèle :\n\n**Pitch médecin modèle :**\n\"Bonjour docteur, FONGIDERM Antifongique Crème est une solution rapide pour les mycoses superficielles. Un résultat visible en 48h, ce qui réduit les consultations de suivi pour vous. Simple pour le patient, efficace pour vous.\"\n\n**Pitch pharmacien modèle :**\n\"Bonjour pharmacien, FONGIDERM Antifongique Crème est une crème en tube de 30g qui lutte contre les atteintes fongiques. Un résultat visible en 48h, ce qui réduit les consultations de suivi pour les médecins. Nous proposons un prix compétitif et une livraison rapide.\"\n\nÉTAPE 3 — Lance la pratique :\n\nMaintenant, touta, je veux que tu reprises ce pitch avec tes propres mots. N'hésite pas à adapter les phrases pour que cela te ressemble. Je vais corriger et affiner avec toi au fur et à mesure. Prépare-toi à lancer ton pitch comme si tu étais en visite !\n\nLance l'évaluation Module 1 pour touta sur FONGIDERM Antifongique Crème.\n\n1. Annonce en 1 phrase directe : \"On passe à l'évaluation — 3 questions, réponds avec la lettre.\"\n\nQCM 3 questions — niveau débutant :\n\nQ1 (indication) : Parmi ces profils patients, lequel est la cible principale de FONGIDERM Antifongique Crème ?\nA) Les patients atteints de mycoses profondes\nB) Les adultes et les enfants de plus de 2 ans souffrant de mycoses superficielles\nC) Les patients souffrant de dermatite atopique\n\nQ2 (bénéfice principal) : Quel est l'argument numéro 1 à mettre en"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "timestamp": "null",
+  "system_info": {
+    "name": "Adaptive Learning System",
+    "version": "1.0",
+    "user_levels": [
+      "novice",
+      "intermediate",
+      "advanced",
+      "expert"
+    ]
+  },
+  "users": {
+    "delegate_001": {
+      "user_id": "delegate_001",
+      "current_level": "intermediate",
+      "level_description": "Délégué avec expérience basique",
+      "score": 37,
+      "accuracy": 1.0,
+      "interaction_count": 3,
+      "progression": "37%"
+    },
+    "delegate_002": {
+      "user_id": "delegate_002",
+      "current_level": "intermediate",
+      "level_description": "Délégué avec expérience basique",
+      "score": 38,
+      "accuracy": 0,
+      "interaction_count": 0,
+      "progression": "38%"
+    },
+    "delegate_003": {
+      "user_id": "delegate_003",
+      "current_level": "advanced",
+      "level_description": "Délégué expérimenté",
+      "score": 63,
+      "accuracy": 0,
+      "interaction_count": 0,
+      "progression": "63%"
+    }
+  }
+}

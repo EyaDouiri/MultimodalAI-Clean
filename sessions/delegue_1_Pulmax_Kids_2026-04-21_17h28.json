@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "delegue_id": 1,
+    "delegue_name": "touta",
+    "product_name": "Pulmax Kids",
+    "module_reached": "m3_medecin",
+    "timestamp": "2026-04-21_17h28",
+    "nb_messages": 2,
+    "scores": {}
+  },
+  "summary": {},
+  "conversation": [
+    {
+      "role": "alia",
+      "content": "Très bien, touta ! Je vais te présenter Pulmax Kids de manière concise et commerciale.\n\n**Étape 1 - Brief commercial du produit**\n\nPulmax Kids est un complément alimentaire en forme de gélule pour soulager la toux mixte chez les nourrissons et les enfants. Les médecins prescrivent Pulmax Kids pour les parents qui cherchent à aider leurs petits à se sentir mieux. L'avantage clé de Pulmax Kids est qu'il agit rapidement pour dégager les voies respiratoires, ce qui est essentiel pour les enfants qui ont du mal à respirer. N'oublie pas de mentionner les contre-indications, notamment l'allergie connue à l'un des composants.\n\n**Étape 2 - Pitch modèle**\n\nVoici le pitch modèle pour les médecins :\n\n\"Bonjour docteur, Pulmax Kids est un complément alimentaire qui soulage la toux mixte chez les nourrissons et les enfants. Il agit rapidement pour dégager les voies respiratoires, ce qui est essentiel pour les enfants qui ont du mal à respirer. Je recommande Pulmax Kids pour les patients qui ont besoin d'une solution efficace pour soulager leur toux.\"\n\nEt voici le pitch modèle pour les pharmaciens :\n\n\"Bonjour, Pulmax Kids est un complément alimentaire qui soulage la toux mixte chez les nourrissons et les enfants. Il est facile à prescrire et à utiliser, et les parents apprécient son efficacité rapide. Nous proposons également un prix compétitif et une livraison rapide pour vous aider à répondre aux besoins de vos clients.\"\n\n**Étape 3 - Lance la pratique**\n\nMaintenant, touta, je veux que tu reprises ce pitch avec tes propres mots. N'hésite pas à adapter les phrases pour les rendre plus naturelles et plus à ton style. Je vais corriger et affiner avec toi au fur et à mesure pour que tu puisses présenter Pulmax Kids avec confiance et efficacité.\n\nAlors, vas-y ! Comment vas-tu présenter Pulmax Kids ?"
+    },
+    {
+      "role": "alia",
+      "content": "Bonjour, docteur. Je suis désolé, je suis un peu en retard, je suis en pleine consultation. Qu'est-ce que je peux faire pour vous ?"
+    }
+  ]
+}

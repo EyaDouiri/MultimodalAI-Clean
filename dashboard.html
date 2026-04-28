@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Alia — Coach Pharmaceutique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & TOKENS ──────────────────────────────────────────── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --bg:        #080b10;
+  --bg2:       #0e1218;
+  --bg3:       #141a24;
+  --border:    rgba(255,255,255,.07);
+  --accent:    #7c6af5;
+  --accent2:   #a78bfa;
+  --green:     #34d399;
+  --amber:     #f59e0b;
+  --red:       #f87171;
+  --text:      #e2e8f0;
+  --muted:     #64748b;
+  --card:      rgba(255,255,255,.04);
+  --shadow:    0 24px 64px rgba(0,0,0,.6);
+}
+
+html, body {
+  width:100%; height:100%; background:var(--bg);
+  color:var(--text); font-family:'Outfit',sans-serif;
+  overflow:hidden;
+}
+
+/* ── GRAIN OVERLAY ───────────────────────────────────────────── */
+body::before {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:9999;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  opacity:.5;
+}
+
+/* ── LAYOUT ──────────────────────────────────────────────────── */
+#app {
+  display:grid;
+  grid-template-columns: 340px 1fr;
+  grid-template-rows: 100vh;
+  height:100vh;
+}
+
+/* ── LEFT PANEL — AVATAR ─────────────────────────────────────── */
+#left {
+  position:relative;
+  background:var(--bg);
+  border-right:1px solid var(--border);
+  display:flex; flex-direction:column;
+  overflow:hidden;
+}
+
+/* glowing orb behind avatar */
+#left::before {
+  content:''; position:absolute;
+  top:10%; left:50%; transform:translateX(-50%);
+  width:260px; height:260px;
+  background: radial-gradient(circle, rgba(124,106,245,.18) 0%, transparent 70%);
+  border-radius:50%; pointer-events:none;
+  transition: opacity .5s;
+}
+#left.speaking::before { opacity:1.4; }
+#left.idle::before { opacity:.5; }
+
+#avatar-frame {
+  position:relative;
+  flex:1; overflow:hidden;
+  display:flex; align-items:flex-end; justify-content:center;
+}
+
+#avatar-iframe {
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  border:none; background:transparent;
+}
+
+/* Persona + status strip */
+#persona-strip {
+  position:absolute; top:16px; left:16px; right:16px;
+  display:flex; align-items:center; justify-content:space-between;
+  pointer-events:none;
+}
+#persona-name {
+  font-family:'DM Serif Display', serif;
+  font-size:13px; letter-spacing:.15em;
+  color:rgba(255,255,255,.85);
+  text-transform:uppercase;
+}
+#status-badge {
+  display:flex; align-items:center; gap:6px;
+  background:rgba(0,0,0,.45); backdrop-filter:blur(12px);
+  padding:4px 10px; border-radius:20px;
+  border:1px solid var(--border);
+  font-size:11px; color:var(--muted);
+  font-family:'DM Mono', monospace;
+}
+.sbdot {
+  width:6px; height:6px; border-radius:50%;
+  background:var(--muted); transition:background .3s;
+}
+.sbdot.speaking { background:var(--accent2); box-shadow:0 0 6px var(--accent2); animation:pulse 1s ease infinite; }
+.sbdot.listening { background:var(--green); box-shadow:0 0 6px var(--green); }
+
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+/* ── VOICE WAVE (bottom of left panel) ──────────────────────── */
+#wave-wrap {
+  height:64px;
+  padding:0 12px;
+  display:flex; align-items:center; justify-content:center;
+  background:linear-gradient(transparent, var(--bg2));
+  position:relative;
+}
+#wave-canvas { width:100%; height:48px; }
+
+/* ── BOTTOM LEFT — SIM INFO ──────────────────────────────────── */
+#sim-bar {
+  padding:10px 16px;
+  background:var(--bg2);
+  border-top:1px solid var(--border);
+  font-size:11px; color:var(--muted);
+  font-family:'DM Mono',monospace;
+  display:flex; align-items:center; gap:8px;
+  min-height:38px;
+}
+#sim-pill {
+  padding:2px 8px; border-radius:10px;
+  font-size:10px; font-weight:600; letter-spacing:.08em;
+  display:none;
+}
+#sim-pill.training { background:rgba(124,106,245,.2); color:var(--accent2); display:inline-block; }
+#sim-pill.exam     { background:rgba(248,113,113,.2); color:var(--red); display:inline-block; }
+
+/* ── RIGHT PANEL — CHAT ──────────────────────────────────────── */
+#right {
+  display:flex; flex-direction:column;
+  background:var(--bg2);
+  overflow:hidden;
+}
+
+/* Top bar */
+#topbar {
+  padding:0 24px;
+  height:56px;
+  border-bottom:1px solid var(--border);
+  display:flex; align-items:center; justify-content:space-between;
+  flex-shrink:0;
+}
+#topbar-left { display:flex; align-items:center; gap:12px; }
+#topbar-title {
+  font-family:'DM Serif Display',serif; font-size:18px;
+  color:white; letter-spacing:.02em;
+}
+#delegue-chip {
+  font-size:11px; color:var(--muted);
+  background:var(--card); border:1px solid var(--border);
+  padding:3px 10px; border-radius:12px;
+  font-family:'DM Mono',monospace;
+}
+#topbar-right { display:flex; align-items:center; gap:10px; }
+
+/* Mode switch */
+#mode-toggle {
+  display:flex; background:var(--bg3); border-radius:20px;
+  border:1px solid var(--border); overflow:hidden;
+}
+.mode-btn {
+  padding:5px 14px; font-size:12px; font-weight:500;
+  cursor:pointer; background:transparent; border:none; color:var(--muted);
+  transition:all .2s; border-radius:20px;
+  display:flex; align-items:center; gap:5px;
+}
+.mode-btn.active { background:var(--accent); color:white; }
+.mode-btn:hover:not(.active) { color:var(--text); }
+
+/* History btn */
+.icon-btn {
+  width:32px; height:32px; border-radius:8px;
+  background:var(--card); border:1px solid var(--border);
+  cursor:pointer; display:flex; align-items:center; justify-content:center;
+  color:var(--muted); font-size:14px; transition:all .2s;
+}
+.icon-btn:hover { background:var(--bg3); color:var(--text); }
+
+/* ── MESSAGES ────────────────────────────────────────────────── */
+#messages-wrap {
+  flex:1; overflow-y:auto; padding:20px 24px;
+  display:flex; flex-direction:column; gap:14px;
+  scroll-behavior:smooth;
+}
+#messages-wrap::-webkit-scrollbar { width:4px; }
+#messages-wrap::-webkit-scrollbar-track { background:transparent; }
+#messages-wrap::-webkit-scrollbar-thumb { background:var(--bg3); border-radius:4px; }
+
+.msg { display:flex; flex-direction:column; max-width:82%; animation:fadeUp .25s ease; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+
+.msg.alia  { align-self:flex-start; }
+.msg.user  { align-self:flex-end; }
+
+.msg-meta {
+  font-size:10px; color:var(--muted); margin-bottom:4px;
+  font-family:'DM Mono',monospace; letter-spacing:.04em;
+}
+.msg.user .msg-meta { text-align:right; }
+
+.bubble {
+  padding:12px 16px; border-radius:16px;
+  font-size:14px; line-height:1.65; font-weight:400;
+}
+.msg.alia  .bubble {
+  background:var(--bg3); border:1px solid var(--border);
+  border-bottom-left-radius:4px;
+  color:var(--text);
+}
+.msg.user  .bubble {
+  background:linear-gradient(135deg, var(--accent), #6d5ce6);
+  color:white;
+  border-bottom-right-radius:4px;
+  box-shadow:0 4px 16px rgba(124,106,245,.25);
+}
+
+/* Typing indicator */
+#typing {
+  align-self:flex-start; display:none;
+  padding:12px 16px; background:var(--bg3);
+  border:1px solid var(--border); border-radius:16px;
+  border-bottom-left-radius:4px;
+}
+#typing.visible { display:flex; gap:5px; align-items:center; animation:fadeUp .2s ease; }
+.tdot {
+  width:7px; height:7px; border-radius:50%;
+  background:var(--muted);
+  animation:bounce .9s ease infinite;
+}
+.tdot:nth-child(2) { animation-delay:.15s; }
+.tdot:nth-child(3) { animation-delay:.3s; }
+@keyframes bounce { 0%,80%,100%{transform:translateY(0)} 40%{transform:translateY(-7px)} }
+
+/* ── INPUT AREA ──────────────────────────────────────────────── */
+#input-area {
+  padding:16px 24px 20px;
+  border-top:1px solid var(--border);
+  background:var(--bg2);
+  flex-shrink:0;
+}
+
+#input-row {
+  display:flex; align-items:flex-end; gap:10px;
+  background:var(--bg3); border:1px solid var(--border);
+  border-radius:16px; padding:10px 12px 10px 16px;
+  transition:border-color .2s;
+}
+#input-row:focus-within { border-color:rgba(124,106,245,.5); }
+
+#msg-input {
+  flex:1; background:transparent; border:none; outline:none;
+  color:var(--text); font-family:'Outfit',sans-serif; font-size:14px;
+  resize:none; max-height:120px; min-height:22px; line-height:1.5;
+}
+#msg-input::placeholder { color:var(--muted); }
+
+#send-btn {
+  width:36px; height:36px; border-radius:10px; flex-shrink:0;
+  background:var(--accent); border:none; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:all .2s; color:white;
+}
+#send-btn:hover { background:var(--accent2); transform:scale(1.05); }
+#send-btn:active { transform:scale(.95); }
+#send-btn svg { width:16px; height:16px; }
+
+/* Voice record button */
+#mic-btn {
+  width:36px; height:36px; border-radius:10px; flex-shrink:0;
+  background:var(--bg); border:1px solid var(--border);
+  cursor:pointer; display:flex; align-items:center; justify-content:center;
+  color:var(--muted); transition:all .2s;
+}
+#mic-btn:hover { border-color:var(--green); color:var(--green); }
+#mic-btn.recording {
+  background:rgba(52,211,153,.15); border-color:var(--green);
+  color:var(--green); animation:pulse 1s ease infinite;
+}
+#mic-btn svg { width:16px; height:16px; }
+
+/* Quick commands */
+#quick-cmds {
+  display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px;
+}
+.qcmd {
+  font-size:11px; padding:4px 10px;
+  background:var(--card); border:1px solid var(--border);
+  border-radius:10px; cursor:pointer; color:var(--muted);
+  font-family:'DM Mono',monospace;
+  transition:all .2s;
+}
+.qcmd:hover { background:var(--bg3); color:var(--text); border-color:var(--accent); }
+
+/* ── HISTORY PANEL ───────────────────────────────────────────── */
+#history-panel {
+  position:fixed; right:-380px; top:0; bottom:0; width:360px;
+  background:var(--bg2); border-left:1px solid var(--border);
+  z-index:1000; transition:right .35s cubic-bezier(.4,0,.2,1);
+  display:flex; flex-direction:column; overflow:hidden;
+}
+#history-panel.open { right:0; }
+#hist-header {
+  padding:20px 20px 14px; border-bottom:1px solid var(--border);
+  display:flex; align-items:center; justify-content:space-between;
+}
+#hist-title {
+  font-family:'DM Serif Display',serif; font-size:16px; color:white;
+}
+#hist-close {
+  cursor:pointer; color:var(--muted); font-size:18px;
+  transition:color .2s; background:none; border:none;
+}
+#hist-close:hover { color:var(--text); }
+#hist-list { flex:1; overflow-y:auto; padding:12px; display:flex; flex-direction:column; gap:8px; }
+.hist-card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:12px; padding:12px 14px; cursor:pointer;
+  transition:border-color .2s;
+}
+.hist-card:hover { border-color:var(--accent); }
+.hist-date { font-size:10px; color:var(--muted); font-family:'DM Mono',monospace; margin-bottom:4px; }
+.hist-product { font-size:13px; font-weight:500; color:var(--text); }
+.hist-score { font-size:11px; color:var(--accent2); margin-top:3px; }
+
+/* ── LOADING OVERLAY ─────────────────────────────────────────── */
+#loading-overlay {
+  position:fixed; inset:0; z-index:2000;
+  background:var(--bg);
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap:20px; transition:opacity .5s;
+}
+#loading-overlay.hidden { opacity:0; pointer-events:none; }
+#loading-logo {
+  font-family:'DM Serif Display',serif; font-size:42px;
+  color:white; letter-spacing:.05em;
+}
+#loading-sub {
+  font-size:13px; color:var(--muted); font-family:'DM Mono',monospace;
+}
+.load-bar {
+  width:200px; height:2px; background:var(--bg3); border-radius:2px;
+  overflow:hidden;
+}
+.load-fill {
+  height:100%; width:0; background:var(--accent);
+  border-radius:2px; animation:loadprog 2.5s ease forwards;
+}
+@keyframes loadprog { 0%{width:0} 60%{width:80%} 100%{width:100%} }
+
+/* ── NOTIFICATION TOAST ──────────────────────────────────────── */
+#toast {
+  position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(60px);
+  background:var(--bg3); border:1px solid var(--border);
+  padding:10px 20px; border-radius:12px; font-size:13px;
+  color:var(--text); z-index:3000;
+  transition:transform .3s cubic-bezier(.4,0,.2,1);
+  box-shadow:var(--shadow);
+}
+#toast.show { transform:translateX(-50%) translateY(0); }
+
+/* ── CONN INDICATOR ──────────────────────────────────────────── */
+#conn-dot {
+  width:7px; height:7px; border-radius:50%;
+  background:var(--muted); transition:background .3s;
+  display:inline-block;
+}
+#conn-dot.ok { background:var(--green); box-shadow:0 0 5px var(--green); }
+#conn-dot.error { background:var(--red); }
+</style>
+</head>
+<body>
+
+<!-- Loading -->
+<div id="loading-overlay">
+  <div id="loading-logo">alia</div>
+  <div class="load-bar"><div class="load-fill"></div></div>
+  <div id="loading-sub">Chargement de l'agent...</div>
+</div>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<!-- History Panel -->
+<div id="history-panel">
+  <div id="hist-header">
+    <div id="hist-title">Historique</div>
+    <button id="hist-close" onclick="toggleHistory()">✕</button>
+  </div>
+  <div id="hist-list"></div>
+</div>
+
+<div id="app">
+
+  <!-- ── LEFT: AVATAR ── -->
+  <div id="left" class="idle">
+    <div id="persona-strip">
+      <div id="persona-name">ALIA</div>
+      <div id="status-badge">
+        <div class="sbdot" id="sbdot"></div>
+        <span id="status-label">En attente</span>
+      </div>
+    </div>
+
+    <div id="avatar-frame">
+      <iframe id="avatar-iframe" src="/alia_avatar.html" scrolling="no"
+        allow="camera; microphone"></iframe>
+    </div>
+
+    <div id="wave-wrap">
+      <canvas id="wave-canvas"></canvas>
+    </div>
+
+    <div id="sim-bar">
+      <span id="sim-pill"></span>
+      <span id="sim-info">Formation — Module 1</span>
+    </div>
+  </div>
+
+  <!-- ── RIGHT: CHAT ── -->
+  <div id="right">
+
+    <!-- Topbar -->
+    <div id="topbar">
+      <div id="topbar-left">
+        <div id="topbar-title">Session de formation</div>
+        <div id="delegue-chip" style="display:flex;align-items:center;gap:6px;">
+          <div id="conn-dot"></div>
+          <span id="delegue-name">...</span>
+        </div>
+      </div>
+      <div id="topbar-right">
+        <!-- Mode toggle -->
+        <div id="mode-toggle">
+          <button class="mode-btn active" id="mode-text-btn" onclick="setMode('text')">
+            <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor">
+              <path d="M2 2h12v2H2zM2 6h8v2H2zM2 10h10v2H2z"/>
+            </svg>
+            Texte
+          </button>
+          <button class="mode-btn" id="mode-voice-btn" onclick="setMode('voice')">
+            <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor">
+              <path d="M8 1a3 3 0 0 1 3 3v4a3 3 0 0 1-6 0V4a3 3 0 0 1 3-3zm0 1a2 2 0 0 0-2 2v4a2 2 0 0 0 4 0V4a2 2 0 0 0-2-2z"/>
+              <path d="M1 8a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1 5.5 5.5 0 0 0 11 0 .5.5 0 0 1 1 0A6.5 6.5 0 0 1 8.5 14.5V15h2a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h2v-.5A6.5 6.5 0 0 1 1 8z"/>
+            </svg>
+            Voix
+          </button>
+        </div>
+        <button class="icon-btn" onclick="toggleHistory()" title="Historique">📋</button>
+        <button class="icon-btn" onclick="sendCmd('status')" title="Statut">ℹ️</button>
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div id="messages-wrap">
+      <!-- Rempli dynamiquement -->
+      <div id="typing"><div class="tdot"></div><div class="tdot"></div><div class="tdot"></div></div>
+    </div>
+
+    <!-- Input -->
+    <div id="input-area">
+      <div id="quick-cmds">
+        <span class="qcmd" onclick="sendCmd('sim')">▶ sim</span>
+        <span class="qcmd" onclick="sendCmd('stop_sim')">⏹ stop sim</span>
+        <span class="qcmd" onclick="sendCmd('eval')">📊 eval</span>
+        <span class="qcmd" onclick="sendCmd('next')">→ next</span>
+        <span class="qcmd" onclick="sendCmd('exam')">🎯 exam</span>
+        <span class="qcmd" onclick="sendCmd('save')">💾 save</span>
+      </div>
+      <div id="input-row">
+        <textarea id="msg-input" rows="1" placeholder="Parle à Alia ou tape une commande..."
+          onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+        <button id="mic-btn" id="mic-btn" onclick="toggleMic()" title="Enregistrer voix">
+          <svg viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 1a3 3 0 0 1 3 3v4a3 3 0 0 1-6 0V4a3 3 0 0 1 3-3zm0 1a2 2 0 0 0-2 2v4a2 2 0 0 0 4 0V4a2 2 0 0 0-2-2z"/>
+            <path d="M1 8a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1 5.5 5.5 0 0 0 11 0 .5.5 0 0 1 1 0A6.5 6.5 0 0 1 8.5 14.5V15h2a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h2v-.5A6.5 6.5 0 0 1 1 8z"/>
+          </svg>
+        </button>
+        <button id="send-btn" onclick="sendMessage()">
+          <svg viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════════════════════════
+let currentMode   = 'text';   // 'text' | 'voice'
+let isSpeaking    = false;
+let isRecording   = false;
+let mediaRec      = null;
+let audioChunks   = [];
+let lastMsgTs     = 0;
+let pollTimer     = null;
+let waveCtx       = null;
+let waveAnimId    = null;
+let wavePhase     = 0;
+let agentReady    = false;
+let historyOpen   = false;
+
+const $ = id => document.getElementById(id);
+
+// ══════════════════════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════════════════════
+window.onload = async () => {
+  initWave();
+  await waitForAgent();
+  startPolling();
+};
+
+async function waitForAgent() {
+  $('loading-sub').textContent = 'Connexion à l\'agent...';
+  for (let i = 0; i < 40; i++) {
+    try {
+      const r  = await fetch('/api/status');
+      if (r.ok) {
+        const d = await r.json();
+        if (d.ready) {
+          $('delegue-name').textContent = (d.delegue || 'Délégué') + ' · ' + (d.niveau || '');
+          $('conn-dot').className = 'ok';
+          agentReady = true;
+          $('loading-overlay').classList.add('hidden');
+          updateSimBar(d);
+          return;
+        }
+        if (d.error && d.error !== 'Chargement en cours...') {
+          $('loading-sub').textContent = '❌ ' + d.error;
+          return;
+        }
+      }
+    } catch(e) {}
+    $('loading-sub').textContent = 'Chargement (' + (i+1) + ')...';
+    await sleep(1000);
+  }
+  $('loading-sub').textContent = '⚠️ Serveur non disponible — lance python avatar_server.py';
+}
+
+// ══════════════════════════════════════════════════════════════
+// POLLING — messages depuis le serveur
+// ══════════════════════════════════════════════════════════════
+function startPolling() {
+  clearInterval(pollTimer);
+  pollTimer = setInterval(pollMessages, 600);
+  pollAvatarState();
+}
+
+// Modal pour choisir le rôle (médecin/pharmacien)
+let roleModal = null;
+let pendingCommand = null;  // 'sim' ou 'exam'
+
+function showRoleModal(command) {
+  pendingCommand = command;
+  if (!roleModal) {
+    roleModal = document.createElement('div');
+    roleModal.id = 'role-modal';
+    roleModal.style.cssText = `
+      position: fixed; inset: 0; background: rgba(0,0,0,0.8); display: flex;
+      align-items: center; justify-content: center; z-index: 9999;
+    `;
+    roleModal.innerHTML = `
+      <div style="background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 24px; max-width: 400px; text-align: center;">
+        <h2 style="font-size: 18px; margin-bottom: 16px; font-family: 'DM Serif Display', serif;">Choisir le rôle</h2>
+        <p style="color: var(--muted); margin-bottom: 24px;">Qui voulez-vous simuler ?</p>
+        <div style="display: flex; gap: 12px;">
+          <button onclick="launchWithRole('medecin')" style="flex: 1; padding: 12px; background: var(--accent); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 500;">👨‍⚕️ Médecin</button>
+          <button onclick="launchWithRole('pharmacien')" style="flex: 1; padding: 12px; background: var(--accent2); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 500;">💊 Pharmacien</button>
+        </div>
+        <button onclick="closeRoleModal()" style="margin-top: 12px; width: 100%; padding: 10px; background: var(--border); color: var(--text); border: none; border-radius: 6px; cursor: pointer;">Annuler</button>
+      </div>
+    `;
+    document.body.appendChild(roleModal);
+  } else {
+    roleModal.style.display = 'flex';
+  }
+}
+
+function launchWithRole(role) {
+  const cmd = pendingCommand === 'exam' ? 'exam' : 'sim';
+  closeRoleModal();
+  // Ouvrir la caméra dans l'iframe avatar automatiquement
+  try {
+    const iframe = $('avatar-iframe');
+    if (iframe && iframe.contentWindow && !iframe.contentWindow.camOn) {
+      iframe.contentWindow.toggleCam();
+    }
+  } catch(e) { console.warn('Cam:', e); }
+  directSend(cmd, {interlocuteur: role});
+}
+
+function closeRoleModal() {
+  if (roleModal) roleModal.style.display = 'none';
+  pendingCommand = null;
+}
+
+async function pollMessages() {
+  try {
+    const r = await fetch('/api/messages?since=' + lastMsgTs);
+    if (!r.ok) return;
+    const msgs = await r.json();
+    if (!msgs.length) return;
+    for (const m of msgs) {
+      if (m.ts > lastMsgTs) {
+        renderMessage(m.role === 'alia' ? 'alia' : 'user', m.content, m.persona);
+        lastMsgTs = m.ts;
+      }
+    }
+  } catch(e) {}
+}
+
+// Avatar state polling
+let lastAvatarKey = '';
+async function pollAvatarState() {
+  try {
+    const r = await fetch('/api/avatar/last', {cache:'no-store'});
+    if (!r.ok) { setTimeout(pollAvatarState, 500); return; }
+    const d = await r.json();
+    const key = d.state + '|' + (d.persona||'');
+    if (key !== lastAvatarKey) {
+      lastAvatarKey = key;
+      updateAvatarUI(d);
+    }
+  } catch(e) {}
+  setTimeout(pollAvatarState, 200);
+}
+
+function updateAvatarUI(d) {
+  const left    = $('left');
+  const sbdot   = $('sbdot');
+  const lbl     = $('status-label');
+  const pname   = $('persona-name');
+
+  sbdot.className = 'sbdot';
+  left.className  = '';
+
+  if (d.persona) pname.textContent = d.persona;
+
+  if (d.state === 'speaking') {
+    isSpeaking = true;
+    sbdot.classList.add('speaking');
+    left.classList.add('speaking');
+    lbl.textContent = 'Parle...';
+    startWave();
+  } else if (d.state === 'listening') {
+    isSpeaking = false;
+    sbdot.classList.add('listening');
+    left.classList.add('listening');
+    lbl.textContent = 'Écoute...';
+    stopWave();
+  } else {
+    isSpeaking = false;
+    lbl.textContent = 'En attente';
+    left.classList.add('idle');
+    stopWave();
+  }
+
+  // Sync iframe avatar state
+  try {
+    const iframe = $('avatar-iframe');
+    if (iframe.contentWindow && iframe.contentWindow.setStatus) {
+      iframe.contentWindow.setStatus(d.state, d.text || '');
+      if (d.persona && iframe.contentWindow.setPersona) {
+        iframe.contentWindow.setPersona(d.persona);
+      }
+    }
+  } catch(e) {}
+}
+
+function updateSimBar(status) {
+  const pill = $('sim-pill');
+  const info = $('sim-info');
+  const modeMap = {
+    'm1_formation': 'Module 1 — Formation',
+    'm2_formation': 'Module 2 — Argumentation',
+    'm3_medecin':   'Module 3 — Simulation Médecin',
+    'm3_pharmacien':'Module 3 — Simulation Pharmacien',
+    'done':         'Parcours terminé ✓',
+  };
+  info.textContent = modeMap[status.mode] || status.mode || 'Formation';
+  
+  // Sync camera state with simulation
+  try {
+    const iframe = $('avatar-iframe');
+    if (iframe.contentWindow) {
+      if (status.sim) {
+        // Simulation active → activer caméra
+        if (iframe.contentWindow.startCam && !iframe.contentWindow.camOn) {
+          iframe.contentWindow.startCam();
+        }
+      } else {
+        // Simulation inactif → désactiver caméra
+        if (iframe.contentWindow.stopCam && iframe.contentWindow.camOn) {
+          iframe.contentWindow.stopCam();
+        }
+      }
+    }
+  } catch(e) {}
+  
+  if (status.sim) {
+    pill.textContent = status.exam ? 'EXAMEN' : 'TRAINING';
+    pill.className   = status.exam ? 'exam'   : 'training';
+  } else {
+    pill.className = '';
+  }
+}
+
+// ══════════════════════════════════════════════════════════════
+// SEND MESSAGE
+// ══════════════════════════════════════════════════════════════
+async function sendMessage() {
+  const input = $('msg-input');
+  const text  = input.value.trim();
+  if (!text || !agentReady) return;
+
+  const msgLower = text.toLowerCase();
+  // stop_sim direct (pas d'interception)
+  if (msgLower === 'stop_sim' || msgLower === 'stop sim') {
+    input.value = ''; autoResize(input);
+    directSend('stop_sim');
+    return;
+  }
+  // sim/exam → modal de choix
+  if ((msgLower === 'sim' || msgLower === 'simulation') && !msgLower.includes('stop')) {
+    input.value = ''; autoResize(input);
+    showRoleModal('sim'); return;
+  }
+  if (msgLower === 'exam' || msgLower === 'examen') {
+    input.value = ''; autoResize(input);
+    showRoleModal('exam'); return;
+  }
+
+  input.value = '';
+  autoResize(input);
+  showTyping(true);
+
+  try {
+    const r = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({message: text})
+    });
+    const d = await r.json();
+    showTyping(false);
+    if (d.error) { toast('❌ ' + d.error); return; }
+    updateSimBar(d);
+  } catch(e) {
+    showTyping(false);
+    toast('❌ Erreur réseau');
+  }
+}
+
+let _simActive = false; // track local sim state
+
+function sendCmd(cmd) {
+  // stop_sim : envoi direct sans passer par sendMessage (évite le re-trigger sim)
+  if (cmd === 'stop_sim') {
+    directSend('stop_sim');
+    return;
+  }
+  // sim / exam : afficher le modal de choix de rôle
+  if (cmd === 'sim') { showRoleModal('sim'); return; }
+  if (cmd === 'exam') { showRoleModal('exam'); return; }
+  $('msg-input').value = cmd;
+  sendMessage();
+}
+
+async function directSend(message, extra) {
+  if (!agentReady) return;
+  showTyping(true);
+  try {
+    const body = Object.assign({message}, extra || {});
+    const r = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(body)
+    });
+    const d = await r.json();
+    showTyping(false);
+    if (d.error) { toast('❌ ' + d.error); return; }
+    updateSimBar(d);
+  } catch(e) {
+    showTyping(false);
+    toast('❌ Erreur réseau');
+  }
+}
+
+function handleKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendMessage();
+  }
+}
+
+function autoResize(el) {
+  el.style.height = 'auto';
+  el.style.height = Math.min(el.scrollHeight, 120) + 'px';
+}
+
+// ══════════════════════════════════════════════════════════════
+// RENDER MESSAGES
+// ══════════════════════════════════════════════════════════════
+function renderMessage(role, content, persona) {
+  const wrap = $('messages-wrap');
+  const typing = $('typing');
+
+  const div = document.createElement('div');
+  div.className = 'msg ' + (role === 'alia' ? 'alia' : 'user');
+
+  const meta = document.createElement('div');
+  meta.className = 'msg-meta';
+  meta.textContent = role === 'alia'
+    ? (persona || 'Alia') + ' · ' + now()
+    : 'Vous · ' + now();
+
+  const bubble = document.createElement('div');
+  bubble.className = 'bubble';
+  bubble.innerHTML = formatMd(content);
+
+  div.appendChild(meta);
+  div.appendChild(bubble);
+  wrap.insertBefore(div, typing);
+  wrap.scrollTop = wrap.scrollHeight;
+}
+
+function formatMd(text) {
+  return text
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g,     '<em>$1</em>')
+    .replace(/`(.+?)`/g,       '<code>$1</code>')
+    .replace(/\n/g,            '<br>')
+    .replace(/#{1,3}\s+(.+)/g, '<b>$1</b>');
+}
+
+function now() {
+  return new Date().toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
+}
+
+function showTyping(show) {
+  $('typing').className = show ? 'visible' : '';
+  if (show) $('messages-wrap').scrollTop = $('messages-wrap').scrollHeight;
+}
+
+// ══════════════════════════════════════════════════════════════
+// MODE SWITCH
+// ══════════════════════════════════════════════════════════════
+async function setMode(mode) {
+  currentMode = mode;
+  $('mode-text-btn').classList.toggle('active', mode === 'text');
+  $('mode-voice-btn').classList.toggle('active', mode === 'voice');
+
+  if (mode === 'voice') {
+    // Ouvrir la caméra dans l'iframe avatar (alia_avatar.html)
+    try {
+      const iframe = $('avatar-iframe');
+      if (iframe && iframe.contentWindow && iframe.contentWindow.toggleCam) {
+        if (!iframe.contentWindow.camOn) {
+          iframe.contentWindow.toggleCam();
+        }
+      }
+    } catch(e) { console.warn('Cam iframe:', e); }
+    toast('🎤 Mode voix actif — appuie sur 🎙️ pour parler');
+  } else {
+    // Fermer la caméra si ouverte
+    try {
+      const iframe = $('avatar-iframe');
+      if (iframe && iframe.contentWindow && iframe.contentWindow.camOn) {
+        iframe.contentWindow.toggleCam();
+      }
+    } catch(e) {}
+    toast('⌨️ Mode texte');
+  }
+}
+
+// ══════════════════════════════════════════════════════════════
+// MIC BROWSER (enregistrement audio côté browser)
+// ══════════════════════════════════════════════════════════════
+// ── Enregistrement WAV PCM via Web Audio (sans ffmpeg) ────────────────
+let _audioCtx   = null;
+let _recStream  = null;
+let _scriptNode = null;
+let _recBuffers = [];
+let _recSampleRate = 16000;
+
+async function toggleMic() {
+  if (isRecording) { stopMic(); } else { await startMic(); }
+}
+
+async function startMic() {
+  try {
+    _recStream = await navigator.mediaDevices.getUserMedia({audio: true});
+    _audioCtx  = new (window.AudioContext || window.webkitAudioContext)({sampleRate: 16000});
+    _recSampleRate = _audioCtx.sampleRate;
+    const source = _audioCtx.createMediaStreamSource(_recStream);
+    _scriptNode = _audioCtx.createScriptProcessor(4096, 1, 1);
+    _recBuffers = [];
+    _scriptNode.onaudioprocess = e => {
+      const samples = e.inputBuffer.getChannelData(0);
+      _recBuffers.push(new Float32Array(samples));
+    };
+    source.connect(_scriptNode);
+    _scriptNode.connect(_audioCtx.destination);
+    isRecording = true;
+    $('mic-btn').classList.add('recording');
+    toast('🎙️ Enregistrement... (clique pour arrêter)');
+  } catch(e) {
+    console.error('Micro:', e);
+    toast('❌ Micro non disponible : ' + e.message);
+  }
+}
+
+function stopMic() {
+  if (!isRecording) return;
+  isRecording = false;
+  $('mic-btn').classList.remove('recording');
+  // Déconnecter le script processor
+  if (_scriptNode) { try { _scriptNode.disconnect(); } catch(e){} _scriptNode = null; }
+  if (_audioCtx)   { try { _audioCtx.close(); }        catch(e){} _audioCtx   = null; }
+  if (_recStream)  { _recStream.getTracks().forEach(t => t.stop()); _recStream = null; }
+  if (_recBuffers.length > 0) {
+    transcribeWAV(_recBuffers, _recSampleRate);
+    _recBuffers = [];
+  } else {
+    toast('⚠️ Aucun audio capturé');
+  }
+}
+
+async function transcribeWAV(buffers, sampleRate) {
+  // Assembler tous les chunks Float32 en un seul tableau
+  let totalLen = 0;
+  buffers.forEach(b => totalLen += b.length);
+  const merged = new Float32Array(totalLen);
+  let offset = 0;
+  buffers.forEach(b => { merged.set(b, offset); offset += b.length; });
+
+  // Encoder en WAV PCM 16-bit mono
+  const wavBlob = float32ToWav(merged, sampleRate);
+  console.log('[Mic] WAV size:', wavBlob.size, 'bytes, sr:', sampleRate);
+
+  if (wavBlob.size < 1000) {
+    toast('⚠️ Enregistrement trop court');
+    return;
+  }
+
+  toast('⏳ Transcription en cours...');
+  try {
+    const formData = new FormData();
+    formData.append('audio', wavBlob, 'audio.wav');
+    const r = await fetch('/api/transcribe', { method: 'POST', body: formData });
+    if (!r.ok) {
+      const err = await r.json().catch(() => ({}));
+      toast('❌ ' + (err.error || 'Erreur ' + r.status));
+      console.error('[Transcribe]', r.status, err);
+      return;
+    }
+    const data = await r.json();
+    if (!data.ok || !data.text || !data.text.trim()) {
+      toast('⚠️ Aucun texte détecté — parle plus fort');
+      return;
+    }
+    console.log('[Transcribe] OK:', data.text);
+    $('msg-input').value = data.text;
+    autoResize($('msg-input'));
+    sendMessage();
+  } catch(e) {
+    console.error('[Transcribe] Exception:', e);
+    toast('❌ Erreur réseau');
+  }
+}
+
+function float32ToWav(samples, sampleRate) {
+  const numSamples = samples.length;
+  const buffer     = new ArrayBuffer(44 + numSamples * 2);
+  const view       = new DataView(buffer);
+  const writeStr   = (o, s) => { for (let i = 0; i < s.length; i++) view.setUint8(o + i, s.charCodeAt(i)); };
+  writeStr(0,  'RIFF');
+  view.setUint32( 4,  36 + numSamples * 2, true);
+  writeStr(8,  'WAVE');
+  writeStr(12, 'fmt ');
+  view.setUint32(16, 16,         true);   // chunk size
+  view.setUint16(20, 1,          true);   // PCM
+  view.setUint16(22, 1,          true);   // mono
+  view.setUint32(24, sampleRate, true);
+  view.setUint32(28, sampleRate * 2, true); // byte rate
+  view.setUint16(32, 2,          true);   // block align
+  view.setUint16(34, 16,         true);   // bits per sample
+  writeStr(36, 'data');
+  view.setUint32(40, numSamples * 2, true);
+  let o = 44;
+  for (let i = 0; i < numSamples; i++, o += 2) {
+    const s = Math.max(-1, Math.min(1, samples[i]));
+    view.setInt16(o, s < 0 ? s * 0x8000 : s * 0x7FFF, true);
+  }
+  return new Blob([buffer], {type: 'audio/wav'});
+}
+
+// ══════════════════════════════════════════════════════════════
+// WAVE ANIMATION (canvas)
+// ══════════════════════════════════════════════════════════════
+function initWave() {
+  const canvas = $('wave-canvas');
+  waveCtx = canvas.getContext('2d');
+  resizeWave();
+  window.addEventListener('resize', resizeWave);
+  drawWaveIdle();
+}
+
+function resizeWave() {
+  const c = $('wave-canvas');
+  c.width  = c.offsetWidth  * window.devicePixelRatio;
+  c.height = c.offsetHeight * window.devicePixelRatio;
+  waveCtx.scale(window.devicePixelRatio, window.devicePixelRatio);
+}
+
+let waveActive = false;
+
+function startWave() {
+  waveActive = true;
+  if (waveAnimId) cancelAnimationFrame(waveAnimId);
+  animateWave();
+}
+function stopWave() {
+  waveActive = false;
+}
+
+function animateWave() {
+  const c   = $('wave-canvas');
+  const w   = c.offsetWidth, h = c.offsetHeight;
+  waveCtx.clearRect(0, 0, w, h);
+
+  wavePhase += 0.045;
+  const amp   = waveActive ? 14 : 3;
+  const lines = 5;
+
+  for (let l = 0; l < lines; l++) {
+    const alpha  = waveActive ? (0.15 + (lines-l)/lines * 0.35) : 0.06;
+    const freq   = 1.2 + l * 0.3;
+    const yOff   = h / 2 + (l - lines/2) * 1.8;
+    const phShft = l * 0.7;
+
+    waveCtx.beginPath();
+    waveCtx.strokeStyle = `rgba(124,106,245,${alpha})`;
+    waveCtx.lineWidth   = waveActive ? 1.5 - l*0.1 : 1;
+
+    for (let x = 0; x <= w; x += 2) {
+      const t = x / w * Math.PI * 2 * freq + wavePhase + phShft;
+      const y = yOff + Math.sin(t) * amp * (waveActive ? 1 : 0.4)
+              + Math.sin(t * 2.1 + 1.3) * amp * 0.3
+              + Math.sin(t * 3.7 + 0.6) * amp * 0.15;
+      x === 0 ? waveCtx.moveTo(x, y) : waveCtx.lineTo(x, y);
+    }
+    waveCtx.stroke();
+  }
+
+  waveAnimId = requestAnimationFrame(animateWave);
+}
+
+function drawWaveIdle() {
+  if (!waveAnimId) animateWave();
+}
+
+// ══════════════════════════════════════════════════════════════
+// HISTORY PANEL
+// ══════════════════════════════════════════════════════════════
+async function toggleHistory() {
+  historyOpen = !historyOpen;
+  $('history-panel').classList.toggle('open', historyOpen);
+  if (historyOpen) await loadHistory();
+}
+
+async function loadHistory() {
+  const list = $('hist-list');
+  list.innerHTML = '<div style="color:var(--muted);font-size:12px;padding:8px">Chargement...</div>';
+  try {
+    const r = await fetch('/api/history');
+    const sessions = await r.json();
+    if (!sessions.length) {
+      list.innerHTML = '<div style="color:var(--muted);font-size:12px;padding:8px">Aucune session sauvegardée.</div>';
+      return;
+    }
+    list.innerHTML = '';
+    for (const s of sessions) {
+      const card = document.createElement('div');
+      card.className = 'hist-card';
+      card.innerHTML = `
+        <div class="hist-date">${s.date || s.file}</div>
+        <div class="hist-product">${s.product || '—'}</div>
+        <div class="hist-score">${s.score ? s.score + '/100' : ''} · ${s.turns || 0} échanges</div>
+      `;
+      list.appendChild(card);
+    }
+  } catch(e) {
+    list.innerHTML = '<div style="color:var(--red);font-size:12px;padding:8px">Erreur chargement</div>';
+  }
+}
+
+// ══════════════════════════════════════════════════════════════
+// TOAST
+// ══════════════════════════════════════════════════════════════
+let toastTimer = null;
+function toast(msg) {
+  const el = $('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2800);
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+</script>
+</body>
+</html>
