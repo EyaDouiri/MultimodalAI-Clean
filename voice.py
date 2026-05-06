@@ -84,6 +84,40 @@ VOICE_MAP = {
 }
 
 
+# ════════════════════════════════════════════════════════════════════════════
+# SIMPLE TRANSLATOR — Mode de traduction sans voix
+# (Utilisé en mode web avec mode_voix=False — pour garder le système multilingue)
+# ════════════════════════════════════════════════════════════════════════════
+
+class SimpleTranslator:
+    """
+    Traduction multilingue légère — SANS micro, micro TTS, VAD, barge-in.
+    Utilisé quand mode_voix=False mais on veut garder la détection/traduction de langue.
+    """
+    def __init__(self):
+        self.delegue_lang = "fr"  # Langue détectée du délégué
+    
+    def _to_french(self, text: str, lang: str) -> str:
+        """Traduit du langage du délégué vers le français."""
+        if lang == "fr" or not text or not TRANSLATOR_AVAILABLE:
+            return text
+        try:
+            return GoogleTranslator(source=lang, target="fr").translate(text)
+        except Exception as e:
+            print(f"[Translator] Erreur traduction {lang}→fr : {e}")
+            return text
+    
+    def _from_french(self, text: str, lang: str) -> str:
+        """Traduit du français vers la langue du délégué."""
+        if lang == "fr" or not text or not TRANSLATOR_AVAILABLE:
+            return text
+        try:
+            return GoogleTranslator(source="fr", target=lang).translate(text)
+        except Exception as e:
+            print(f"[Translator] Erreur traduction fr→{lang} : {e}")
+            return text
+
+
 class VoiceEngine:
     """
     Moteur voix avec barge-in réel.

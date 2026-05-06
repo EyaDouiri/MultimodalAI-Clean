@@ -17,6 +17,14 @@ from pathlib import Path
 from flask import Flask, request, jsonify, send_from_directory, send_file
 from flask_cors import CORS
 
+# ── Détection de langue ───────────────────────────────────────────────────────
+try:
+    from langdetect import detect, LangDetectException
+    LANGDETECT_AVAILABLE = True
+except ImportError:
+    LANGDETECT_AVAILABLE = False
+    print("[Server] ⚠️  langdetect non installé — pip install langdetect")
+
 app = Flask(__name__)
 CORS(app)
 
@@ -53,10 +61,13 @@ def _init_agent():
         print("[Server] ✅ Agent Alia prêt")
 
         # Message d'ouverture
-        opening = _agent.start_session()
-        _agent._add("alia", opening)
-        _push_message("alia", opening, _agent._get_persona_label())
-        _speak_response(opening, "alia")
+        try:
+            opening = _agent.start_session()
+            _agent._add("alia", opening)
+            _push_message("alia", opening, _agent._get_persona_label())
+            _speak_response(opening, "alia")
+        except Exception as e:
+            print(f"[Server] ⚠️  Note: Pas d'ouverture de session chargée: {e}")
 
     except Exception as e:
         _agent_error = str(e)
@@ -230,23 +241,51 @@ def api_chat():
     if not message:
         return jsonify({"error": "Message vide"}), 400
 
+    # ── DÉTECTION DE LANGUE AUTOMATIQUE ───────────────────────────────────
+    detected_lang = "fr"
+    if LANGDETECT_AVAILABLE:
+        try:
+            detected_lang = detect(message)
+            # Normaliser les codes de langue (ex: en, es, ar, fr)
+            detected_lang = detected_lang.lower()[:2]
+            if hasattr(_agent, 'voice') and _agent.voice:
+                old_lang = getattr(_agent.voice, 'delegue_lang', 'fr')
+                _agent.voice.delegue_lang = detected_lang
+                if detected_lang != old_lang:
+                    print(f"[API] 🌍 Langue détectée: {old_lang} → {detected_lang}")
+        except LangDetectException:
+            detected_lang = "fr"
+            print(f"[API] ⚠️  Détection de langue échouée — utilisation du français par défaut")
+
+    # ── TRADUCTION EN FRANÇAIS SI BESOIN ──────────────────────────────
+    message_fr = message
+    if detected_lang != "fr" and hasattr(_agent, 'voice') and _agent.voice:
+        try:
+            message_fr = _agent.voice._to_french(message, detected_lang)
+            print(f"[API] Traduit {detected_lang}→fr: {message_fr[:60]}...")
+        except Exception as e:
+            print(f"[API] Traduction message échouée ({e}) — utilisation du texte original")
+            message_fr = message
+
     _push_message("delegue", message, _agent.profile.name)
 
     # Commandes
     COMMANDS = {
-        "eval":     ["eval", "évalue", "évaluation"],
-        "next":     ["next", "suivant", "avancer"],
-        "sim":      ["sim", "simulation", "simuler"],
-        "stop_sim": ["stop_sim", "stop sim", "arrêter simulation", "fin simulation"],
-        "exam":     ["exam", "examen", "test final"],
+        "eval":     ["eval", "évalue", "évaluation", "evaluate"],
+        "next":     ["next", "suivant", "avancer", "continue"],
+        "sim":      ["sim", "simulation", "simuler", "simulate"],
+        "stop_sim": ["stop sim", "stop_sim", "arrêter simulation", "fin simulation", "stop simulation"],
+        "exam":     ["exam", "examen", "test final", "test", "exam mode"],
         "save":     ["save", "sauvegarder"],
         "status":   ["status", "statut"],
         "history":  ["history", "historique"],
     }
+    # Vérifier les commandes sur BOTH le message original ET traduit pour support multilingue
     msg_lower = message.lower().strip()
+    msg_fr_lower = message_fr.lower().strip()
     cmd = None
     for c, variants in COMMANDS.items():
-        if any(v in msg_lower for v in variants):
+        if any(v in msg_lower for v in variants) or any(v in msg_fr_lower for v in variants):
             cmd = c; break
 
     try:
@@ -310,7 +349,7 @@ def api_chat():
             _agent.save_and_close()
             response = "Session sauvegardée ✓"
         else:
-            response = _agent.respond(message)
+            response = _agent.respond(message_fr)  # ← Utiliser message_fr (traduit en français)
 
         # Détecter le persona pour la voix
         persona_label = _agent._get_persona_label()

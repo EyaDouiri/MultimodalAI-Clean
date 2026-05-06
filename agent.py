@@ -44,10 +44,11 @@ def _send_avatar_state(speaking: bool, listening: bool, text: str = "",
 
 # ── Moteur voix ────────────────────────────────────────────────────────────────
 try:
-    from voice import VoiceEngine
+    from voice import VoiceEngine, SimpleTranslator
     VOICE_ENGINE_AVAILABLE = True
 except ImportError:
     VOICE_ENGINE_AVAILABLE = False
+    SimpleTranslator = None
     print("[Agent] ⚠️  voice.py non trouvé — mode voix désactivé")
 
 # ── Vision — MoondreamCoach (Moondream API + MediaPipe) ────────────────────────
@@ -193,11 +194,16 @@ class AliaAgent:
         self.mode_voix = mode_voix
         self.web_mode  = False   # True en mode serveur web — TTS géré par avatar_server
         self.voice: Optional[VoiceEngine] = None
+        
         if mode_voix and VOICE_ENGINE_AVAILABLE:
             self.voice = VoiceEngine(whisper_model=whisper_model)
         elif mode_voix:
             print("[Agent] ⚠️  VoiceEngine non disponible → mode écrit")
             self.mode_voix = False
+        elif not mode_voix and VOICE_ENGINE_AVAILABLE and SimpleTranslator:
+            # Mode web: créer un SimpleTranslator pour la traduction multilingue SANS micro
+            self.voice = SimpleTranslator()
+            print("[Agent] 🌍 Traduction multilingue activée (SimpleTranslator)")
 
         print("\n[Alia] Chargement session...")
         self.profile: DelegueProfile = load_session(SESSION_CSV, ASSIGNMENTS_CSV)

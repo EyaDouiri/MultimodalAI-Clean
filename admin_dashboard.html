@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALIA Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #7c3aed;
+            --primary-dark: #6d28d9;
+            --secondary: #0ea5e9;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark-bg: #0f172a;
+            --dark-secondary: #1e293b;
+            --dark-tertiary: #334155;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --border: #475569;
+            --accent: #a78bfa;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1f3a 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+
+        /* ──────── SIDEBAR ────────── */
+        .sidebar {
+            background: var(--dark-secondary);
+            border-right: 1px solid var(--border);
+            padding: 24px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 280px;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .nav-item {
+            padding: 12px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--text-secondary);
+            border-left: 3px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            user-select: none;
+        }
+
+        .nav-item:hover {
+            background: var(--dark-tertiary);
+            color: var(--text-primary);
+        }
+
+        .nav-item.active {
+            background: linear-gradient(90deg, rgba(124, 58, 237, 0.2) 0%, rgba(14, 165, 233, 0.1) 100%);
+            color: var(--primary);
+            border-left-color: var(--primary);
+        }
+
+        .nav-icon {
+            font-size: 20px;
+        }
+
+        /* ──────── MAIN CONTENT ────────── */
+        .main {
+            margin-left: 280px;
+            padding: 32px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .header-title {
+            font-size: 32px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(124, 58, 237, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--dark-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--border);
+        }
+
+        .btn-danger {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--danger);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        .btn-danger:hover {
+            background: rgba(239, 68, 68, 0.2);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* ──────── CARDS & GRID ────────── */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            background: var(--dark-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 24px rgba(124, 58, 237, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .stat-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .badge-success {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+
+        .badge-warning {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--warning);
+        }
+
+        .badge-danger {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--danger);
+        }
+
+        /* ──────── CONTENT PANEL ────────── */
+        .content-panel {
+            background: var(--dark-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 32px;
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .panel-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* ──────── SEARCH & FILTER ────────── */
+        .search-filter-bar {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 16px;
+            background: var(--dark-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        .search-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 12px rgba(124, 58, 237, 0.2);
+        }
+
+        /* ──────── TABLE ────────── */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: var(--dark-tertiary);
+        }
+
+        th {
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+
+        tbody tr {
+            transition: all 0.2s ease;
+        }
+
+        tbody tr:hover {
+            background: var(--dark-tertiary);
+        }
+
+        .cell-delegue {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .cell-email {
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .cell-score {
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .niveau-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            text-align: center;
+            min-width: 110px;
+        }
+
+        .niveau-debutant {
+            background: rgba(239, 68, 68, 0.15);
+            color: #fca5a5;
+        }
+
+        .niveau-intermediaire {
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+        }
+
+        .niveau-confirmé {
+            background: rgba(16, 185, 129, 0.15);
+            color: #6ee7b7;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .action-btn {
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .action-edit {
+            background: rgba(124, 58, 237, 0.2);
+            color: var(--primary);
+        }
+
+        .action-edit:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .action-delete {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--danger);
+        }
+
+        .action-delete:hover {
+            background: var(--danger);
+            color: white;
+        }
+
+        /* ──────── MODAL ────────── */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--dark-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-header {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            background: var(--dark-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 12px rgba(124, 58, 237, 0.2);
+        }
+
+        .modal-footer {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-top: 28px;
+        }
+
+        /* ──────── DELEGUE GRID ────────── */
+        .delegues-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .delegue-card {
+            background: linear-gradient(135deg, var(--dark-tertiary) 0%, var(--dark-secondary) 100%);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .delegue-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 12px 32px rgba(124, 58, 237, 0.15);
+            transform: translateY(-6px);
+        }
+
+        .delegue-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .delegue-email {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .delegue-stats {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding: 12px;
+            background: rgba(124, 58, 237, 0.1);
+            border-radius: 8px;
+        }
+
+        .stat-item {
+            flex: 1;
+            text-align: center;
+        }
+
+        .stat-item-value {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat-item-label {
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .delegue-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .delegue-actions button {
+            flex: 1;
+        }
+
+        /* ──────── LOADING & EMPTY ────────── */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-secondary);
+        }
+
+        .loading::after {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid var(--border);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .empty-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .empty-text {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        /* ──────── RESPONSIVE ────────── */
+        @media (max-width: 1200px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+                border-bottom: 1px solid var(--border);
+                border-right: none;
+            }
+
+            .main {
+                margin-left: 0;
+            }
+
+            .sidebar-nav {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .nav-item {
+                border-left: none;
+                border-bottom: 3px solid transparent;
+            }
+
+            .nav-item.active {
+                border-left: none;
+                border-bottom-color: var(--primary);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .delegues-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main {
+                padding: 16px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 16px;
+                align-items: flex-start;
+            }
+
+            .search-filter-bar {
+                flex-direction: column;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 12px;
+            }
+
+            .modal-content {
+                max-width: 90%;
+            }
+        }
+
+        .error-message {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #fca5a5;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .success-message {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #6ee7b7;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="logo">✨ ALIA Admin</div>
+            <nav class="sidebar-nav">
+                <div class="nav-item active" data-view="delegues">
+                    <span class="nav-icon">👥</span>
+                    <span>Délégués</span>
+                </div>
+                <div class="nav-item" data-view="assignments">
+                    <span class="nav-icon">📋</span>
+                    <span>Assignations</span>
+                </div>
+                <div class="nav-item" data-view="analytics">
+                    <span class="nav-icon">📊</span>
+                    <span>Analytiques</span>
+                </div>
+                <div class="nav-item" data-view="settings">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Paramètres</span>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main">
+            <!-- HEADER -->
+            <div class="header">
+                <h1 class="header-title">Dashboard ALIA</h1>
+                <div class="header-actions">
+                    <button class="btn btn-primary" id="createUserBtn">+ Créer Délégué</button>
+                    <button class="btn btn-secondary" id="logoutBtn">Déconnexion</button>
+                </div>
+            </div>
+
+            <!-- STATISTICS -->
+            <div class="stats-grid" id="statsGrid">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalDelegues">0</div>
+                    <div class="stat-label">Délégués Actifs</div>
+                    <span class="stat-badge badge-success">↑ En ligne</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="totalAssignments">0</div>
+                    <div class="stat-label">Assignations</div>
+                    <span class="stat-badge badge-warning">📦 En cours</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="avgScore">0%</div>
+                    <div class="stat-label">Score Moyen</div>
+                    <span class="stat-badge badge-success">✓ Bon</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="completionRate">0%</div>
+                    <div class="stat-label">Taux Complétude</div>
+                    <span class="stat-badge badge-warning">⏱ Modéré</span>
+                </div>
+            </div>
+
+            <!-- DELEGUES VIEW -->
+            <div id="deleguesView" class="view-content">
+                <div class="content-panel">
+                    <div class="panel-header">
+                        <h2 class="panel-title">👥 Gestion des Délégués</h2>
+                    </div>
+                    <div class="search-filter-bar">
+                        <input type="text" class="search-input" id="delegueSearch" placeholder="Rechercher un délégué...">
+                        <select class="search-input" id="niveauFilter" style="flex: 0.3;">
+                            <option value="">Tous les niveaux</option>
+                            <option value="débutant">Débutant</option>
+                            <option value="intermédiaire">Intermédiaire</option>
+                            <option value="confirmé">Confirmé</option>
+                        </select>
+                    </div>
+                    <div id="deleguesContainer" class="delegues-grid"></div>
+                </div>
+            </div>
+
+            <!-- ASSIGNMENTS VIEW -->
+            <div id="assignmentsView" class="view-content" style="display: none;">
+                <div class="content-panel">
+                    <div class="panel-header">
+                        <h2 class="panel-title">📋 Gestion des Assignations</h2>
+                    </div>
+                    <div class="search-filter-bar">
+                        <input type="text" class="search-input" id="assignmentSearch" placeholder="Rechercher une assignation...">
+                        <select class="search-input" id="statutFilter" style="flex: 0.3;">
+                            <option value="">Tous les statuts</option>
+                            <option value="non_commence">Non commencé</option>
+                            <option value="en_cours">En cours</option>
+                            <option value="termine">Terminé</option>
+                        </select>
+                    </div>
+                    <div class="table-container">
+                        <table id="assignmentsTable">
+                            <thead>
+                                <tr>
+                                    <th>Délégué</th>
+                                    <th>Médicament</th>
+                                    <th>Module 1</th>
+                                    <th>Module 2</th>
+                                    <th>Module 3</th>
+                                    <th>Score Global</th>
+                                    <th>Statut</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="assignmentsBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ANALYTICS VIEW -->
+            <div id="analyticsView" class="view-content" style="display: none;">
+                <div class="content-panel">
+                    <div class="panel-header">
+                        <h2 class="panel-title">📊 Analytiques & Rapports</h2>
+                    </div>
+                    <div style="text-align: center; padding: 60px 20px; color: var(--text-secondary);">
+                        <div style="font-size: 48px; margin-bottom: 16px;">📊</div>
+                        <p>Module analytiques en développement</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SETTINGS VIEW -->
+            <div id="settingsView" class="view-content" style="display: none;">
+                <div class="content-panel">
+                    <div class="panel-header">
+                        <h2 class="panel-title">⚙️ Paramètres</h2>
+                    </div>
+                    <div style="text-align: center; padding: 60px 20px; color: var(--text-secondary);">
+                        <div style="font-size: 48px; margin-bottom: 16px;">⚙️</div>
+                        <p>Configuration en cours de développement</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- MODALS -->
+    <div id="createUserModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">Créer un Nouveau Délégué</div>
+            <div id="createUserError" class="error-message" style="display: none;"></div>
+            <form id="createUserForm">
+                <div class="form-group">
+                    <label class="form-label">Prénom</label>
+                    <input type="text" class="form-input" id="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Nom</label>
+                    <input type="text" class="form-input" id="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Mot de passe</label>
+                    <input type="password" class="form-input" id="password" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelCreateBtn">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Créer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="editAssignmentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">Modifier Assignation</div>
+            <div id="editAssignmentError" class="error-message" style="display: none;"></div>
+            <form id="editAssignmentForm">
+                <div class="form-group">
+                    <label class="form-label">Score Module 1</label>
+                    <input type="number" class="form-input" id="editModule1" min="0" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Score Module 2</label>
+                    <input type="number" class="form-input" id="editModule2" min="0" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Score Module 3</label>
+                    <input type="number" class="form-input" id="editModule3" min="0" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Statut</label>
+                    <select class="form-input" id="editStatut" required>
+                        <option value="non_commence">Non commencé</option>
+                        <option value="en_cours">En cours</option>
+                        <option value="termine">Terminé</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelEditBtn">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Mettre à jour</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://127.0.0.1:8000/api';
+        let currentEditingAssignment = null;
+        let currentView = 'delegues';
+        let allDelegues = [];
+        let allAssignments = [];
+
+        // ──────── UTILS ────────
+        function getToken() {
+            return localStorage.getItem('token');
+        }
+
+        async function apiCall(endpoint, method = 'GET', data = null) {
+            const options = {
+                method,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${getToken()}`
+                }
+            };
+            if (data) options.body = JSON.stringify(data);
+
+            try {
+                const res = await fetch(`${API_URL}${endpoint}`, options);
+                const json = await res.json();
+                if (!res.ok && json.error) throw new Error(json.error);
+                return json;
+            } catch (err) {
+                console.error('API Error:', err);
+                throw err;
+            }
+        }
+
+        // ──────── NAV ────────
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+                currentView = item.dataset.view;
+                switchView(currentView);
+            });
+        });
+
+        function switchView(view) {
+            document.querySelectorAll('.view-content').forEach(v => v.style.display = 'none');
+            document.getElementById(`${view}View`).style.display = 'block';
+            if (view === 'delegues') loadDelegues();
+            else if (view === 'assignments') loadAssignments();
+        }
+
+        // ──────── DELEGUES ────────
+        async function loadDelegues() {
+            try {
+                const result = await apiCall('/admin/delegues');
+                allDelegues = result.delegues || [];
+                renderDelegues(allDelegues);
+                updateStats();
+            } catch (err) {
+                console.error('Error loading delegues:', err);
+            }
+        }
+
+        function renderDelegues(delegues) {
+            const container = document.getElementById('deleguesContainer');
+            if (!delegues.length) {
+                container.innerHTML = '<div class="empty-state"><div class="empty-icon">👤</div><div class="empty-text">Aucun délégué trouvé</div></div>';
+                return;
+            }
+
+            container.innerHTML = delegues.map(d => `
+                <div class="delegue-card">
+                    <div class="delegue-name">${d.first_name} ${d.last_name}</div>
+                    <div class="delegue-email">${d.email}</div>
+                    <div class="delegue-stats">
+                        <div class="stat-item">
+                            <div class="stat-item-value">${d.nb_produits}</div>
+                            <div class="stat-item-label">Produits</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-item-value">${d.assignments?.length || 0}</div>
+                            <div class="stat-item-label">Assignations</div>
+                        </div>
+                    </div>
+                    <div class="niveau-badge niveau-${d.niveau.toLowerCase()}">${d.niveau}</div>
+                    <div class="delegue-actions" style="margin-top: 12px;">
+                        <button class="btn btn-secondary" onclick="viewDelegueDetails(${d.id})">Détails</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // ──────── ASSIGNMENTS ────────
+        async function loadAssignments() {
+            try {
+                const result = await apiCall('/admin/delegues');
+                allAssignments = [];
+                (result.delegues || []).forEach(d => {
+                    (d.assignments || []).forEach(a => {
+                        allAssignments.push({...a, delegue_name: `${d.first_name} ${d.last_name}`});
+                    });
+                });
+                renderAssignments(allAssignments);
+            } catch (err) {
+                console.error('Error loading assignments:', err);
+            }
+        }
+
+        function renderAssignments(assignments) {
+            const tbody = document.getElementById('assignmentsBody');
+            if (!assignments.length) {
+                tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 40px;">Aucune assignation trouvée</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = assignments.map(a => `
+                <tr>
+                    <td class="cell-delegue">${a.delegue_name}</td>
+                    <td>${a.medicament_nom}</td>
+                    <td class="cell-score">${a.score_module1 || '-'}</td>
+                    <td class="cell-score">${a.score_module2 || '-'}</td>
+                    <td class="cell-score">${a.score_module3 || '-'}</td>
+                    <td class="cell-score">${a.score_global || '-'}</td>
+                    <td><span class="niveau-badge" style="background: ${getStatutColor(a.statut)}; color: white;">${a.statut}</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="action-btn action-edit" onclick="openEditModal(${a.id}, ${a.score_module1}, ${a.score_module2}, ${a.score_module3}, '${a.statut}')">✏️ Edit</button>
+                            <button class="action-btn action-delete" onclick="deleteAssignment(${a.id})">🗑️ Delete</button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function getStatutColor(statut) {
+            const colors = {
+                'non_commence': '#ef4444',
+                'en_cours': '#f59e0b',
+                'termine': '#10b981'
+            };
+            return colors[statut] || '#6b7280';
+        }
+
+        // ──────── MODALS ────────
+        document.getElementById('createUserBtn').addEventListener('click', () => {
+            document.getElementById('createUserModal').classList.add('active');
+        });
+
+        document.getElementById('cancelCreateBtn').addEventListener('click', () => {
+            document.getElementById('createUserModal').classList.remove('active');
+            document.getElementById('createUserForm').reset();
+        });
+
+        document.getElementById('createUserForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                first_name: document.getElementById('firstName').value,
+                last_name: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            };
+
+            try {
+                await apiCall('/admin/create-user', 'POST', data);
+                document.getElementById('createUserModal').classList.remove('active');
+                document.getElementById('createUserForm').reset();
+                loadDelegues();
+            } catch (err) {
+                document.getElementById('createUserError').textContent = err.message;
+                document.getElementById('createUserError').style.display = 'block';
+            }
+        });
+
+        function openEditModal(assignmentId, m1, m2, m3, statut) {
+            currentEditingAssignment = assignmentId;
+            document.getElementById('editModule1').value = m1 || 0;
+            document.getElementById('editModule2').value = m2 || 0;
+            document.getElementById('editModule3').value = m3 || 0;
+            document.getElementById('editStatut').value = statut;
+            document.getElementById('editAssignmentModal').classList.add('active');
+        }
+
+        document.getElementById('cancelEditBtn').addEventListener('click', () => {
+            document.getElementById('editAssignmentModal').classList.remove('active');
+        });
+
+        document.getElementById('editAssignmentForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = {
+                score_module1: parseInt(document.getElementById('editModule1').value),
+                score_module2: parseInt(document.getElementById('editModule2').value),
+                score_module3: parseInt(document.getElementById('editModule3').value),
+                statut: document.getElementById('editStatut').value
+            };
+
+            try {
+                await apiCall(`/admin/assignment/${currentEditingAssignment}`, 'PUT', data);
+                document.getElementById('editAssignmentModal').classList.remove('active');
+                loadAssignments();
+            } catch (err) {
+                document.getElementById('editAssignmentError').textContent = err.message;
+                document.getElementById('editAssignmentError').style.display = 'block';
+            }
+        });
+
+        async function deleteAssignment(assignmentId) {
+            if (!confirm('Êtes-vous sûr de vouloir supprimer cette assignation?')) return;
+            try {
+                await apiCall(`/admin/assignment/${assignmentId}`, 'DELETE');
+                loadAssignments();
+            } catch (err) {
+                alert('Erreur: ' + err.message);
+            }
+        }
+
+        // ──────── SEARCH & FILTER ────────
+        document.getElementById('delegueSearch').addEventListener('input', (e) => {
+            const search = e.target.value.toLowerCase();
+            const niveau = document.getElementById('niveauFilter').value;
+            const filtered = allDelegues.filter(d =>
+                (d.first_name.toLowerCase().includes(search) || d.last_name.toLowerCase().includes(search)) &&
+                (!niveau || d.niveau === niveau)
+            );
+            renderDelegues(filtered);
+        });
+
+        document.getElementById('niveauFilter').addEventListener('change', (e) => {
+            const search = document.getElementById('delegueSearch').value.toLowerCase();
+            const niveau = e.target.value;
+            const filtered = allDelegues.filter(d =>
+                (d.first_name.toLowerCase().includes(search) || d.last_name.toLowerCase().includes(search)) &&
+                (!niveau || d.niveau === niveau)
+            );
+            renderDelegues(filtered);
+        });
+
+        document.getElementById('assignmentSearch').addEventListener('input', (e) => {
+            const search = e.target.value.toLowerCase();
+            const statut = document.getElementById('statutFilter').value;
+            const filtered = allAssignments.filter(a =>
+                (a.delegue_name.toLowerCase().includes(search) || a.medicament_nom.toLowerCase().includes(search)) &&
+                (!statut || a.statut === statut)
+            );
+            renderAssignments(filtered);
+        });
+
+        document.getElementById('statutFilter').addEventListener('change', (e) => {
+            const search = document.getElementById('assignmentSearch').value.toLowerCase();
+            const statut = e.target.value;
+            const filtered = allAssignments.filter(a =>
+                (a.delegue_name.toLowerCase().includes(search) || a.medicament_nom.toLowerCase().includes(search)) &&
+                (!statut || a.statut === statut)
+            );
+            renderAssignments(filtered);
+        });
+
+        // ──────── STATS ────────
+        function updateStats() {
+            const totalAssignments = allDelegues.reduce((sum, d) => sum + (d.assignments?.length || 0), 0);
+            const globalScores = [];
+            allDelegues.forEach(d => {
+                (d.assignments || []).forEach(a => {
+                    if (a.score_global) globalScores.push(a.score_global);
+                });
+            });
+            const avgScore = globalScores.length ? Math.round(globalScores.reduce((a, b) => a + b) / globalScores.length) : 0;
+            const completed = allDelegues.reduce((sum, d) => sum + (d.assignments || []).filter(a => a.statut === 'termine').length, 0);
+            const completionRate = totalAssignments ? Math.round((completed / totalAssignments) * 100) : 0;
+
+            document.getElementById('totalDelegues').textContent = allDelegues.length;
+            document.getElementById('totalAssignments').textContent = totalAssignments;
+            document.getElementById('avgScore').textContent = avgScore + '%';
+            document.getElementById('completionRate').textContent = completionRate + '%';
+        }
+
+        // ──────── INIT ────────
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem('token');
+            window.location.href = 'http://localhost:3000/login';
+        });
+
+        loadDelegues();
+    </script>
+</body>
+</html>

@@ -1,2 +1,100 @@
 delegue_id,delegue_name,current_module,niveau,score_module_1,date_last_session
-1,touta,1,debutant,40,2026-04-22
+1,Délégué Défaut,1,debutant,0,2026-05-05
+
+        'indications': 'Apport en fer et probiotiques',
+    },
+    {
+        'nom': 'VitaminC+',
+        'forme': 'Comprimé',
+        'classe_therapeutique': 'Vitamine',
+        'indications': 'Renforcement immunitaire',
+    },
+    {
+        'nom': 'Magnésol',
+        'forme': 'Comprimé',
+        'classe_therapeutique': 'Minéral',
+        'indications': 'Apport en magnésium',
+    },
+    {
+        'nom': 'Vitamin_D3',
+        'forme': 'Gélule',
+        'classe_therapeutique': 'Vitamine'        from api.models import User, Medicament, Assignment
+        import csv
+        
+        # Créer les médicaments à partir du CSV
+        medicaments_data = [
+            {
+                'nom': 'FerBiotic',
+                'forme': 'Gélule',
+                'classe_therapeutique': 'Complément alimentaire',
+                'indications': 'Apport en fer et probiotiques',
+            },
+            {
+                'nom': 'VitaminC+',
+                'forme': 'Comprimé',
+                'classe_therapeutique': 'Vitamine',
+                'indications': 'Renforcement immunitaire',
+            },
+            {
+                'nom': 'Magnésol',
+                'forme': 'Comprimé',
+                'classe_therapeutique': 'Minéral',
+                'indications': 'Apport en magnésium',
+            },
+            {
+                'nom': 'Vitamin_D3',
+                'forme': 'Gélule',
+                'classe_therapeutique': 'Vitamine',
+                'indications': 'Santé osseuse et immunitaire',
+            },
+            {
+                'nom': 'Calcium_Plus',
+                'forme': 'Comprimé',
+                'classe_therapeutique': 'Minéral',
+                'indications': 'Fortification osseuse',
+            },
+            {
+                'nom': 'Omega3_Forte',
+                'forme': 'Gélule',
+                'classe_therapeutique': 'Acide gras',
+                'indications': 'Santé cardiaque',
+            },
+            {
+                'nom': 'Probiotics_Plus',
+                'forme': 'Gélule',
+                'classe_therapeutique': 'Probiotique',
+                'indications': 'Santé digestive',
+            },
+            {
+                'nom': 'FONGIDERM Antifongique Crème',
+                'forme': 'Crème 30g',
+                'classe_therapeutique': 'Antifongique',
+                'indications': 'Mycoses cutanées',
+            },
+        ]
+        
+        # Créer les médicaments
+        for med in medicaments_data:
+            Medicament.objects.get_or_create(**med)
+        
+        print(f"✅ {len(medicaments_data)} médicaments créés")
+        
+        # Ajouter les assignments pour le délégué "eya"
+        eya = User.objects.get(email='eya@alia.com')
+        med_ferbiotic = Medicament.objects.get(nom='FerBiotic')
+        med_vitaminc = Medicament.objects.get(nom='VitaminC+')
+        
+        Assignment.objects.get_or_create(
+            delegue=eya,
+            medicament=med_ferbiotic,
+            defaults={'score_global': 0, 'statut': 'en_cours'}
+        )
+        
+        Assignment.objects.get_or_create(
+            delegue=eya,
+            medicament=med_vitaminc,
+            defaults={'score_global': 0, 'statut': 'non_commence'}
+        )
+        
+        print("✅ Assignments créés pour Eya")
+        exit()
